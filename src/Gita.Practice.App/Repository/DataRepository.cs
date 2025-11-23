@@ -3,7 +3,7 @@ using Gita.Practice.App.Models;
 
 namespace Gita.Practice.App.Repository
 {
-    internal class DataRepository
+    internal class DataRepository : IDataRepository
     {
         public async Task<Chapter> Get(int chapter)
         {

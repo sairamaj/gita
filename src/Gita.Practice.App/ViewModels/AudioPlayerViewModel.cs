@@ -1,8 +1,5 @@
+using Gita.Practice.App.Models;
 using Gita.Practice.App.Repository;
-using System;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -43,7 +40,8 @@ public class AudioPlayerViewModel : BaseViewModel
 
         PlayCommand = new RelayCommand(_ =>
         {
-            PlayRange();
+            //PlayRange();
+            Play2();
         });
 
         PauseCommand = new RelayCommand(_ => Pause());
@@ -57,6 +55,21 @@ public class AudioPlayerViewModel : BaseViewModel
         _timer.Tick += Timer_Tick;
 
     }
+
+    private async Task Play2()
+    {
+        var student = new PracticeInfo
+        {
+            Chapter = 6,
+            NumberOfParticipants = 2,
+            YourDurationInSeconds = 3,
+            Sloka = 1,
+            YourTurn = 2
+        };
+
+        await new PlayRepository2(new DataRepository()).Start(student, this._mediaElement);
+    }
+
     private void PlayRange()
     {
         _mediaElement.Position = _fromTime;
