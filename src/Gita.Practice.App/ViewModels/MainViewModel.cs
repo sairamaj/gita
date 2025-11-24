@@ -1,3 +1,4 @@
+using Gita.Practice.App.ViewModels;
 using System.ComponentModel;
 
 namespace Gita.Practice.App;
@@ -6,7 +7,7 @@ public class MainViewModel : BaseViewModel
 {
     public MainViewModel()
     {
-        //this.AudioPlayer = new AudioPlayerViewModel()
     }
-    //public AudioPlayerViewModel AudioPlayer { get; }
+
+    public ChapterTreeViewModel ChapterTreeViewModel { get; } = new ChapterTreeViewModel();
 }

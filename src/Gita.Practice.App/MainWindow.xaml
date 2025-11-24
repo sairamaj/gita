@@ -7,7 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <local:AudioPlayerControl />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left column placeholder (replace with real content as needed) -->
+        <local:ChapterTreeView Grid.Column="0" Background="Transparent" DataContext="{Binding ChapterTreeViewModel}" />
+
+        <!-- Vertical splitter between column 0 and column 2 (placed in column 1) -->
+        <GridSplitter Grid.Column="1"
+                      Width="5"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch"
+                      ResizeBehavior="PreviousAndNext"
+                      ResizeDirection="Columns"
+                      ShowsPreview="True"
+                      Background="Gray" />
+
+        <!-- Audio player placed in the 3rd column (index 2) -->
+        <local:AudioPlayerControl Grid.Column="2" />
     </Grid>
 </Window>
 

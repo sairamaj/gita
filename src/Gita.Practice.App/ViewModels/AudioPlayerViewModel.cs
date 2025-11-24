@@ -60,7 +60,7 @@ public class AudioPlayerViewModel : BaseViewModel
     {
         var student = new PracticeInfo
         {
-            Chapter = 6,
+            Chapter = 2,
             NumberOfParticipants = 2,
             YourDurationInSeconds = 3,
             Sloka = 1,

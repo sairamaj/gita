@@ -1,4 +1,5 @@
 ﻿using Gita.Practice.App.Models;
+using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Threading;
 
@@ -54,6 +55,8 @@ internal class PlayRepository2
             }
 
             participantIndex++;
+            if (participantIndex > practiceInfo.NumberOfParticipants)
+                participantIndex = 1;
 
             // First and last entry define the segment
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
@@ -65,9 +68,59 @@ internal class PlayRepository2
             Console.WriteLine($"Playing: {shloka.ShlokaNum}");
             mediaElement.Play();
 
-            //await Task.Delay(500); // small delay to allow mediaElement to seek
+            await Task.Delay(500); // small delay to allow mediaElement to seek
+            //duration = TimeSpan.FromSeconds(1);
             await Task.Delay(duration);
             mediaElement.Pause();
+        }
+    }
+
+    public async Task StartForDebug(PracticeInfo practiceInfo, MediaElement mediaElement)
+    {
+        var chapter = await DataRepository.Get(practiceInfo.Chapter);
+        var audioFilePath = await DataRepository.GetAuditFilePath(practiceInfo.Chapter);
+
+        // Start from the requested sloka number
+        var startIndex = chapter.Shlokas
+            .FindIndex(s => s.ShlokaNum == practiceInfo.Sloka.ToString());
+
+        if (startIndex == -1)
+            startIndex = 0; // fallback to beginning
+
+        int participantIndex = 1;
+
+        for (int i = startIndex; i < chapter.Shlokas.Count; i++)
+        {
+            var shloka = chapter.Shlokas[i];
+            if (shloka.Entries == null || shloka.Entries.Count == 0)
+                continue;
+
+            // Pause for student turn if it's their slot
+            if (participantIndex == practiceInfo.YourTurn)
+            {
+                Trace.WriteLine($"Your turn:{shloka.ShlokaNum}");
+                await Task.Delay(TimeSpan.FromSeconds(practiceInfo.YourDurationInSeconds));
+                // Cycle participant index
+                participantIndex++;
+                if (participantIndex > practiceInfo.NumberOfParticipants)
+                    participantIndex = 1;
+                continue;
+            }
+
+            participantIndex++;
+            if (participantIndex > practiceInfo.NumberOfParticipants)
+                participantIndex = 1;
+
+            // First and last entry define the segment
+            var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
+            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries.Last().EndTime));
+            var duration = end - start;
+
+            // Play audio segment
+            mediaElement.Position = start;
+            Trace.WriteLine($"Playing: {shloka.ShlokaNum}");
+            duration = TimeSpan.FromSeconds(1); // debug duration
+            await Task.Delay(duration);
         }
     }
 }
