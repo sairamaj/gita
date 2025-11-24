@@ -27,7 +27,7 @@
                       Background="Gray" />
 
         <!-- Audio player placed in the 3rd column (index 2) -->
-        <local:AudioPlayerControl Grid.Column="2" />
+        <local:AudioPlayerControl Grid.Column="2" DataContext="{Binding AudioPlayerViewModel}" />
     </Grid>
 </Window>
 

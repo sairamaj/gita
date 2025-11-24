@@ -1,28 +1,29 @@
-using System;
+	using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Gita.Practice.App;
+namespace Gita.Practice.App.ViewModels;
 
 // Minimal base view model providing property change notification and a SetProperty helper.
 public abstract class BaseViewModel : INotifyPropertyChanged
 {
-	public event PropertyChangedEventHandler PropertyChanged;
+	public event PropertyChangedEventHandler? PropertyChanged;
 
 	// Raises PropertyChanged for the given property name.
-	protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+	protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
 	{
 		PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 	}
 
 	// Helper to set a backing field and raise PropertyChanged only when the value actually changes.
-	protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+	protected bool SetProperty<T>(ref T backingField, T value, [CallerMemberName] string? propertyName = null)
 	{
-		if (EqualityComparer<T>.Default.Equals(storage, value))
+		if (EqualityComparer<T>.Default.Equals(backingField, value))
 			return false;
 
-		storage = value;
+		backingField = value;
 		OnPropertyChanged(propertyName);
 		return true;
 	}
 }
+

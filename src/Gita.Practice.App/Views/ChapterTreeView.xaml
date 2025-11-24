@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Gita.Practice.App.Views"
              xmlns:vm="clr-namespace:Gita.Practice.App.ViewModels"
+             xmlns:svc="clr-namespace:Gita.Practice.App.Services"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
@@ -12,7 +13,8 @@
         <TreeView x:Name="ChaptersTreeView"
                   ItemsSource="{Binding Chapters}"
                   HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch">
+                  VerticalAlignment="Stretch"
+                  svc:TreeViewSelectionService.SelectedItemChangedCommand="{Binding ChapterSelectedCommand}">
             <!-- Enable selection and expansion state to be driven by the view models.
                  Each ChapterViewModel is expected to expose `IsSelected` and `IsExpanded` properties. -->
             <TreeView.ItemContainerStyle>
