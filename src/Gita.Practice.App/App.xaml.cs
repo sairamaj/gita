@@ -12,7 +12,7 @@ namespace Gita.Practice.App;
 /// Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
-{   
+{
     private IHost? _host;
 
     protected override async void OnStartup(StartupEventArgs e)
@@ -68,7 +68,11 @@ public partial class App : Application
         {
             // Set Application.MainWindow and show
             MainWindow = mainWindow;
-            mainWindow.DataContext = new MainViewModel();
+
+            // Resolve MainViewModel through DI. Fallback to ActivatorUtilities or a new instance if necessary.
+            var mainVm = serviceProvider.GetService<MainViewModel>()
+                         ?? ActivatorUtilities.CreateInstance<MainViewModel>(serviceProvider);
+            mainWindow.DataContext = mainVm;
             mainWindow.Show();
         }
         else

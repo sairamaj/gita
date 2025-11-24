@@ -1,10 +1,10 @@
 ﻿using Gita.Practice.App.Models;
 
-namespace Gita.Practice.App.Repository
+namespace Gita.Practice.App.Repository;
+
+public interface IDataRepository
 {
-    internal interface IDataRepository
-    {
-        public Task<Chapter> Get(int chapter);
-        Task<string> GetAuditFilePath(int chapter);
-    }
+    public IEnumerable<Tuple<string,int>> GetAllChapters();
+    public Task<Chapter> Get(int chapter);
+    Task<string> GetAuditFilePath(int chapter);
 }

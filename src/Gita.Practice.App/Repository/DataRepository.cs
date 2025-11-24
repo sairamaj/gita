@@ -18,6 +18,18 @@ namespace Gita.Practice.App.Repository
                        ?? throw new InvalidOperationException("Failed to deserialize chapter JSON.");
         }
 
+        public IEnumerable<Tuple<string, int>> GetAllChapters()
+        {
+            return new List<Tuple<string, int>>
+            {
+                new Tuple<string,int>("Arjuna Vishadha Yoga", 1),
+                new Tuple<string,int>("Sankhya Yoga", 2),
+                new Tuple<string,int>("Karma Yoga", 3),
+                new Tuple<string,int>("Jnana Yoga", 4),
+                new Tuple<string,int>("Karma Sanyasa Yoga", 5),
+            };
+        }
+
         public async Task<string> GetAuditFilePath(int chapter)
         {
             var chapterInfo = await new DownloadManager().DownloadChapterAsync(chapter);

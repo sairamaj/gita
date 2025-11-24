@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left column placeholder (replace with real content as needed) -->
-        <local:ChapterTreeView Grid.Column="0" Background="Transparent" DataContext="{Binding ChapterTreeViewModel}" />
+        <local:ChapterTreeView Grid.Column="0" Background="Transparent" DataContext="{Binding}" />
 
         <!-- Vertical splitter between column 0 and column 2 (placed in column 1) -->
         <GridSplitter Grid.Column="1"
