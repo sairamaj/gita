@@ -4,9 +4,69 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="150" d:DesignWidth="400">
+             d:DesignHeight="250" d:DesignWidth="400">
 
-    <Grid>
+    <UserControl.Resources>
+        <!-- Playback button styles -->
+        <LinearGradientBrush x:Key="PlaybackNormalBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FF66A3FF" Offset="0"/>
+            <GradientStop Color="#FF2D6BFF" Offset="1"/>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="PlaybackHoverBrush" StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FF6FB8FF" Offset="0"/>
+            <GradientStop Color="#FF335EFF" Offset="1"/>
+        </LinearGradientBrush>
+
+        <Style x:Key="PlaybackButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource PlaybackNormalBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="10,6" />
+            <Setter Property="Margin" Value="6,0" />
+            <Setter Property="MinWidth" Value="72" />
+            <Setter Property="MinHeight" Value="44" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="8"
+                                SnapsToDevicePixels="True"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource PlaybackHoverBrush}" />
+                                <Setter TargetName="border" Property="Opacity" Value="0.98" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.9" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="border" Property="Opacity" Value="0.45" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Input panel -->
+            <RowDefinition Height="Auto"/>
+            <!-- Playback buttons -->
+        </Grid.RowDefinitions>
+
         <!-- MediaElement hidden (no UI) -->
         <MediaElement Name="mediaElement"
                       LoadedBehavior="Manual"
@@ -14,12 +74,51 @@
                       Visibility="Collapsed"
                       Source="{Binding AudioSource}" />
 
+        <!-- Input panel at top -->
+        <Border Grid.Row="0"
+                Background="#f5f7fa"
+                CornerRadius="10"
+                Padding="12"
+                Margin="0,0,0,15"
+                BorderBrush="#d0d7de"
+                BorderThickness="1">
+            <StackPanel>
+                <TextBlock Text="Session Settings" 
+                           FontSize="14" 
+                           FontWeight="Bold" 
+                           Foreground="#333" 
+                           Margin="0,0,0,10"/>
+
+                <UniformGrid Columns="2" Rows="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
+                    <TextBlock Text="Participants:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding NumberOfParticipants, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+
+                    <TextBlock Text="Your Turn:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding YourTurn, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+
+                    <TextBlock Text="Duration (sec):" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding YourDurationInSeconds, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+
+                    <TextBlock Text="Repeat Your Sloka:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <CheckBox IsChecked="{Binding RepeatYourSloka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                </UniformGrid>
+            </StackPanel>
+        </Border>
+
         <!-- Playback controls -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Download" Command="{Binding DownloadCommand}" />
-            <Button Content="Play" Command="{Binding PlayCommand}" />
-            <Button Content="Pause" Command="{Binding PauseCommand}" />
-            <Button Content="Stop" Command="{Binding StopCommand}" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+            <Button Style="{StaticResource PlaybackButtonStyle}" Command="{Binding PlayCommand}" ToolTip="Play">
+                <TextBlock Text="Play" FontSize="12" HorizontalAlignment="Center"/>
+            </Button>
+
+            <Button Style="{StaticResource PlaybackButtonStyle}" Command="{Binding PauseCommand}" ToolTip="Pause">
+                <TextBlock Text="Pause" FontSize="12" HorizontalAlignment="Center"/>
+            </Button>
+
+            <Button Style="{StaticResource PlaybackButtonStyle}" Command="{Binding StopCommand}" ToolTip="Stop">
+                <TextBlock Text="Stop" FontSize="12" HorizontalAlignment="Center"/>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>

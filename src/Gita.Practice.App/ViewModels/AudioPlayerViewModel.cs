@@ -38,7 +38,7 @@ public class AudioPlayerViewModel : BaseViewModel
         PlayCommand = new RelayCommand(_ =>
         {
             //PlayRange();
-            Play2();
+            Play();
         });
 
         //PauseCommand = new RelayCommand(_ => Pause());
@@ -51,8 +51,12 @@ public class AudioPlayerViewModel : BaseViewModel
     public MediaElement MediaElement { get; set; }
 
     public int SelectedChapterNumber { get; set; } = 1;
+    public int NumberOfParticipants { get; set; } = 2;
+    public int YourTurn { get; set; } = 2;
+    public int YourDurationInSeconds { get; set; } = 20;
+    public bool RepeatYourSloka { get; set; }
 
-    private async Task Play2()
+    private async Task Play()
     {
         if(this.MediaElement == null)
         {
@@ -61,12 +65,13 @@ public class AudioPlayerViewModel : BaseViewModel
         var student = new PracticeInfo
         {
             Chapter = this.SelectedChapterNumber,
-            NumberOfParticipants = 2,
-            YourDurationInSeconds = 3,
+            NumberOfParticipants = NumberOfParticipants,
+            YourDurationInSeconds = YourDurationInSeconds,
+            RepeatYourSloka = RepeatYourSloka,
             Sloka = 1,
-            YourTurn = 2
+            YourTurn = YourTurn,
         };
 
-        await new PlayRepository2(new DataRepository()).Start(student, this.MediaElement);
+        await new PlayRepository(new DataRepository()).Start(student, this.MediaElement!);
     }
 }

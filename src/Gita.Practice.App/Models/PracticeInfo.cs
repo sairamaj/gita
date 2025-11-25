@@ -7,5 +7,6 @@
         public int NumberOfParticipants { get; set; }
         public int YourTurn { get; set; }
         public int YourDurationInSeconds { get; set; }
+        public bool RepeatYourSloka { get; set; }
     }
 }
