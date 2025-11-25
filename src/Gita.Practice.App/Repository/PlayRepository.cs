@@ -14,7 +14,7 @@ internal class PlayRepository
     public IDataRepository DataRepository { get; }
 
 
-    public async Task Start(PracticeInfo practiceInfo, MediaElement mediaElement)
+    public async Task Start(PracticeInfo practiceInfo, MediaElement mediaElement, Func<int, Task> waitForYourTurnToFinish)
     {
         var chapter = await DataRepository.Get(practiceInfo.Chapter);
         var audioFilePath = await DataRepository.GetAuditFilePath(practiceInfo.Chapter);
@@ -40,7 +40,7 @@ internal class PlayRepository
             // Pause for student turn if it's their slot
             if (participantIndex == practiceInfo.YourTurn)
             {
-                await Task.Delay(TimeSpan.FromSeconds(practiceInfo.YourDurationInSeconds));
+                await waitForYourTurnToFinish(practiceInfo.YourDurationInSeconds); 
                 // Cycle participant index
                 participantIndex++;
                 if (participantIndex > practiceInfo.NumberOfParticipants)

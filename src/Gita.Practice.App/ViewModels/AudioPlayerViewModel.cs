@@ -10,28 +10,12 @@ namespace Gita.Practice.App.ViewModels;
 public class AudioPlayerViewModel : BaseViewModel
 {
     private Uri _audioSource;
-    public Uri AudioSource
-    {
-        get => _audioSource;
-        set { _audioSource = value; OnPropertyChanged(); }
-    }
+
 
     public ICommand PlayCommand { get; }
     public ICommand PauseCommand { get; }
     public ICommand StopCommand { get; }
     public ICommand DownloadCommand { get; }
-
-    private readonly DispatcherTimer _timer;
-
-
-    // Segment playback fields
-    private DispatcherTimer? _segmentTimer;
-    private TimeSpan? _segmentStart;
-    private TimeSpan? _segmentEnd;
-    private const int TimerIntervalMs = 200;
-
-    private TimeSpan _fromTime = TimeSpan.FromSeconds(629.525);
-    private TimeSpan _toTime = TimeSpan.FromSeconds(642.336);
 
     public AudioPlayerViewModel()
     {
@@ -55,12 +39,12 @@ public class AudioPlayerViewModel : BaseViewModel
     public int YourTurn { get; set; } = 2;
     public int YourDurationInSeconds { get; set; } = 20;
     public bool RepeatYourSloka { get; set; }
-
+    public WaitModeOption WaitMode { get; set; } = WaitModeOption.Duration;
     private async Task Play()
     {
-        if(this.MediaElement == null)
+        if (this.MediaElement == null)
         {
-           MessageBox.Show("MediaElement is not set.");
+            MessageBox.Show("MediaElement is not set.");
         }
         var student = new PracticeInfo
         {
@@ -70,8 +54,19 @@ public class AudioPlayerViewModel : BaseViewModel
             RepeatYourSloka = RepeatYourSloka,
             Sloka = 1,
             YourTurn = YourTurn,
+            WaitForKeyPress = WaitMode == WaitModeOption.KeyboardHit
         };
 
-        await new PlayRepository(new DataRepository()).Start(student, this.MediaElement!);
+        await new PlayRepository(new DataRepository()).Start(student, this.MediaElement!, async (waitInSeconds) =>
+        {
+            if (student.WaitForKeyPress)
+            {
+                MessageBox.Show("Press OK to continue to finish your turn and proceed.");
+            }
+            else
+            {
+                await Task.Delay(TimeSpan.FromSeconds(waitInSeconds));
+            }
+        });
     }
 }

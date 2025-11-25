@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Gita.Practice.App.ViewModels" 
              mc:Ignorable="d"
              d:DesignHeight="250" d:DesignWidth="400">
 
@@ -89,7 +90,7 @@
                            Foreground="#333" 
                            Margin="0,0,0,10"/>
 
-                <UniformGrid Columns="2" Rows="3" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
+                <UniformGrid Columns="2" Rows="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
                     <TextBlock Text="Participants:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding NumberOfParticipants, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
@@ -99,9 +100,12 @@
                     <TextBlock Text="Duration (sec):" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding YourDurationInSeconds, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
+                    <TextBlock Text="Wait Mode:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <ComboBox ItemsSource="{Binding Source={x:Static local:WaitModeValues.All}}"
+                              SelectedItem="{Binding WaitMode, Mode=TwoWay}" Width="150"/>
+
                     <TextBlock Text="Repeat Your Sloka:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <CheckBox IsChecked="{Binding RepeatYourSloka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
-
                 </UniformGrid>
             </StackPanel>
         </Border>
