@@ -9,5 +9,6 @@
         public int YourDurationInSeconds { get; set; }
         public bool WaitForKeyPress { get; set; }
         public bool RepeatYourSloka { get; set; }
+        public int ParticipantEntryCount { get; set; } = 4;
     }
 }

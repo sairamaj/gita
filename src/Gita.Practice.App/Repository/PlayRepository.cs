@@ -16,6 +16,7 @@ internal class PlayRepository
 
     public async Task Start(PracticeInfo practiceInfo, MediaElement mediaElement, Func<int, Task> waitForYourTurnToFinish)
     {
+
         var chapter = await DataRepository.Get(practiceInfo.Chapter);
         var audioFilePath = await DataRepository.GetAuditFilePath(practiceInfo.Chapter);
 
@@ -37,6 +38,12 @@ internal class PlayRepository
             if (shloka.Entries == null || shloka.Entries.Count == 0)
                 continue;
 
+            var participantEntryCount = practiceInfo.ParticipantEntryCount;
+            if (shloka.Entries.Count > 4)
+            {
+                participantEntryCount++;
+            }
+
             // Pause for student turn if it's their slot
             if (participantIndex == practiceInfo.YourTurn)
             {
@@ -57,9 +64,17 @@ internal class PlayRepository
                     participantIndex = 1;
             }
 
-            // First and last entry define the segment
-            var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
-            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries.Last().EndTime));
+            // Start = first entry
+            var start = TimeSpan.FromSeconds(
+                double.Parse(shloka.Entries.First().StartTime)
+            );
+
+            // End = entry at ParticipantEntryCount index (1-based)
+            var end = TimeSpan.FromSeconds(
+                double.Parse(shloka.Entries[participantEntryCount - 1].EndTime)
+            );
+
+            // Duration
             var duration = end - start;
 
             // Play audio segment

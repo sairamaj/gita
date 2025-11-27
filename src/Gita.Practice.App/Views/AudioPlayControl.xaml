@@ -90,7 +90,7 @@
                            Foreground="#333" 
                            Margin="0,0,0,10"/>
 
-                <UniformGrid Columns="2" Rows="4" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
+                <UniformGrid Columns="2" Rows="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
                     <TextBlock Text="Participants:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding NumberOfParticipants, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
@@ -106,6 +106,10 @@
 
                     <TextBlock Text="Repeat Your Sloka:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <CheckBox IsChecked="{Binding RepeatYourSloka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+
+                    <TextBlock Text="Number of Stangs count:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding ParticipantEntryCount, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
+
                 </UniformGrid>
             </StackPanel>
         </Border>

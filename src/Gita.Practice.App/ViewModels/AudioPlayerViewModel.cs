@@ -40,6 +40,7 @@ public class AudioPlayerViewModel : BaseViewModel
     public int YourDurationInSeconds { get; set; } = 20;
     public bool RepeatYourSloka { get; set; }
     public WaitModeOption WaitMode { get; set; } = WaitModeOption.Duration;
+    public int ParticipantEntryCount { get; set; } = 4;
     private async Task Play()
     {
         if (this.MediaElement == null)
@@ -54,7 +55,8 @@ public class AudioPlayerViewModel : BaseViewModel
             RepeatYourSloka = RepeatYourSloka,
             Sloka = 1,
             YourTurn = YourTurn,
-            WaitForKeyPress = WaitMode == WaitModeOption.KeyboardHit
+            WaitForKeyPress = WaitMode == WaitModeOption.KeyboardHit,
+            ParticipantEntryCount = ParticipantEntryCount,
         };
 
         await new PlayRepository(new DataRepository()).Start(student, this.MediaElement!, async (waitInSeconds) =>
