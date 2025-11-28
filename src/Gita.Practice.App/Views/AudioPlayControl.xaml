@@ -4,10 +4,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:Gita.Practice.App.ViewModels" 
+             xmlns:vw="clr-namespace:Gita.Practice.App.Views"
              mc:Ignorable="d"
              d:DesignHeight="250" d:DesignWidth="400">
 
     <UserControl.Resources>
+
+            <vw:WaitModeToVisibilityConverter x:Key="WaitModeToVisibilityConverter"/>
         <!-- Playback button styles -->
         <LinearGradientBrush x:Key="PlaybackNormalBrush" StartPoint="0,0" EndPoint="0,1">
             <GradientStop Color="#FF66A3FF" Offset="0"/>
@@ -97,12 +100,18 @@
                     <TextBlock Text="Your Turn:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding YourTurn, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
-                    <TextBlock Text="Duration (sec):" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                    <TextBox Text="{Binding YourDurationInSeconds, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
-
+                    <!-- Grouped WaitMode + Duration -->
                     <TextBlock Text="Wait Mode:" VerticalAlignment="Center" Margin="0,0,8,0"/>
-                    <ComboBox ItemsSource="{Binding Source={x:Static local:WaitModeValues.All}}"
-              SelectedItem="{Binding WaitMode, Mode=TwoWay}" Width="150"/>
+                    <StackPanel Orientation="Horizontal">
+                        <ComboBox ItemsSource="{Binding Source={x:Static local:WaitModeValues.All}}"
+                  SelectedItem="{Binding WaitMode, Mode=TwoWay}" Width="120"/>
+
+                        <!-- Duration only visible when WaitMode == Duration -->
+                        <TextBlock Text="Duration (sec):" VerticalAlignment="Center" Margin="12,0,4,0"
+                   Visibility="{Binding WaitMode, Converter={StaticResource WaitModeToVisibilityConverter}}"/>
+                        <TextBox Text="{Binding YourDurationInSeconds, UpdateSourceTrigger=PropertyChanged}" Width="80"
+                 Visibility="{Binding WaitMode, Converter={StaticResource WaitModeToVisibilityConverter}}"/>
+                    </StackPanel>
 
                     <TextBlock Text="Repeat Your Sloka:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <CheckBox IsChecked="{Binding RepeatYourSloka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
