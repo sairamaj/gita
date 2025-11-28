@@ -21,7 +21,7 @@ internal class PlayRepository
         var audioFilePath = await DataRepository.GetAuditFilePath(practiceInfo.Chapter);
 
         mediaElement.Source = new Uri(audioFilePath);
-        //mediaElement.AutoPlay = false;
+        mediaElement.SpeedRatio = practiceInfo.PlaybackSpeed;
 
         // Start from the requested sloka number
         var startIndex = chapter.Shlokas
@@ -84,7 +84,7 @@ internal class PlayRepository
 
             await Task.Delay(500); // small delay to allow mediaElement to seek
             //duration = TimeSpan.FromSeconds(1);
-            await Task.Delay(duration);
+            await Task.Delay(duration / practiceInfo.PlaybackSpeed);
             mediaElement.Pause();
         }
     }

@@ -10,5 +10,6 @@
         public bool WaitForKeyPress { get; set; }
         public bool RepeatYourSloka { get; set; }
         public int ParticipantEntryCount { get; set; } = 4;
+        public double PlaybackSpeed { get; set; } = 1.0;
     }
 }

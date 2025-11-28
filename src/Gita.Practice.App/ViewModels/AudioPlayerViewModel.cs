@@ -9,9 +9,7 @@ namespace Gita.Practice.App.ViewModels;
 
 public class AudioPlayerViewModel : BaseViewModel
 {
-    private Uri _audioSource;
-
-
+    private double _playningSpeed = 1.0;
     public ICommand PlayCommand { get; }
     public ICommand PauseCommand { get; }
     public ICommand StopCommand { get; }
@@ -41,6 +39,7 @@ public class AudioPlayerViewModel : BaseViewModel
     public bool RepeatYourSloka { get; set; }
     public WaitModeOption WaitMode { get; set; } = WaitModeOption.Duration;
     public int ParticipantEntryCount { get; set; } = 4;
+    public double PlayingSpeed { get => _playningSpeed; set { _playningSpeed = value; OnPropertyChanged(); } }
     private async Task Play()
     {
         if (this.MediaElement == null)
@@ -57,6 +56,7 @@ public class AudioPlayerViewModel : BaseViewModel
             YourTurn = YourTurn,
             WaitForKeyPress = WaitMode == WaitModeOption.KeyboardHit,
             ParticipantEntryCount = ParticipantEntryCount,
+            PlaybackSpeed = PlayingSpeed,
         };
 
         await new PlayRepository(new DataRepository()).Start(student, this.MediaElement!, async (waitInSeconds) =>

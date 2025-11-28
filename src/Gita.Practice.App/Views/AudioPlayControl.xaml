@@ -90,7 +90,7 @@
                            Foreground="#333" 
                            Margin="0,0,0,10"/>
 
-                <UniformGrid Columns="2" Rows="5" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
+                <UniformGrid Columns="2" Rows="7" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,5">
                     <TextBlock Text="Participants:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding NumberOfParticipants, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
@@ -102,7 +102,7 @@
 
                     <TextBlock Text="Wait Mode:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <ComboBox ItemsSource="{Binding Source={x:Static local:WaitModeValues.All}}"
-                              SelectedItem="{Binding WaitMode, Mode=TwoWay}" Width="150"/>
+              SelectedItem="{Binding WaitMode, Mode=TwoWay}" Width="150"/>
 
                     <TextBlock Text="Repeat Your Sloka:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <CheckBox IsChecked="{Binding RepeatYourSloka, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
@@ -110,6 +110,16 @@
                     <TextBlock Text="Number of Stangs count:" VerticalAlignment="Center" Margin="0,0,8,0"/>
                     <TextBox Text="{Binding ParticipantEntryCount, UpdateSourceTrigger=PropertyChanged}" Width="100"/>
 
+                    <!-- NEW: Playback Speed Control -->
+                    <TextBlock Text="Playback Speed:" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Slider Minimum="0.5" Maximum="2.0"
+                Value="{Binding PlayingSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                TickFrequency="0.25" IsSnapToTickEnabled="True"
+                Width="120"/>
+                        <TextBlock Text="{Binding PlayingSpeed, StringFormat={}{0:0.00}x}"
+                   VerticalAlignment="Center" Margin="8,0,0,0"/>
+                    </StackPanel>
                 </UniformGrid>
             </StackPanel>
         </Border>
