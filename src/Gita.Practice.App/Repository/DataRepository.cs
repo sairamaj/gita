@@ -27,6 +27,19 @@ namespace Gita.Practice.App.Repository
                 new Tuple<string,int>("Karma Yoga", 3),
                 new Tuple<string,int>("Jnana Yoga", 4),
                 new Tuple<string,int>("Karma Sanyasa Yoga", 5),
+                new Tuple<string,int>("Dhyana Yoga", 6),
+                new Tuple<string,int>("Jnana Vijnana Yoga", 7),
+                new Tuple<string,int>("Aksara Brahma Yoga", 8),
+                new Tuple<string,int>("Raja Vidya Raja Guhya Yoga", 9),
+                new Tuple<string,int>("Vibhuti Yoga", 10),
+                new Tuple<string,int>("Visvarupa Darsana Yoga", 11),
+                new Tuple<string,int>("Bhakti Yoga", 12),
+                new Tuple<string,int>("Ksetra Ksetrajna Vibhaga Yoga", 13),
+                new Tuple<string,int>("Gunatraya Vibhaga Yoga", 14),
+                new Tuple<string,int>("Purushottama Yoga", 15),
+                new Tuple<string,int>("Daivasura Sampad Vibhaga Yoga", 16),
+                new Tuple<string,int>("Sraddhatraya Vibhaga Yoga", 17),
+                new Tuple<string,int>("Moksha Sanyasa Yoga", 18),
             };
         }
 
