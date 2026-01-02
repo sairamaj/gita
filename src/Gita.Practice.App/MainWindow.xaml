@@ -8,9 +8,9 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="220" />
             <ColumnDefinition Width="5" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <!-- Left column placeholder (replace with real content as needed) -->
@@ -27,7 +27,8 @@
                       Background="Gray" />
 
         <!-- Audio player placed in the 3rd column (index 2) -->
-        <local:AudioPlayerControl Grid.Column="2" DataContext="{Binding AudioPlayerViewModel}" />
+        <!--<local:AudioPlayerControl Grid.Column="2" DataContext="{Binding AudioPlayerViewModel}" />-->
+        <local:PlayView Grid.Column="2" DataContext="{Binding}" />
     </Grid>
 </Window>
 

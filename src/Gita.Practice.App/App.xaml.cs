@@ -109,6 +109,7 @@ public partial class App : Application
     {
         // Put DI registrations here. Examples:
         services.AddTransient<IDataRepository, DataRepository>();
+        services.AddSingleton<IPlayer, Player>();
         services.AddTransient<MainViewModel>();
     }
 

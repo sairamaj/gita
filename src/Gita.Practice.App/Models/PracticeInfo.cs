@@ -1,6 +1,6 @@
 ﻿namespace Gita.Practice.App.Models
 {
-    internal class PracticeInfo
+    public class PracticeInfo
     {
         public int Chapter { get; set; }
         public int Sloka { get; set; }
@@ -9,7 +9,7 @@
         public int YourDurationInSeconds { get; set; }
         public bool WaitForKeyPress { get; set; }
         public bool RepeatYourSloka { get; set; }
-        public int ParticipantEntryCount { get; set; } = 4;
+        public int ParticipantStanzaCount { get; set; } = 4;
         public double PlaybackSpeed { get; set; } = 1.0;
     }
 }

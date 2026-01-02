@@ -1,0 +1,116 @@
+﻿using Gita.Practice.App.Models;
+using Gita.Practice.App.Repository;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+
+namespace Gita.Practice.App.ViewModels
+{
+    public class IndividualPracticeViewModel : BaseViewModel
+    {
+        private double _playningSpeed = 1.0;
+        private int _yourTurn = 1;
+        private int _participantStanzaCount = 1;
+        private WaitModeOption _waitMode = WaitModeOption.KeyboardHit;
+
+        public ICommand PlayCommand { get; set; }
+        public ICommand PauseCommand { get; }
+        public ICommand StopCommand { get; }
+
+        public IndividualPracticeViewModel(IPlayer player)
+        {
+            PlayCommand = new RelayCommand(_ => _ = Play());
+            PauseCommand = new RelayCommand(_ => Pause());
+            StopCommand = new RelayCommand(_ => Stop());
+            Player = player ?? throw new ArgumentNullException(nameof(player));
+        }
+
+        public MediaElement MediaElement { get; set; }
+        public bool IsPlaying { get; set; }
+        public int SelectedChapterNumber { get; set; } = 1;
+
+        public int YourDurationInSeconds { get; set; } = 20;
+        public bool RepeatYourSloka { get; set; }
+        public WaitModeOption WaitMode { get => _waitMode; set { _waitMode = value; OnPropertyChanged(); } }
+
+        public int ParticipantStanzaCount
+        {
+            get => _participantStanzaCount;
+            set
+            {
+                if (value > 4 || value < 1)
+                {
+                    OnPropertyChanged();
+                    return;
+                }
+                _participantStanzaCount = value; OnPropertyChanged();
+            }
+        }
+
+        public double PlayingSpeed { get => _playningSpeed; set { _playningSpeed = value; OnPropertyChanged(); } }
+
+        public IPlayer Player { get; }
+
+        private async Task Play()
+        {
+            if (this.MediaElement == null)
+            {
+                MessageBox.Show("MediaElement is not set.");
+            }
+            try
+            {
+                IsPlaying = true;
+                OnPropertyChanged(nameof(IsPlaying));
+                await this.Player.StartWithRandom(GetPracticeInfo(), this.MediaElement!, async (config) =>
+                {
+                    if (config.WaitForKeyPress)
+                    {
+                        MessageBox.Show("Press OK to continue to finish your turn and proceed.");
+                    }
+                    else
+                    {
+                        await Task.Delay(TimeSpan.FromSeconds(config.YourDurationInSeconds));
+                    }
+
+                    return GetPracticeInfo();
+                });
+            }
+            finally
+            {
+                IsPlaying = false;
+                OnPropertyChanged(nameof(IsPlaying));
+            }
+        }
+
+        private void Stop()
+        {
+            _ = this.Player.Stop();
+            IsPlaying = false;
+            OnPropertyChanged(nameof(IsPlaying));
+        }
+
+        private void Pause()
+        {
+            // Call Player's Pause if available
+            if (this.Player is Player concretePlayer)
+            {
+                concretePlayer.Pause();
+            }
+        }
+
+        private PracticeInfo GetPracticeInfo()
+        {
+            return new PracticeInfo
+            {
+                Chapter = this.SelectedChapterNumber,
+                YourDurationInSeconds = YourDurationInSeconds,
+                RepeatYourSloka = RepeatYourSloka,
+                Sloka = 1,
+                WaitForKeyPress = WaitMode == WaitModeOption.KeyboardHit,
+                ParticipantStanzaCount = ParticipantStanzaCount,
+                PlaybackSpeed = PlayingSpeed,
+            };
+        }
+    }
+}

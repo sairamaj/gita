@@ -7,10 +7,21 @@ using System.Windows.Input;
 
 namespace Gita.Practice.App;
 
+/// <summary>
+/// Main view model for the Gita Practice application.
+/// Coordinates the chapter selection and audio playback functionality.
+/// </summary>
 public class MainViewModel : BaseViewModel
 {
-    public MainViewModel(IDataRepository dataRepository)
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainViewModel"/> class.
+    /// </summary>
+    /// <param name="player">The audio player service used for playback operations.</param>
+    /// <param name="dataRepository">The data repository used to retrieve chapter information.</param>
+    public MainViewModel(IPlayer player, IDataRepository dataRepository)
     {
+        this.GroupPractiveViewModel = new GroupPracticeViewModel(player);
+        this.IndividualPracticeViewModel = new IndividualPracticeViewModel(player);
         this.Chapters = dataRepository.GetAllChapters()
             .Select(tuple => new ChapterViewModel(tuple.Item1, tuple.Item2))
             .ToList();
@@ -18,23 +29,46 @@ public class MainViewModel : BaseViewModel
         ChapterSelectedCommand = new RelayCommand(param => OnChapterSelected(param));
     }
 
+    /// <summary>
+    /// Gets the collection of chapter view models representing all available chapters.
+    /// </summary>
     public IEnumerable<ChapterViewModel> Chapters{ get; }
-    public AudioPlayerViewModel AudioPlayerViewModel { get; } = new AudioPlayerViewModel();
+
+    /// <summary>
+    /// Gets the audio player view model that manages playback controls and settings.
+    /// </summary>
+    public GroupPracticeViewModel GroupPractiveViewModel { get; }
+    public IndividualPracticeViewModel IndividualPracticeViewModel { get; }
+
     private ChapterViewModel? _selectedChapter;
+
+    /// <summary>
+    /// Gets or sets the currently selected chapter.
+    /// When set, updates the audio player to use the selected chapter number.
+    /// </summary>
     public ChapterViewModel? SelectedChapter
     {
         get => _selectedChapter;
         set => SetProperty(ref _selectedChapter, value);
     }
 
+    /// <summary>
+    /// Gets the command that is executed when a chapter is selected from the UI.
+    /// </summary>
     public ICommand ChapterSelectedCommand { get; }
 
+    /// <summary>
+    /// Handles the chapter selection event.
+    /// Updates the selected chapter and synchronizes the audio player with the selected chapter number.
+    /// </summary>
+    /// <param name="parameter">The command parameter, expected to be a <see cref="ChapterViewModel"/> instance.</param>
     private void OnChapterSelected(object? parameter)
     {
-        if (parameter is ChapterViewModel cv)
+        if (parameter is ChapterViewModel cv)   
         {
             SelectedChapter = cv;
-            this.AudioPlayerViewModel.SelectedChapterNumber = cv.Number;
+            this.GroupPractiveViewModel.SelectedChapterNumber = cv.Number;
+            this.IndividualPracticeViewModel.SelectedChapterNumber = cv.Number;
         }
     }
 }

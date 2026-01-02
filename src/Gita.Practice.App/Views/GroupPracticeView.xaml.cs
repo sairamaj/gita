@@ -4,9 +4,9 @@ using Gita.Practice.App.ViewModels;
 
 namespace Gita.Practice.App.Views;
 
-public partial class AudioPlayerControl : UserControl
+public partial class GroupPracticeView : UserControl
 {
-    public AudioPlayerControl()
+    public GroupPracticeView()
     {
         InitializeComponent();
 
@@ -20,7 +20,7 @@ public partial class AudioPlayerControl : UserControl
     private void AudioPlayerControl_DataContextChanged(object? sender, DependencyPropertyChangedEventArgs e)
     {
         // Clear old VM reference to avoid holding the view alive
-        if (e.OldValue is AudioPlayerViewModel oldVm)
+        if (e.OldValue is GroupPracticeViewModel oldVm)
             oldVm.MediaElement = null;
 
         TryAttachMediaElement(e.NewValue);
@@ -28,7 +28,7 @@ public partial class AudioPlayerControl : UserControl
 
     private void TryAttachMediaElement(object? dataContext)
     {
-        if (dataContext is AudioPlayerViewModel vm)
+        if (dataContext is GroupPracticeViewModel vm)
             vm.MediaElement = mediaElement;
     }
 }
