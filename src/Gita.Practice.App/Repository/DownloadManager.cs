@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gita.Practice.App.Repository
 {
-    internal class DownloadManager
+    internal class DownloadManager : IDownloadManager
     {
         private static readonly HttpClient httpClient = new HttpClient();
 
@@ -14,6 +14,9 @@ namespace Gita.Practice.App.Repository
         private const string BaseUrl = "https://www.sgsgitafoundation.org/bg/";
         private const string JsonFileName = "plain_chapter.json";
         private const string AudioFileName = "plain_chapter.m4a";
+
+        public event EventHandler<DownloadProgressEventArgs> DownloadProgressChanged;
+        public event EventHandler<ChapterDownloadedEventArgs> ChapterDownloaded;
 
         public string DownloadPath => Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
@@ -40,10 +43,10 @@ namespace Gita.Practice.App.Repository
             string jsonFilePath = Path.Combine(downloadsPath, JsonFileName);
             string audioFilePath = Path.Combine(downloadsPath, AudioFileName);
 
-            
+
             // Download both files asynchronously (skip if already exists)
-            var jsonFileName = await DownloadFileAsync(jsonUrl, jsonFilePath);
-            var auditFileName = await DownloadFileAsync(audioUrl, audioFilePath);
+            var jsonFileName = await DownloadFileAsync($"metadata for chapter-{chapterName}", jsonUrl, jsonFilePath);
+            var auditFileName = await DownloadFileAsync($"audio for chapter-{chapterName}", audioUrl, audioFilePath);
 
             return new ChapterInfo(auditFileName, jsonFileName);
         }
@@ -53,7 +56,8 @@ namespace Gita.Practice.App.Repository
             var chapterInfo = await this.DownloadChapterAsync(chapter);
             return File.ReadAllText(chapterInfo.DataFileLocation);
         }
-        private async Task<string> DownloadFileAsync(string url, string destinationPath)
+
+        private async Task<string> DownloadFileAsync(string description, string url, string destinationPath)
         {
             if (File.Exists(destinationPath))
             {
@@ -61,11 +65,22 @@ namespace Gita.Practice.App.Repository
                 return destinationPath;
             }
 
-            using (HttpResponseMessage response = await httpClient.GetAsync(url))
+            this.DownloadProgressChanged?.Invoke(this, new DownloadProgressEventArgs($"downloading:{description}"));
+
+            try
             {
-                response.EnsureSuccessStatusCode();
-                byte[] content = await response.Content.ReadAsByteArrayAsync();
-                await File.WriteAllBytesAsync(destinationPath, content);
+                using (HttpResponseMessage response = await httpClient.GetAsync(url))
+                {
+                    response.EnsureSuccessStatusCode();
+                    byte[] content = await response.Content.ReadAsByteArrayAsync();
+                    await File.WriteAllBytesAsync(destinationPath, content);
+                }
+                this.ChapterDownloaded?.Invoke(this, new ChapterDownloadedEventArgs($"downloaded:{description}"));
+            }
+            catch (Exception ex)
+            {
+                this.DownloadProgressChanged?.Invoke(this, new DownloadProgressEventArgs($"error:{description}:{ex.Message}"));
+                throw;
             }
 
             return destinationPath;

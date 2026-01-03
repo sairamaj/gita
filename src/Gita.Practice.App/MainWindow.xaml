@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gita.Practice.App.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="750" Width="1000">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />  <!-- main content -->
+            <RowDefinition Height="120" /> <!-- status bar -->
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220" />
             <ColumnDefinition Width="5" />
@@ -14,10 +19,10 @@
         </Grid.ColumnDefinitions>
 
         <!-- Left column placeholder (replace with real content as needed) -->
-        <local:ChapterTreeView Grid.Column="0" Background="Transparent" DataContext="{Binding}" />
+        <local:ChapterTreeView Grid.Row="0" Grid.Column="0" Background="Transparent" DataContext="{Binding}" />
 
         <!-- Vertical splitter between column 0 and column 2 (placed in column 1) -->
-        <GridSplitter Grid.Column="1"
+        <GridSplitter Grid.Row="0" Grid.Column="1"
                       Width="5"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Stretch"
@@ -27,8 +32,12 @@
                       Background="Gray" />
 
         <!-- Audio player placed in the 3rd column (index 2) -->
-        <!--<local:AudioPlayerControl Grid.Column="2" DataContext="{Binding AudioPlayerViewModel}" />-->
-        <local:PlayView Grid.Column="2" DataContext="{Binding}" />
+        <!--<local:AudioPlayerControl Grid.Row="0" Grid.Column="2" DataContext="{Binding AudioPlayerViewModel}" />-->
+        <local:PlayView Grid.Row="0" Grid.Column="2" DataContext="{Binding}" />
+
+        <!-- Status bar at the bottom spanning all columns -->
+        <local:StatusView Grid.Row="1" Grid.ColumnSpan="3" DataContext="{Binding StatusViewModel}">
+        </local:StatusView>
     </Grid>
 </Window>
 

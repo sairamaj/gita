@@ -2,7 +2,7 @@
 
 namespace Gita.Practice.App.Models
 {
-    internal class ChapterInfo
+    public class ChapterInfo
     {
         public ChapterInfo(string audioFileLocation, string dataFileLocation)
         {
