@@ -1,5 +1,6 @@
 using Gita.Practice.App.Models;
 using Gita.Practice.App.Repository;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ public class GroupPracticeViewModel : BaseViewModel
     private int _participantStanzaCount = 4;
     private string _selectedChapterName = string.Empty;
     private WaitModeOption _waitMode = WaitModeOption.KeyboardHit;
+    private GroupPracticeProgressViewModel _progressViewModel;
     public ICommand PlayCommand { get; set; }
     public ICommand PauseCommand { get; }
     public ICommand StopCommand { get; }
@@ -28,6 +30,8 @@ public class GroupPracticeViewModel : BaseViewModel
         PauseCommand = new RelayCommand(_ => Pause());
         StopCommand = new RelayCommand(_ => Stop());
         Player = player ?? throw new ArgumentNullException(nameof(player));
+        _progressViewModel = new GroupPracticeProgressViewModel();
+        UpdateProgressParticipants();
     }
 
     public string ChapterDisplayName { get; set; }
@@ -39,22 +43,41 @@ public class GroupPracticeViewModel : BaseViewModel
         get => this._selectedChapterName;
         set
         {
-            this._selectedChapterName = value; 
+            this._selectedChapterName = value;
             OnPropertyChanged();
         }
     }
-    public int NumberOfParticipants { get; set; } = 2;
+    private int _numberOfParticipants = 2;
+    public int NumberOfParticipants
+    {
+        get => _numberOfParticipants;
+        set
+        {
+            _numberOfParticipants = value;
+            OnPropertyChanged();
+            UpdateProgressParticipants();
+            this.YourTurn = this._yourTurn; // Re-validate your turn
+        }
+    }
+
+    public GroupPracticeProgressViewModel ProgressViewModel => _progressViewModel;
     public int YourTurn
     {
         get => this._yourTurn;
         set
         {
-            if (value > NumberOfParticipants || value < 1)
+            if (value > NumberOfParticipants)
             {
-                OnPropertyChanged();
-                return;
+                value = NumberOfParticipants;
             }
-            this._yourTurn = value; OnPropertyChanged();
+            if (value < 1)
+            {
+                value = 1;
+            }
+
+            this._yourTurn = value;
+            OnPropertyChanged();
+            UpdateProgressParticipants();
         }
     }
     public int YourDurationInSeconds { get; set; } = 20;
@@ -76,6 +99,11 @@ public class GroupPracticeViewModel : BaseViewModel
     public double PlayingSpeed { get => _playningSpeed; set { _playningSpeed = value; OnPropertyChanged(); } }
 
     public IPlayer Player { get; }
+
+    private void UpdateProgressParticipants()
+    {
+        _progressViewModel?.UpdateParticipants(NumberOfParticipants, YourTurn);
+    }
 
     private async Task Play()
     {

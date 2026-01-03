@@ -114,12 +114,20 @@
 
     <!-- MAIN LAYOUT -->
     <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Input panel -->
-            <RowDefinition Height="Auto"/>
-            <!-- Playback buttons -->
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Side panel for progress -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Column="0" Margin="0,0,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Input panel -->
+                <RowDefinition Height="Auto"/>
+                <!-- Playback buttons -->
+            </Grid.RowDefinitions>
 
         <!-- Hidden MediaElement -->
         <MediaElement Name="mediaElement"
@@ -179,7 +187,9 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="Chapter:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedChapterName}" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left"/>
                             <TextBlock Grid.Row="1" Grid.Column="0" Text="Participants:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
-                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NumberOfParticipants}" Width="100" HorizontalAlignment="Left">
+                            <TextBox Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Left"
+                                     Text="{Binding NumberOfParticipants, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                                     >
                                 <TextBox.Style>
                                     <Style TargetType="TextBox">
                                         <Style.Triggers>
@@ -310,10 +320,10 @@
             </StackPanel>
         </Border>
 
-        <!-- PLAYBACK BUTTONS -->
-        <StackPanel Grid.Row="1"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center">
+            <!-- PLAYBACK BUTTONS -->
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
 
             <Button Style="{StaticResource PlayButtonStyle}"
                     Command="{Binding PlayCommand}"
@@ -327,13 +337,35 @@
                 <TextBlock Text="Pause" FontSize="12"/>
             </Button>
 
-            <Button Style="{StaticResource PauseStopButtonStyle}"
-                    Command="{Binding StopCommand}"
-                    ToolTip="Stop">
-                <TextBlock Text="Stop" FontSize="12"/>
-            </Button>
+                <Button Style="{StaticResource PauseStopButtonStyle}"
+                        Command="{Binding StopCommand}"
+                        ToolTip="Stop">
+                    <TextBlock Text="Stop" FontSize="12"/>
+                </Button>
 
-        </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <!-- PROGRESS SIDE PANEL -->
+        <Border Grid.Column="1"
+                Background="#f8f9fa"
+                CornerRadius="10"
+                Padding="15"
+                BorderBrush="#d0d7de"
+                BorderThickness="1"
+                MinWidth="250"
+                MaxWidth="300">
+            <StackPanel>
+                <TextBlock Text="Progress"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#2d3748"
+                           Margin="0,0,0,15"/>
+
+                <vw:GroupPracticeProgressView DataContext="{Binding ProgressViewModel}"/>
+
+            </StackPanel>
+        </Border>
 
     </Grid>
 </UserControl>
