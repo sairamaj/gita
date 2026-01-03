@@ -8,12 +8,12 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8">
-            <TabItem Header="Group Play">
+            <TabItem Header="Group Practice">
                 <Grid>
                     <local:GroupPracticeView DataContext="{Binding GroupPractiveViewModel}"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Individual Play">
+            <TabItem Header="Individual Practice">
                 <Grid>
                     <local:IndividualPracticeView DataContext="{Binding IndividualPracticeViewModel}" />
                 </Grid>

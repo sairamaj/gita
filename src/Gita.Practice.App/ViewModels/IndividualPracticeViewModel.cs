@@ -12,6 +12,7 @@ namespace Gita.Practice.App.ViewModels
         private double _playningSpeed = 1.0;
         private int _yourTurn = 1;
         private int _participantStanzaCount = 1;
+        private string _selectedChapterName = string.Empty;
         private WaitModeOption _waitMode = WaitModeOption.KeyboardHit;
 
         public ICommand PlayCommand { get; set; }
@@ -32,6 +33,16 @@ namespace Gita.Practice.App.ViewModels
 
         public int YourDurationInSeconds { get; set; } = 20;
         public bool RepeatYourSloka { get; set; }
+        public string SelectedChapterName
+        {
+            get => this._selectedChapterName;
+            set
+            {
+                this._selectedChapterName = value;
+                OnPropertyChanged();
+            }
+        }
+
         public WaitModeOption WaitMode { get => _waitMode; set { _waitMode = value; OnPropertyChanged(); } }
 
         public int ParticipantStanzaCount

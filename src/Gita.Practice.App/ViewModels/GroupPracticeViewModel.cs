@@ -11,6 +11,7 @@ public class GroupPracticeViewModel : BaseViewModel
     private double _playningSpeed = 1.50;
     private int _yourTurn = 2;
     private int _participantStanzaCount = 4;
+    private string _selectedChapterName = string.Empty;
     private WaitModeOption _waitMode = WaitModeOption.KeyboardHit;
     public ICommand PlayCommand { get; set; }
     public ICommand PauseCommand { get; }
@@ -29,9 +30,19 @@ public class GroupPracticeViewModel : BaseViewModel
         Player = player ?? throw new ArgumentNullException(nameof(player));
     }
 
+    public string ChapterDisplayName { get; set; }
     public MediaElement MediaElement { get; set; }
     public bool IsPlaying { get; set; }
     public int SelectedChapterNumber { get; set; } = 1;
+    public string SelectedChapterName
+    {
+        get => this._selectedChapterName;
+        set
+        {
+            this._selectedChapterName = value; 
+            OnPropertyChanged();
+        }
+    }
     public int NumberOfParticipants { get; set; } = 2;
     public int YourTurn
     {
@@ -54,7 +65,7 @@ public class GroupPracticeViewModel : BaseViewModel
         get => _participantStanzaCount;
         set
         {
-            if(value > 4 || value < 1)
+            if (value > 4 || value < 1)
             {
                 OnPropertyChanged();
                 return;

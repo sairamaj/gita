@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gita.Practice.App.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="1000">
+        Title="Gita Practice App" Height="750" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />  <!-- main content -->

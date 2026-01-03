@@ -103,6 +103,7 @@
             <Setter Property="Control.Margin" Value="0,12,8,0"/>
             <Setter Property="Control.BorderBrush" Value="#800080"/>
             <Setter Property="Control.BorderThickness" Value="1"/>
+            <Setter Property="Control.MinWidth" Value="400"/>
         </Style>
 
         <Style x:Key="GroupBoxHeaderStyle">
@@ -166,13 +167,19 @@
                         </GroupBox.Header>
 
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" Text="Participants:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
-                            <TextBox Grid.Column="1" Text="{Binding NumberOfParticipants}" Width="100" HorizontalAlignment="Left">
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Chapter:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedChapterName}" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Participants:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
+                            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NumberOfParticipants}" Width="100" HorizontalAlignment="Left">
                                 <TextBox.Style>
                                     <Style TargetType="TextBox">
                                         <Style.Triggers>

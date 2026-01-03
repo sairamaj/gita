@@ -38,6 +38,12 @@ public class MainViewModel : BaseViewModel
         {
             this.StatusViewModel.UpdateLastMessage(e.Message);
         };
+
+        var firstChapter = this.Chapters.First();
+        this.GroupPractiveViewModel.SelectedChapterNumber = firstChapter.Number;
+        this.GroupPractiveViewModel.SelectedChapterName = firstChapter.Name;
+        this.IndividualPracticeViewModel.SelectedChapterNumber = firstChapter.Number;
+        this.IndividualPracticeViewModel.SelectedChapterName = firstChapter.Name;
     }
 
     /// <summary>
@@ -81,7 +87,9 @@ public class MainViewModel : BaseViewModel
         {
             SelectedChapter = cv;
             this.GroupPractiveViewModel.SelectedChapterNumber = cv.Number;
+            this.GroupPractiveViewModel.SelectedChapterName = cv.Name;
             this.IndividualPracticeViewModel.SelectedChapterNumber = cv.Number;
+            this.IndividualPracticeViewModel.SelectedChapterName = cv.Name;
         }
     }
 }
