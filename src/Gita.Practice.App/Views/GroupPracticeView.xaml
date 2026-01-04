@@ -127,6 +127,8 @@
                 <!-- Input panel -->
                 <RowDefinition Height="Auto"/>
                 <!-- Playback buttons -->
+                <RowDefinition Height="Auto"/>
+                <!-- Help control -->
             </Grid.RowDefinitions>
 
         <!-- Hidden MediaElement -->
@@ -344,6 +346,9 @@
                 </Button>
 
             </StackPanel>
+
+        <!-- HELP CONTROL -->
+        <vw:HelpControl Grid.Row="2" Margin="0,15,0,0"/>
         </Grid>
 
         <!-- PROGRESS SIDE PANEL -->

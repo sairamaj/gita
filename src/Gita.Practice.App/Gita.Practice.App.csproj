@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MdXaml" Version="1.27.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
   </ItemGroup>
 
@@ -24,6 +25,12 @@
     <Resource Include="Assets\gita-icon.ico" />
     <Resource Include="Assets\gita-icon.png" />
     <Resource Include="Assets\krishna-arjuna-icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Help\help.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
