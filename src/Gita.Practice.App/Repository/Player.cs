@@ -79,6 +79,7 @@ public class Player : IPlayer
         var token = _cts.Token;
 
         int participantIndex = 1;
+        var currentPlayingParticipant = participantIndex;
 
         for (int i = startIndex; i < chapter.Shlokas.Count - 1; i++)
         {
@@ -108,7 +109,8 @@ public class Player : IPlayer
             }
             else
             {
-                onOtherParticipant(new OtherParticipantInfo(participantIndex,true));
+                currentPlayingParticipant = participantIndex;
+                onOtherParticipant(new OtherParticipantInfo(currentPlayingParticipant, true));
                 participantIndex++;
                 if (participantIndex > practiceInfo.NumberOfParticipants)
                     participantIndex = 1;
@@ -129,7 +131,7 @@ public class Player : IPlayer
             }
 
             await PlaySegment(start, end, practiceInfo, token);
-            onOtherParticipant(new OtherParticipantInfo(participantIndex-1, false));
+            onOtherParticipant(new OtherParticipantInfo(currentPlayingParticipant, false));
         }
     }
 
