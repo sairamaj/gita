@@ -72,6 +72,7 @@ public class Player : IPlayer
     public async Task Start(
         PracticeInfo practiceInfo,
         MediaElement mediaElement,
+        Action<OtherParticipantInfo> onOtherParticipant,
         Func<PracticeInfo, Task<PracticeInfo>> waitForYourTurnToFinish)
     {
         var (chapter, startIndex, chapterEndTime) = await InitializeAsync(practiceInfo, mediaElement);
@@ -107,6 +108,7 @@ public class Player : IPlayer
             }
             else
             {
+                onOtherParticipant(new OtherParticipantInfo(participantIndex,true));
                 participantIndex++;
                 if (participantIndex > practiceInfo.NumberOfParticipants)
                     participantIndex = 1;
@@ -127,6 +129,7 @@ public class Player : IPlayer
             }
 
             await PlaySegment(start, end, practiceInfo, token);
+            onOtherParticipant(new OtherParticipantInfo(participantIndex-1, false));
         }
     }
 

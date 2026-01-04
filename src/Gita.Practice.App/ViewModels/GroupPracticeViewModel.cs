@@ -115,8 +115,13 @@ public class GroupPracticeViewModel : BaseViewModel
         {
             IsPlaying = true;
             OnPropertyChanged(nameof(IsPlaying));
-            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, async (config) =>
+            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
             {
+                _progressViewModel.SetParticipantStatus(otherParticipant.Number, otherParticipant.IsReciting ? ParticipantStatus.Reciting : ParticipantStatus.Idle);
+            },
+            async (config) =>
+            {
+                _progressViewModel.SetParticipantStatus(this.YourTurn, ParticipantStatus.Reciting);
                 if (config.WaitForKeyPress)
                 {
                     MessageBox.Show("Press OK to continue to finish your turn and proceed.");
@@ -126,6 +131,7 @@ public class GroupPracticeViewModel : BaseViewModel
                     await Task.Delay(TimeSpan.FromSeconds(config.YourDurationInSeconds));
                 }
 
+                _progressViewModel.SetParticipantStatus(this.YourTurn, ParticipantStatus.Idle);
                 return GetPracticeInfo();       // Return updated config if needed
             });
         }

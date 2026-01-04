@@ -26,20 +26,18 @@ public class GroupPracticeProgressViewModel : BaseViewModel
         for (int i = 1; i < yourTurn; i++)
         {
             string participantName = $"participant-{i}";
-            bool isSelf = (i == yourTurn);
-            var participant = new ParticipantStatusViewModel(participantName, isSelf);
+            var participant = new ParticipantStatusViewModel(participantName, false, i);
             _participants.Add(participant);
         }
 
         // Add "you" as a separate entry
-        var selfParticipant = new ParticipantStatusViewModel("you", true);
+        var selfParticipant = new ParticipantStatusViewModel("you", true, yourTurn);
         _participants.Add(selfParticipant);
 
         for (int i = yourTurn; i < numberOfParticipants; i++)
         {
-            string participantName = $"participant-{i}";
-            bool isSelf = (i == yourTurn);
-            var participant = new ParticipantStatusViewModel(participantName, isSelf);
+            string participantName = $"participant-{i+1}";
+            var participant = new ParticipantStatusViewModel(participantName, false, i+1);
             _participants.Add(participant);
         }
 
@@ -48,13 +46,10 @@ public class GroupPracticeProgressViewModel : BaseViewModel
 
     public void SetParticipantStatus(int participantNumber, ParticipantStatus status)
     {
-        if (participantNumber > 0 && participantNumber <= _participants.Count)
+        var participant = _participants.FirstOrDefault(p => p.ParticipantNumber == participantNumber);
+        if (participant != null)
         {
-            var participant = _participants.FirstOrDefault(p => p.Name == $"participant-{participantNumber}");
-            if (participant != null)
-            {
-                participant.Status = status;
-            }
+            participant.Status = status;
         }
     }
 
