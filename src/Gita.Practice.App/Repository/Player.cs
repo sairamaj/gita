@@ -131,6 +131,7 @@ public class Player : IPlayer
             }
 
             await PlaySegment(start, end, practiceInfo, token);
+            await Task.Delay(500);      // give little gap for the next sloka.
             onOtherParticipant(new OtherParticipantInfo(currentPlayingParticipant, false));
         }
     }

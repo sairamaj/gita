@@ -32,7 +32,7 @@ namespace Gita.Practice.App.ViewModels
         public int SelectedChapterNumber { get; set; } = 1;
 
         public int YourDurationInSeconds { get; set; } = 20;
-        public bool RepeatYourSloka { get; set; }
+        public bool RepeatYourSloka { get; set; } = true;
         public string SelectedChapterName
         {
             get => this._selectedChapterName;
