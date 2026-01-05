@@ -7,13 +7,10 @@
              xmlns:vm="clr-namespace:Gita.Practice.App.ViewModels"
              mc:Ignorable="d"
              d:DesignHeight="200" d:DesignWidth="400">
-    <UserControl.DataContext>
-        <vm:HelpViewModel />
-    </UserControl.DataContext>
     <Grid>
         <Expander Header="Help" 
                   ExpandDirection="Down" 
-                  IsExpanded="False"
+                  IsExpanded="True"
                   Margin="0,10,0,0">
             <mdxaml:MarkdownScrollViewer 
                 Margin="10"

@@ -6,9 +6,9 @@ public class HelpViewModel : BaseViewModel
 {
     private string _helpText = string.Empty;
 
-    public HelpViewModel()
+    public HelpViewModel(string fileName)
     {
-        LoadHelpText();
+        LoadHelpText(fileName);
     }
 
     public string HelpText
@@ -17,12 +17,12 @@ public class HelpViewModel : BaseViewModel
         private set => SetProperty(ref _helpText, value);
     }
 
-    private void LoadHelpText()
+    private void LoadHelpText(string fileName)
     {
         try
         {
             // Try to find help file relative to the application directory
-            var helpFilePath = GetHelpFilePath();
+            var helpFilePath = GetHelpFilePath(fileName);
             
             if (File.Exists(helpFilePath))
             {
@@ -41,13 +41,13 @@ public class HelpViewModel : BaseViewModel
         }
     }
 
-    private string GetHelpFilePath()
+    private string GetHelpFilePath(string fileName)
     {
         // Get the directory where the executable is located
         var appDirectory = AppDomain.CurrentDomain.BaseDirectory;
         
         // Look for Help folder in the same directory as the executable
-        var helpFilePath = Path.Combine(appDirectory, "Help", "help.md");
+        var helpFilePath = Path.Combine(appDirectory, "Help", fileName);
         
         // Also check if running from Visual Studio/debug, check project directory
         if (!File.Exists(helpFilePath))

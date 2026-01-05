@@ -183,10 +183,6 @@
                 <TextBlock Text="Play" FontSize="12" />
             </Button>
 
-            <Button Style="{StaticResource PauseStopButtonStyle}" Command="{Binding PauseCommand}" ToolTip="Pause">
-                <TextBlock Text="Pause" FontSize="12" />
-            </Button>
-
             <Button Style="{StaticResource PauseStopButtonStyle}" Command="{Binding StopCommand}" ToolTip="Stop">
                 <TextBlock Text="Stop" FontSize="12" />
             </Button>

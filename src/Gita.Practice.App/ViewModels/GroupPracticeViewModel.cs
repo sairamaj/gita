@@ -31,6 +31,7 @@ public class GroupPracticeViewModel : BaseViewModel
         StopCommand = new RelayCommand(_ => Stop());
         Player = player ?? throw new ArgumentNullException(nameof(player));
         _progressViewModel = new GroupPracticeProgressViewModel();
+        this.HelpViewModel = new HelpViewModel("group_practice_help.md");
         UpdateProgressParticipants();
     }
 
@@ -82,6 +83,7 @@ public class GroupPracticeViewModel : BaseViewModel
     }
     public int YourDurationInSeconds { get; set; } = 20;
     public bool RepeatYourSloka { get; set; }
+    public HelpViewModel HelpViewModel { get; set; }
     public WaitModeOption WaitMode { get => _waitMode; set { _waitMode = value; OnPropertyChanged(); } }
     public int ParticipantStanzaCount
     {
