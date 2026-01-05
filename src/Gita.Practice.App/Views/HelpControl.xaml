@@ -1,22 +1,14 @@
 <UserControl x:Class="Gita.Practice.App.Views.HelpControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mdxaml="clr-namespace:MdXaml;assembly=MdXaml"
-             xmlns:vm="clr-namespace:Gita.Practice.App.ViewModels"
-             mc:Ignorable="d"
-             d:DesignHeight="200" d:DesignWidth="400">
-    <Grid>
-        <Expander Header="Help" 
-                  ExpandDirection="Down" 
-                  IsExpanded="True"
-                  Margin="0,10,0,0">
-            <mdxaml:MarkdownScrollViewer 
-                Margin="10"
-                VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Auto"
-                Markdown="{Binding HelpText}" />
-        </Expander>
-    </Grid>
+             xmlns:mdxaml="clr-namespace:MdXaml;assembly=MdXaml">
+
+    <Expander Header="Information:" FontWeight="Bold" IsExpanded="True">
+    <Border MaxHeight="400">
+        <mdxaml:MarkdownScrollViewer Height="200"
+        VerticalScrollBarVisibility="Auto"
+        Markdown="{Binding HelpText}" />
+    </Border>
+    </Expander>
+
 </UserControl>

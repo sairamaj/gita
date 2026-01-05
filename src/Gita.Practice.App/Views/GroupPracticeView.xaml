@@ -354,17 +354,10 @@
                 Padding="15"
                 BorderBrush="#d0d7de"
                 BorderThickness="1"
-                MinWidth="250"
+                MinWidth="180"
                 MaxWidth="300">
             <StackPanel>
-                <TextBlock Text="Progress"
-                           FontSize="16"
-                           FontWeight="Bold"
-                           Foreground="#2d3748"
-                           Margin="0,0,0,15"/>
-
                 <vw:GroupPracticeProgressView DataContext="{Binding ProgressViewModel}"/>
-
             </StackPanel>
         </Border>
 
