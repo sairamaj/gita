@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows;
 using Gita.Practice.App.Repository;
+using Gita.Practice.App.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -112,6 +113,7 @@ public partial class App : Application
         services.AddSingleton<IPlayer, Player>();
         services.AddTransient<MainViewModel>();
         services.AddSingleton<IDownloadManager, DownloadManager>();
+        services.AddSingleton<IMessageDialogService, MessageDialogService>();
     }
 
     private void Application_Startup(object sender, StartupEventArgs e)

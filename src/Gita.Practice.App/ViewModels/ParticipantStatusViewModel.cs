@@ -46,11 +46,11 @@ public class ParticipantStatusViewModel : BaseViewModel
 
     public string StatusText => Status switch
     {
-        ParticipantStatus.Idle => "idle",
+        ParticipantStatus.Idle => "waiting",
         ParticipantStatus.Reciting => "reciting",
         ParticipantStatus.Waiting => "waiting",
         ParticipantStatus.Completed => "completed",
-        _ => "idle"
+        _ => "waiting"
     };
 }
 

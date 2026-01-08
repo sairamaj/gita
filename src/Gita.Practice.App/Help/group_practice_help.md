@@ -18,7 +18,7 @@ Use this section to practice reciting Bhagavad Gita verses with a group.
 - **Duration**: When using Duration wait mode, specify how many seconds to wait (this is your time to recite)
 - **Repeat Your Sloka**: Check this box if you want to hear your sloka again after you recite it
 - **Playback Speed**: Adjust the playback speed from 0.5x to 2.0x using the slider
-- **Number of Stanzas**: Set how many stanzas (shlokas) each other participant will recite
+- **Number of Stanzas**: Set how many stanzas each other participant will recite
 
 ## Controls
 

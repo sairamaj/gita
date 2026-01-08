@@ -1,14 +1,146 @@
 <UserControl x:Class="Gita.Practice.App.Views.HelpControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mdxaml="clr-namespace:MdXaml;assembly=MdXaml">
+             xmlns:mdxaml="clr-namespace:MdXaml;assembly=MdXaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="400">
 
-    <Expander Header="Information:" FontWeight="Bold" IsExpanded="True">
-    <Border MaxHeight="400">
-        <mdxaml:MarkdownScrollViewer Height="200"
-        VerticalScrollBarVisibility="Auto"
-        Markdown="{Binding HelpText}" />
-    </Border>
+    <UserControl.Resources>
+        <!-- Help Section Style -->
+        <Style x:Key="HelpExpanderStyle" TargetType="Expander">
+            <Setter Property="Background" Value="#f8f9fa"/>
+            <Setter Property="BorderBrush" Value="#d0d7de"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Margin" Value="0,10,0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Expander">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                
+                                <!-- Header -->
+                                <Border Grid.Row="0" 
+                                        Background="#e9ecef"
+                                        CornerRadius="10,10,0,0"
+                                        Padding="15,12">
+                                    <Grid>
+                                        <ToggleButton x:Name="ExpanderToggle"
+                                                     FontWeight="SemiBold"
+                                                     FontSize="14"
+                                                     Foreground="#2d3748"
+                                                     HorizontalContentAlignment="Left"
+                                                     VerticalContentAlignment="Center"
+                                                     Padding="0"
+                                                     Background="Transparent"
+                                                     BorderThickness="0"
+                                                     IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                            <ToggleButton.Style>
+                                                <Style TargetType="ToggleButton">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="ToggleButton">
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <ColumnDefinition Width="*"/>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <!-- Expand/Collapse Arrow -->
+                                                                    <TextBlock Grid.Column="0" 
+                                                                               x:Name="ExpandArrow"
+                                                                               FontSize="12"
+                                                                               Margin="0,0,8,0"
+                                                                               VerticalAlignment="Center"
+                                                                               Foreground="#6c757d">
+                                                                        <TextBlock.Style>
+                                                                            <Style TargetType="TextBlock">
+                                                                                <Setter Property="Text" Value="▼"/>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding IsExpanded, RelativeSource={RelativeSource AncestorType=Expander}}" Value="False">
+                                                                                        <Setter Property="Text" Value="▶"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding IsExpanded, RelativeSource={RelativeSource AncestorType=Expander}}" Value="True">
+                                                                                        <Setter Property="Text" Value="▼"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </TextBlock.Style>
+                                                                    </TextBlock>
+                                                                    <!-- Info Icon -->
+                                                                    <TextBlock Grid.Column="1" 
+                                                                               Text="ℹ"
+                                                                               FontSize="18"
+                                                                               Margin="0,0,10,0"
+                                                                               VerticalAlignment="Center"
+                                                                               Foreground="#4285f4"/>
+                                                                    <!-- Header Text -->
+                                                                    <ContentPresenter Grid.Column="2"
+                                                                                     Content="{Binding Header, RelativeSource={RelativeSource AncestorType=Expander}}"
+                                                                                     ContentTemplate="{Binding HeaderTemplate, RelativeSource={RelativeSource AncestorType=Expander}}"
+                                                                                     HorizontalAlignment="Left"
+                                                                                     VerticalAlignment="Center"/>
+                                                                </Grid>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </ToggleButton.Style>
+                                        </ToggleButton>
+                                    </Grid>
+                                </Border>
+                                
+                                <!-- Content Area -->
+                                <Border Grid.Row="1"
+                                        BorderThickness="0,1,0,0"
+                                        BorderBrush="#d0d7de"
+                                        Background="#ffffff"
+                                        CornerRadius="0,0,10,10">
+                                    <ContentPresenter x:Name="ExpanderContent"
+                                                     ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                     Margin="0"
+                                                     >
+                                        <ContentPresenter.Visibility>
+                                            <Binding Path="IsExpanded" RelativeSource="{RelativeSource TemplatedParent}">
+                                                <Binding.Converter>
+                                                    <BooleanToVisibilityConverter/>
+                                                </Binding.Converter>
+                                            </Binding>
+                                        </ContentPresenter.Visibility>
+                                    </ContentPresenter>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Expander Style="{StaticResource HelpExpanderStyle}"
+              Header="Help &amp; Information"
+              IsExpanded="True"
+              ExpandDirection="Down">
+        <Border MaxHeight="400">
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                         HorizontalScrollBarVisibility="Disabled"
+                         CanContentScroll="False"
+                         Padding="0">
+                <mdxaml:MarkdownScrollViewer 
+                    VerticalScrollBarVisibility="Disabled"
+                    HorizontalScrollBarVisibility="Disabled"
+                    Padding="5"
+                    Markdown="{Binding HelpText}" />
+            </ScrollViewer>
+        </Border>
     </Expander>
 
 </UserControl>

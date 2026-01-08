@@ -1,5 +1,6 @@
 ﻿using Gita.Practice.App.Models;
 using Gita.Practice.App.Repository;
+using Gita.Practice.App.Services;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,12 +20,13 @@ namespace Gita.Practice.App.ViewModels
         public ICommand PauseCommand { get; }
         public ICommand StopCommand { get; }
 
-        public IndividualPracticeViewModel(IPlayer player)
+        public IndividualPracticeViewModel(IPlayer player, IMessageDialogService messageDialogService)
         {
             PlayCommand = new RelayCommand(_ => _ = Play());
             PauseCommand = new RelayCommand(_ => Pause());
             StopCommand = new RelayCommand(_ => Stop());
             Player = player ?? throw new ArgumentNullException(nameof(player));
+            MessageDialogService = messageDialogService ?? throw new ArgumentNullException(nameof(messageDialogService));
             this.HelpViewModel = new HelpViewModel("individual_practice_help.md");
         }
 
@@ -65,12 +67,14 @@ namespace Gita.Practice.App.ViewModels
         public HelpViewModel HelpViewModel { get; set; }
 
         public IPlayer Player { get; }
+        public IMessageDialogService MessageDialogService { get; }
 
         private async Task Play()
         {
             if (this.MediaElement == null)
             {
-                MessageBox.Show("MediaElement is not set.");
+                MessageDialogService.ShowError("MediaElement is not set.", "Configuration Error");
+                return;
             }
             try
             {
@@ -80,7 +84,7 @@ namespace Gita.Practice.App.ViewModels
                 {
                     if (config.WaitForKeyPress)
                     {
-                        MessageBox.Show("Press OK to continue to finish your turn and proceed.");
+                        MessageDialogService.ShowInformation("Press OK to continue to finish your turn and proceed.", "Your Turn");
                     }
                     else
                     {

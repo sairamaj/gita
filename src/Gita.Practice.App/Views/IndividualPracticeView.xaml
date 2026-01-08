@@ -112,10 +112,32 @@
                       Visibility="Collapsed"
                       Source="{Binding AudioSource}" />
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,10,0,0">
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="Chapter:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedChapterName}" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left"/>
-        </StackPanel>
+        <!-- Chapter Name Display - Centered and Professional -->
+        <Border Grid.Row="0" 
+                Margin="0,10,0,20"
+                Padding="20,12"
+                Background="#F8F9FA"
+                BorderBrush="#E0E0E0"
+                BorderThickness="0,0,0,2"
+                CornerRadius="4">
+            <StackPanel HorizontalAlignment="Center" Orientation="Vertical">
+                <TextBlock Text="CHAPTER" 
+                           FontSize="11"
+                           FontWeight="SemiBold"
+                           Foreground="#666666"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,4"
+                           Opacity="0.8"/>
+                <TextBlock Text="{Binding SelectedChapterName}" 
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="#1A73E8"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           LineHeight="28"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+        </Border>
         
         <!-- Your Turn settings -->
         <GroupBox Grid.Row="1" Style="{StaticResource GroupBoxStyle}">

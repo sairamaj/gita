@@ -1,4 +1,5 @@
 using Gita.Practice.App.Repository;
+using Gita.Practice.App.Services;
 using Gita.Practice.App.ViewModels;
 using System.ComponentModel;
 using System.Collections.Generic;
@@ -18,10 +19,10 @@ public class MainViewModel : BaseViewModel
     /// </summary>
     /// <param name="player">The audio player service used for playback operations.</param>
     /// <param name="dataRepository">The data repository used to retrieve chapter information.</param>
-    public MainViewModel(IPlayer player, IDataRepository dataRepository, IDownloadManager downloadManager)
+    public MainViewModel(IPlayer player, IDataRepository dataRepository, IDownloadManager downloadManager, IMessageDialogService messageDialogService)
     {
-        this.GroupPractiveViewModel = new GroupPracticeViewModel(player);
-        this.IndividualPracticeViewModel = new IndividualPracticeViewModel(player);
+        this.GroupPractiveViewModel = new GroupPracticeViewModel(player, messageDialogService);
+        this.IndividualPracticeViewModel = new IndividualPracticeViewModel(player, messageDialogService);
         this.StatusViewModel = new StatusViewModel();
         this.Chapters = dataRepository.GetAllChapters()
             .Select(tuple => new ChapterViewModel(tuple.Item1, tuple.Item2))

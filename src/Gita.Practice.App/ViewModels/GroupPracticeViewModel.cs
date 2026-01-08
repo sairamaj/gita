@@ -1,6 +1,6 @@
 using Gita.Practice.App.Models;
 using Gita.Practice.App.Repository;
-using System.Threading.Tasks;
+using Gita.Practice.App.Services;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,7 +20,7 @@ public class GroupPracticeViewModel : BaseViewModel
     public ICommand StopCommand { get; }
     public ICommand DownloadCommand { get; }
 
-    public GroupPracticeViewModel(IPlayer player)
+    public GroupPracticeViewModel(IPlayer player, IMessageDialogService messageDialogService)
     {
         PlayCommand = new RelayCommand(_ =>
         {
@@ -30,6 +30,7 @@ public class GroupPracticeViewModel : BaseViewModel
         PauseCommand = new RelayCommand(_ => Pause());
         StopCommand = new RelayCommand(_ => Stop());
         Player = player ?? throw new ArgumentNullException(nameof(player));
+        MessageDialogService = messageDialogService ?? throw new ArgumentNullException(nameof(messageDialogService));
         _progressViewModel = new GroupPracticeProgressViewModel();
         this.HelpViewModel = new HelpViewModel("group_practice_help.md");
         UpdateProgressParticipants();
@@ -48,7 +49,7 @@ public class GroupPracticeViewModel : BaseViewModel
             OnPropertyChanged();
         }
     }
-    private int _numberOfParticipants = 2;
+    private int _numberOfParticipants = 4   ;
     public int NumberOfParticipants
     {
         get => _numberOfParticipants;
@@ -101,6 +102,7 @@ public class GroupPracticeViewModel : BaseViewModel
     public double PlayingSpeed { get => _playningSpeed; set { _playningSpeed = value; OnPropertyChanged(); } }
 
     public IPlayer Player { get; }
+    public IMessageDialogService MessageDialogService { get; }
 
     private void UpdateProgressParticipants()
     {
@@ -111,7 +113,8 @@ public class GroupPracticeViewModel : BaseViewModel
     {
         if (this.MediaElement == null)
         {
-            MessageBox.Show("MediaElement is not set.");
+            MessageDialogService.ShowError("MediaElement is not set.", "Configuration Error");
+            return;
         }
         try
         {
@@ -126,7 +129,7 @@ public class GroupPracticeViewModel : BaseViewModel
                 _progressViewModel.SetParticipantStatus(this.YourTurn, ParticipantStatus.Reciting);
                 if (config.WaitForKeyPress)
                 {
-                    MessageBox.Show("Press OK to continue to finish your turn and proceed.");
+                    MessageDialogService.ShowInformation("Press OK to continue to finish your turn and proceed.", "Your Turn");
                 }
                 else
                 {

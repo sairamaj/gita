@@ -4,70 +4,126 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="250">
+             d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
-        <Style x:Key="ParticipantItemStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Margin" Value="0,4"/>
+        <!-- Status indicator brush converter -->
+        <SolidColorBrush x:Key="RecitingBrush" Color="#2563eb"/>
+        <SolidColorBrush x:Key="IdleBrush" Color="#9ca3af"/>
+        <SolidColorBrush x:Key="WaitingBrush" Color="#f59e0b"/>
+        <SolidColorBrush x:Key="CompletedBrush" Color="#10b981"/>
+        <SolidColorBrush x:Key="SelfBrush" Color="#dc2626"/>
+        
+        <!-- Card background brushes -->
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="#ffffff"/>
+        <SolidColorBrush x:Key="CardBackgroundActiveBrush" Color="#eff6ff"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#e5e7eb"/>
+        <SolidColorBrush x:Key="CardBorderActiveBrush" Color="#3b82f6"/>
+        
+        <!-- Participant card style -->
+        <Style x:Key="ParticipantCardStyle" TargetType="Border">
+            <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource CardBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="12,10"/>
+            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Reciting">
+                    <Setter Property="Background" Value="{StaticResource CardBackgroundActiveBrush}"/>
+                    <Setter Property="BorderBrush" Value="{StaticResource CardBorderActiveBrush}"/>
+                    <Setter Property="BorderThickness" Value="2"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!-- Participant name style -->
+        <Style x:Key="ParticipantNameStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="#1f2937"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelf}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource SelfBrush}"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!-- Status text style -->
+        <Style x:Key="StatusTextStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="#6b7280"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Reciting">
+                    <Setter Property="Foreground" Value="{StaticResource RecitingBrush}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Idle">
+                    <Setter Property="Foreground" Value="{StaticResource IdleBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Waiting">
+                    <Setter Property="Foreground" Value="{StaticResource WaitingBrush}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Completed">
+                    <Setter Property="Foreground" Value="{StaticResource CompletedBrush}"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <!-- Status indicator ellipse style -->
+        <Style x:Key="StatusIndicatorStyle" TargetType="Ellipse">
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,0,8,0"/>
+            <Setter Property="Fill" Value="{StaticResource IdleBrush}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Status}" Value="Reciting">
+                    <Setter Property="Fill" Value="{StaticResource RecitingBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Waiting">
+                    <Setter Property="Fill" Value="{StaticResource WaitingBrush}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Status}" Value="Completed">
+                    <Setter Property="Fill" Value="{StaticResource CompletedBrush}"/>
+                </DataTrigger>
+            </Style.Triggers>
         </Style>
     </UserControl.Resources>
 
-    <ItemsControl ItemsSource="{Binding Participants}" Grid.IsSharedSizeScope="True">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <Grid Margin="0,2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition SharedSizeGroup="ParticipantName"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="4">
+        <ItemsControl ItemsSource="{Binding Participants}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource ParticipantCardStyle}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                    <TextBlock Grid.Column="0" 
-                               Text="{Binding Name}"
-                               TextAlignment="Right">
-                        <TextBlock.Style>
-                            <Style TargetType="TextBlock" BasedOn="{StaticResource ParticipantItemStyle}">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding IsSelf}" Value="True">
-                                        <Setter Property="FontWeight" Value="Bold"/>
-                                        <Setter Property="Foreground" Value="Red"/>
-                                      </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
+                            <!-- Status indicator -->
+                            <Ellipse Grid.Column="0" Style="{StaticResource StatusIndicatorStyle}"/>
 
-                    <TextBlock Grid.Column="1" 
-                               Text=" : " 
-                               Style="{StaticResource ParticipantItemStyle}"/>
+                            <!-- Participant name -->
+                            <TextBlock Grid.Column="1" 
+                                       Text="{Binding Name}"
+                                       Style="{StaticResource ParticipantNameStyle}"/>
 
-                    <TextBlock Grid.Column="2" 
-                               Text="{Binding StatusText}"
-                               TextAlignment="Left">
-                        <TextBlock.Style>
-                            <Style TargetType="TextBlock" BasedOn="{StaticResource ParticipantItemStyle}">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Status}" Value="Reciting">
-                                        <Setter Property="Foreground" Value="#2563eb"/>
-                                        <Setter Property="FontWeight" Value="SemiBold"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Status}" Value="Idle">
-                                        <Setter Property="Foreground" Value="#6b7280"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Status}" Value="Waiting">
-                                        <Setter Property="Foreground" Value="#f59e0b"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Status}" Value="Completed">
-                                        <Setter Property="Foreground" Value="#10b981"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
-                </Grid>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-    </ItemsControl>
+                            <!-- Status text -->
+                            <TextBlock Grid.Column="2" 
+                                       Text="{Binding StatusText}"
+                                       Style="{StaticResource StatusTextStyle}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </ScrollViewer>
 </UserControl>
 
