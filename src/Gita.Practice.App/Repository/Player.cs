@@ -72,12 +72,14 @@ public class Player : IPlayer
     public async Task Start(
         PracticeInfo practiceInfo,
         MediaElement mediaElement,
+        Action<OtherParticipantInfo> onOtherParticipant,
         Func<PracticeInfo, Task<PracticeInfo>> waitForYourTurnToFinish)
     {
         var (chapter, startIndex, chapterEndTime) = await InitializeAsync(practiceInfo, mediaElement);
         var token = _cts.Token;
 
         int participantIndex = 1;
+        var currentPlayingParticipant = participantIndex;
 
         for (int i = startIndex; i < chapter.Shlokas.Count - 1; i++)
         {
@@ -107,6 +109,8 @@ public class Player : IPlayer
             }
             else
             {
+                currentPlayingParticipant = participantIndex;
+                onOtherParticipant(new OtherParticipantInfo(currentPlayingParticipant, true));
                 participantIndex++;
                 if (participantIndex > practiceInfo.NumberOfParticipants)
                     participantIndex = 1;
@@ -127,6 +131,8 @@ public class Player : IPlayer
             }
 
             await PlaySegment(start, end, practiceInfo, token);
+            await Task.Delay(500);      // give little gap for the next sloka.
+            onOtherParticipant(new OtherParticipantInfo(currentPlayingParticipant, false));
         }
     }
 

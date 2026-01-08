@@ -103,6 +103,7 @@
             <Setter Property="Control.Margin" Value="0,12,8,0"/>
             <Setter Property="Control.BorderBrush" Value="#800080"/>
             <Setter Property="Control.BorderThickness" Value="1"/>
+            <Setter Property="Control.MinWidth" Value="400"/>
         </Style>
 
         <Style x:Key="GroupBoxHeaderStyle">
@@ -113,22 +114,32 @@
 
     <!-- MAIN LAYOUT -->
     <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <!-- Input panel -->
-            <RowDefinition Height="Auto"/>
-            <!-- Playback buttons -->
-        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Side panel for progress -->
+        </Grid.ColumnDefinitions>
 
-        <!-- Hidden MediaElement -->
-        <MediaElement Name="mediaElement"
+        <!-- Main Content Area -->
+        <Grid Grid.Column="0" Margin="0,0,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Input panel -->
+                <RowDefinition Height="Auto"/>
+                <!-- Playback buttons -->
+                <RowDefinition Height="Auto"/>
+                <!-- Help control -->
+            </Grid.RowDefinitions>
+
+            <!-- Hidden MediaElement -->
+            <MediaElement Name="mediaElement"
                       LoadedBehavior="Manual"
                       UnloadedBehavior="Stop"
                       Visibility="Collapsed"
                       Source="{Binding AudioSource}" />
 
-        <!-- INPUT PANEL -->
-        <Border Grid.Row="0"
+            <!-- INPUT PANEL -->
+            <Border Grid.Row="0"
                 Background="#f5f7fa"
                 CornerRadius="10"
                 Padding="12"
@@ -136,197 +147,219 @@
                 BorderBrush="#d0d7de"
                 BorderThickness="1">
 
-            <StackPanel>
+                <StackPanel>
 
-                <!-- Updated grid: three columns so all inputs align to the same input column -->
-                <Grid Margin="0,0,0,5" Grid.IsSharedSizeScope="True">
-                    <Grid.ColumnDefinitions>
-                        <!-- Label column -->
-                        <ColumnDefinition Width="Auto"/>
-                        <!-- Input column: fixed width so all controls align with the Participants TextBox -->
-                        <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
-                        <!-- Remainder column for spacing -->
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+                    <!-- Updated grid: three columns so all inputs align to the same input column -->
+                    <Grid Margin="0,0,0,5" Grid.IsSharedSizeScope="True">
+                        <Grid.ColumnDefinitions>
+                            <!-- Label column -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Input column: fixed width so all controls align with the Participants TextBox -->
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
+                            <!-- Remainder column for spacing -->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
 
-                    <!-- Participants grouped into "General Settings" -->
-                    <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
-                        <GroupBox.Header>
-                            <TextBlock Text="General" Style="{StaticResource GroupBoxHeaderStyle}"/>
-                        </GroupBox.Header>
+                        <!-- Participants grouped into "General Settings" -->
+                        <GroupBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
+                            <GroupBox.Header>
+                                <TextBlock Text="General" Style="{StaticResource GroupBoxHeaderStyle}"/>
+                            </GroupBox.Header>
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
+                                </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" Text="Participants:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
-                            <TextBox Grid.Column="1" Text="{Binding NumberOfParticipants}" Width="100" HorizontalAlignment="Left">
-                                <TextBox.Style>
-                                    <Style TargetType="TextBox">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding IsPlaying}" Value="True">
-                                                <Setter Property="IsEnabled" Value="False"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBox.Style>
-                            </TextBox>
-                        </Grid>
-                    </GroupBox>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Chapter:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SelectedChapterName}" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Left"/>
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Participants:" Style="{StaticResource LabelStyle}" Margin="8,0,0,0"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Width="100" HorizontalAlignment="Left"
+                                     Text="{Binding NumberOfParticipants, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
+                                     >
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsPlaying}" Value="True">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
+                            </Grid>
+                        </GroupBox>
 
-                    <!-- YOUR TURN GROUPBOX -->
-                    <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
-                        <GroupBox.Header>
-                            <TextBlock Text="Your turn" Style="{StaticResource GroupBoxHeaderStyle}"/>
-                        </GroupBox.Header>
+                        <!-- YOUR TURN GROUPBOX -->
+                        <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
+                            <GroupBox.Header>
+                                <TextBlock Text="Your turn" Style="{StaticResource GroupBoxHeaderStyle}"/>
+                            </GroupBox.Header>
 
-                        <Grid Margin="8,6,8,6">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
-                            </Grid.ColumnDefinitions>
+                            <Grid Margin="8,6,8,6">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="InputColumn"/>
+                                </Grid.ColumnDefinitions>
 
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <!-- Your Turn -->
-                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Your Turn:" Margin="0,0,8,0" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
-                            <TextBox Grid.Row="0" Grid.Column="1"
+                                <!-- Your Turn -->
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Your Turn:" Margin="0,0,8,0" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1"
                                      Text="{Binding YourTurn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
                                      Width="100"
                                      HorizontalAlignment="Left">
-                                <TextBox.Style>
-                                    <Style TargetType="TextBox">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding IsPlaying}" Value="True">
-                                                <Setter Property="IsEnabled" Value="False"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </TextBox.Style>
-                            </TextBox>
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding IsPlaying}" Value="True">
+                                                    <Setter Property="IsEnabled" Value="False"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
 
-                            <!-- Wait Mode -->
-                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Wait Mode:" Style="{StaticResource LabelStyle}"/>
+                                <!-- Wait Mode -->
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Wait Mode:" Style="{StaticResource LabelStyle}"/>
 
-                            <!-- Use a horizontal StackPanel inside the input column so its controls align with other inputs -->
-                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                                <!-- ComboBox aligned to input column -->
-                                <ComboBox Width="100"
+                                <!-- Use a horizontal StackPanel inside the input column so its controls align with other inputs -->
+                                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                    <!-- ComboBox aligned to input column -->
+                                    <ComboBox Width="100"
                                           ItemsSource="{Binding Source={x:Static local:WaitModeValues.All}}"
                                           SelectedItem="{Binding WaitMode}" />
 
-                                <!-- Duration label -->
-                                <TextBlock Text="Duration (sec):"
+                                    <!-- Duration label -->
+                                    <TextBlock Text="Duration (sec):"
                                            Style="{StaticResource LabelStyle}"
                                            VerticalAlignment="Center"
                                            Visibility="{Binding WaitMode, Converter={StaticResource WaitModeToVisibilityConverter}}"/>
 
-                                <!-- Duration textbox -->
-                                <TextBox Width="100"
+                                    <!-- Duration textbox -->
+                                    <TextBox Width="100"
                                          Text="{Binding YourDurationInSeconds}"
                                          VerticalAlignment="Center"
                                          Visibility="{Binding WaitMode, Converter={StaticResource WaitModeToVisibilityConverter}}"/>
-                            </StackPanel>
+                                </StackPanel>
 
-                            <!-- Repeat Sloka -->
-                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Repeat Your Sloka:" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
-                            <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding RepeatYourSloka}" HorizontalAlignment="Left"/>
-                        </Grid>
-                    </GroupBox>
+                                <!-- Repeat Sloka -->
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Repeat Your Sloka:" VerticalAlignment="Center" Style="{StaticResource LabelStyle}"/>
+                                <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding RepeatYourSloka}" HorizontalAlignment="Left"/>
+                            </Grid>
+                        </GroupBox>
 
-                    <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
-                        <GroupBox.Header>
-                            <TextBlock Text="Other Participant(s)" Style="{StaticResource GroupBoxHeaderStyle}"/>
-                        </GroupBox.Header>
+                        <GroupBox Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource GroupBoxStyle}">
+                            <GroupBox.Header>
+                                <TextBlock Text="Other Participant(s)" Style="{StaticResource GroupBoxHeaderStyle}"/>
+                            </GroupBox.Header>
 
 
-                        <Grid Margin="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
 
-                            <!-- Stanza Count -->
-                            <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}"
+                                <!-- Stanza Count -->
+                                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelStyle}"
                    Text="Number of Stangs:" />
 
-                            <TextBox Grid.Row="0" Grid.Column="1"
+                                <TextBox Grid.Row="0" Grid.Column="1"
                  Text="{Binding ParticipantStanzaCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"
                  Width="100"
                  HorizontalAlignment="Left"
                  Margin="0,0,0,8"/>
 
-                            <!-- Playback Speed -->
-                            <TextBlock Grid.Row="1" Grid.Column="0"
+                                <!-- Playback Speed -->
+                                <TextBlock Grid.Row="1" Grid.Column="0"
                    Text="Playback Speed:"
                                        Style="{StaticResource LabelStyle}" />
 
-                            <StackPanel Grid.Row="1" Grid.Column="1"
+                                <StackPanel Grid.Row="1" Grid.Column="1"
                     Orientation="Horizontal"
                     HorizontalAlignment="Left"
                     Margin="0,0,0,8">
 
-                                <Slider Minimum="0.5"
+                                    <Slider Minimum="0.5"
                     Maximum="2.0"
                     TickFrequency="0.25"
                     IsSnapToTickEnabled="True"
                     Value="{Binding PlayingSpeed}"
                     Width="120"/>
 
-                                <TextBlock Text="{Binding PlayingSpeed, StringFormat={}{0:0.00}x}"
+                                    <TextBlock Text="{Binding PlayingSpeed, StringFormat={}{0:0.00}x}"
                        VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </Grid>
-                    </GroupBox>
-                </Grid>
-            </StackPanel>
-        </Border>
+                                </StackPanel>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </StackPanel>
+            </Border>
 
-        <!-- PLAYBACK BUTTONS -->
-        <StackPanel Grid.Row="1"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Center">
+            <!-- PLAYBACK BUTTONS -->
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center">
 
-            <Button Style="{StaticResource PlayButtonStyle}"
+                <Button Style="{StaticResource PlayButtonStyle}"
                     Command="{Binding PlayCommand}"
                     ToolTip="Play">
-                <TextBlock Text="Play" FontSize="12"/>
-            </Button>
+                    <TextBlock Text="Play" FontSize="12"/>
+                </Button>
 
-            <Button Style="{StaticResource PauseStopButtonStyle}"
-                    Command="{Binding PauseCommand}"
-                    ToolTip="Pause">
-                <TextBlock Text="Pause" FontSize="12"/>
-            </Button>
 
-            <Button Style="{StaticResource PauseStopButtonStyle}"
-                    Command="{Binding StopCommand}"
-                    ToolTip="Stop">
-                <TextBlock Text="Stop" FontSize="12"/>
-            </Button>
+                <Button Style="{StaticResource PauseStopButtonStyle}"
+                        Command="{Binding StopCommand}"
 
-        </StackPanel>
+                        ToolTip="Stop">
+                    <TextBlock Text="Stop" FontSize="12"/>
+                </Button>
+
+            </StackPanel>
+
+            <!-- HELP CONTROL -->
+            <vw:HelpControl Grid.Row="2" Margin="0,15,0,0" DataContext="{Binding HelpViewModel}"/>
+        </Grid>
+
+        <!-- PROGRESS SIDE PANEL -->
+        <Border Grid.Column="1"
+                Background="#f8f9fa"
+                CornerRadius="10"
+                Padding="15"
+                BorderBrush="#d0d7de"
+                BorderThickness="1"
+                MinWidth="180"
+                MaxWidth="300">
+            <StackPanel>
+                <vw:GroupPracticeProgressView DataContext="{Binding ProgressViewModel}"/>
+            </StackPanel>
+        </Border>
 
     </Grid>
 </UserControl>

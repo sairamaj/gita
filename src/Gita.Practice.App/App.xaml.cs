@@ -111,6 +111,7 @@ public partial class App : Application
         services.AddTransient<IDataRepository, DataRepository>();
         services.AddSingleton<IPlayer, Player>();
         services.AddTransient<MainViewModel>();
+        services.AddSingleton<IDownloadManager, DownloadManager>();
     }
 
     private void Application_Startup(object sender, StartupEventArgs e)

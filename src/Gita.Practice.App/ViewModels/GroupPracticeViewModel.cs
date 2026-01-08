@@ -1,5 +1,6 @@
 using Gita.Practice.App.Models;
 using Gita.Practice.App.Repository;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,7 +12,9 @@ public class GroupPracticeViewModel : BaseViewModel
     private double _playningSpeed = 1.50;
     private int _yourTurn = 2;
     private int _participantStanzaCount = 4;
+    private string _selectedChapterName = string.Empty;
     private WaitModeOption _waitMode = WaitModeOption.KeyboardHit;
+    private GroupPracticeProgressViewModel _progressViewModel;
     public ICommand PlayCommand { get; set; }
     public ICommand PauseCommand { get; }
     public ICommand StopCommand { get; }
@@ -27,34 +30,67 @@ public class GroupPracticeViewModel : BaseViewModel
         PauseCommand = new RelayCommand(_ => Pause());
         StopCommand = new RelayCommand(_ => Stop());
         Player = player ?? throw new ArgumentNullException(nameof(player));
+        _progressViewModel = new GroupPracticeProgressViewModel();
+        this.HelpViewModel = new HelpViewModel("group_practice_help.md");
+        UpdateProgressParticipants();
     }
 
+    public string ChapterDisplayName { get; set; }
     public MediaElement MediaElement { get; set; }
     public bool IsPlaying { get; set; }
     public int SelectedChapterNumber { get; set; } = 1;
-    public int NumberOfParticipants { get; set; } = 2;
+    public string SelectedChapterName
+    {
+        get => this._selectedChapterName;
+        set
+        {
+            this._selectedChapterName = value;
+            OnPropertyChanged();
+        }
+    }
+    private int _numberOfParticipants = 2;
+    public int NumberOfParticipants
+    {
+        get => _numberOfParticipants;
+        set
+        {
+            _numberOfParticipants = value;
+            OnPropertyChanged();
+            UpdateProgressParticipants();
+            this.YourTurn = this._yourTurn; // Re-validate your turn
+        }
+    }
+
+    public GroupPracticeProgressViewModel ProgressViewModel => _progressViewModel;
     public int YourTurn
     {
         get => this._yourTurn;
         set
         {
-            if (value > NumberOfParticipants || value < 1)
+            if (value > NumberOfParticipants)
             {
-                OnPropertyChanged();
-                return;
+                value = NumberOfParticipants;
             }
-            this._yourTurn = value; OnPropertyChanged();
+            if (value < 1)
+            {
+                value = 1;
+            }
+
+            this._yourTurn = value;
+            OnPropertyChanged();
+            UpdateProgressParticipants();
         }
     }
     public int YourDurationInSeconds { get; set; } = 20;
     public bool RepeatYourSloka { get; set; }
+    public HelpViewModel HelpViewModel { get; set; }
     public WaitModeOption WaitMode { get => _waitMode; set { _waitMode = value; OnPropertyChanged(); } }
     public int ParticipantStanzaCount
     {
         get => _participantStanzaCount;
         set
         {
-            if(value > 4 || value < 1)
+            if (value > 4 || value < 1)
             {
                 OnPropertyChanged();
                 return;
@@ -66,6 +102,11 @@ public class GroupPracticeViewModel : BaseViewModel
 
     public IPlayer Player { get; }
 
+    private void UpdateProgressParticipants()
+    {
+        _progressViewModel?.UpdateParticipants(NumberOfParticipants, YourTurn);
+    }
+
     private async Task Play()
     {
         if (this.MediaElement == null)
@@ -76,8 +117,13 @@ public class GroupPracticeViewModel : BaseViewModel
         {
             IsPlaying = true;
             OnPropertyChanged(nameof(IsPlaying));
-            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, async (config) =>
+            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
             {
+                _progressViewModel.SetParticipantStatus(otherParticipant.Number, otherParticipant.IsReciting ? ParticipantStatus.Reciting : ParticipantStatus.Idle);
+            },
+            async (config) =>
+            {
+                _progressViewModel.SetParticipantStatus(this.YourTurn, ParticipantStatus.Reciting);
                 if (config.WaitForKeyPress)
                 {
                     MessageBox.Show("Press OK to continue to finish your turn and proceed.");
@@ -87,6 +133,7 @@ public class GroupPracticeViewModel : BaseViewModel
                     await Task.Delay(TimeSpan.FromSeconds(config.YourDurationInSeconds));
                 }
 
+                _progressViewModel.SetParticipantStatus(this.YourTurn, ParticipantStatus.Idle);
                 return GetPracticeInfo();       // Return updated config if needed
             });
         }

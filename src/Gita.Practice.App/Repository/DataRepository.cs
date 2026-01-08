@@ -5,6 +5,13 @@ namespace Gita.Practice.App.Repository
 {
     internal class DataRepository : IDataRepository
     {
+        public DataRepository(IDownloadManager downloadManager)
+        {
+            DownloadManager = downloadManager ?? throw new ArgumentNullException(nameof(downloadManager));
+        }
+
+        public IDownloadManager DownloadManager { get; }
+
         public async Task<Chapter> Get(int chapter)
         {
             // JSON sample embedded as a raw string literal to preserve unicode and formatting.
@@ -13,7 +20,7 @@ namespace Gita.Practice.App.Repository
                 PropertyNameCaseInsensitive = true
             };
 
-            var chapterMetaData = await new DownloadManager().GetChapterMetaData(chapter);
+            var chapterMetaData = await this.DownloadManager.GetChapterMetaData(chapter);
             return JsonSerializer.Deserialize<Chapter>(chapterMetaData, options)
                        ?? throw new InvalidOperationException("Failed to deserialize chapter JSON.");
         }
@@ -45,7 +52,7 @@ namespace Gita.Practice.App.Repository
 
         public async Task<string> GetAuditFilePath(int chapter)
         {
-            var chapterInfo = await new DownloadManager().DownloadChapterAsync(chapter);
+            var chapterInfo = await this.DownloadManager.DownloadChapterAsync(chapter);
             return chapterInfo.AudioFileLocation;
         }
     }

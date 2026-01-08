@@ -18,15 +18,32 @@ public class MainViewModel : BaseViewModel
     /// </summary>
     /// <param name="player">The audio player service used for playback operations.</param>
     /// <param name="dataRepository">The data repository used to retrieve chapter information.</param>
-    public MainViewModel(IPlayer player, IDataRepository dataRepository)
+    public MainViewModel(IPlayer player, IDataRepository dataRepository, IDownloadManager downloadManager)
     {
         this.GroupPractiveViewModel = new GroupPracticeViewModel(player);
         this.IndividualPracticeViewModel = new IndividualPracticeViewModel(player);
+        this.StatusViewModel = new StatusViewModel();
         this.Chapters = dataRepository.GetAllChapters()
             .Select(tuple => new ChapterViewModel(tuple.Item1, tuple.Item2))
             .ToList();
 
         ChapterSelectedCommand = new RelayCommand(param => OnChapterSelected(param));
+        this.DownloadManager = downloadManager;
+
+        this.DownloadManager.DownloadProgressChanged += (s, e) =>
+        {
+            this.StatusViewModel.UpdateLastMessage(e.Message);
+        };
+        this.DownloadManager.ChapterDownloaded += (s, e) =>
+        {
+            this.StatusViewModel.UpdateLastMessage(e.Message);
+        };
+
+        var firstChapter = this.Chapters.First();
+        this.GroupPractiveViewModel.SelectedChapterNumber = firstChapter.Number;
+        this.GroupPractiveViewModel.SelectedChapterName = firstChapter.Name;
+        this.IndividualPracticeViewModel.SelectedChapterNumber = firstChapter.Number;
+        this.IndividualPracticeViewModel.SelectedChapterName = firstChapter.Name;
     }
 
     /// <summary>
@@ -39,6 +56,7 @@ public class MainViewModel : BaseViewModel
     /// </summary>
     public GroupPracticeViewModel GroupPractiveViewModel { get; }
     public IndividualPracticeViewModel IndividualPracticeViewModel { get; }
+    public StatusViewModel StatusViewModel { get; }
 
     private ChapterViewModel? _selectedChapter;
 
@@ -56,6 +74,7 @@ public class MainViewModel : BaseViewModel
     /// Gets the command that is executed when a chapter is selected from the UI.
     /// </summary>
     public ICommand ChapterSelectedCommand { get; }
+    public IDownloadManager DownloadManager { get; }
 
     /// <summary>
     /// Handles the chapter selection event.
@@ -68,7 +87,9 @@ public class MainViewModel : BaseViewModel
         {
             SelectedChapter = cv;
             this.GroupPractiveViewModel.SelectedChapterNumber = cv.Number;
+            this.GroupPractiveViewModel.SelectedChapterName = cv.Name;
             this.IndividualPracticeViewModel.SelectedChapterNumber = cv.Number;
+            this.IndividualPracticeViewModel.SelectedChapterName = cv.Name;
         }
     }
 }
