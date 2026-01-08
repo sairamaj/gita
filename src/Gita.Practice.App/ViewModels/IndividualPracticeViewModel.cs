@@ -25,6 +25,7 @@ namespace Gita.Practice.App.ViewModels
             PauseCommand = new RelayCommand(_ => Pause());
             StopCommand = new RelayCommand(_ => Stop());
             Player = player ?? throw new ArgumentNullException(nameof(player));
+            this.HelpViewModel = new HelpViewModel("individual_practice_help.md");
         }
 
         public MediaElement MediaElement { get; set; }
@@ -60,6 +61,8 @@ namespace Gita.Practice.App.ViewModels
         }
 
         public double PlayingSpeed { get => _playningSpeed; set { _playningSpeed = value; OnPropertyChanged(); } }
+
+        public HelpViewModel HelpViewModel { get; set; }
 
         public IPlayer Player { get; }
 

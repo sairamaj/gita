@@ -102,6 +102,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <!-- Hidden MediaElement bound to AudioSource in VM -->
@@ -187,5 +188,8 @@
                 <TextBlock Text="Stop" FontSize="12" />
             </Button>
         </StackPanel>
+
+        <!-- HELP CONTROL -->
+        <vw:HelpControl Grid.Row="4" Margin="0,15,0,0" DataContext="{Binding HelpViewModel}"/>
     </Grid>
 </UserControl>
