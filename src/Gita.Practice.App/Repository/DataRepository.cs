@@ -29,6 +29,7 @@ namespace Gita.Practice.App.Repository
         {
             return new List<Tuple<string, int>>
             {
+                new Tuple<string,int>("Gita Dhayna Slokas", 0),
                 new Tuple<string,int>("Arjuna Vishadha Yoga", 1),
                 new Tuple<string,int>("Sankhya Yoga", 2),
                 new Tuple<string,int>("Karma Yoga", 3),

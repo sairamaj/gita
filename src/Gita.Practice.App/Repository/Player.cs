@@ -92,9 +92,9 @@ public class Player : IPlayer
             if (shloka.Entries == null || shloka.Entries.Count == 0)
                 continue;
 
-            var participantEntryCount = practiceInfo.ParticipantStanzaCount;
+            var participantStanzaCount = practiceInfo.ParticipantStanzaCount;
             if (shloka.Entries.Count > 4)
-                participantEntryCount++;
+                participantStanzaCount++;
 
             if (participantIndex == practiceInfo.YourTurn)
             {
@@ -117,7 +117,8 @@ public class Player : IPlayer
             }
 
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
-            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries[participantEntryCount - 1].EndTime));
+            var actualEntryCount = Math.Min(shloka.Entries.Count, participantStanzaCount);
+            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries[actualEntryCount - 1].EndTime));
 
             // If this is first shloka to be played, start from 0 (prayer too)
             if (i == 1)
