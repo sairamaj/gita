@@ -69,7 +69,7 @@ public class Player : IPlayer
         _mediaElement.Pause();
     }
 
-    public async Task Start(
+    public async Task StartGroupPractice(
         PracticeInfo practiceInfo,
         MediaElement mediaElement,
         Action<OtherParticipantInfo> onOtherParticipant,
@@ -118,7 +118,8 @@ public class Player : IPlayer
 
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
             var actualEntryCount = Math.Min(shloka.Entries.Count, participantStanzaCount);
-            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries[actualEntryCount - 1].EndTime));
+            var endValue = Math.Floor(double.Parse(shloka.Entries[actualEntryCount - 1].EndTime));
+            var end = TimeSpan.FromSeconds(endValue);
 
             // If this is first shloka to be played, start from 0 (prayer too)
             if (i == 1)
@@ -172,7 +173,7 @@ public class Player : IPlayer
         _resumeTcs?.TrySetResult(true);
     }
 
-    public async Task StartWithRandom(PracticeInfo practiceInfo, MediaElement mediaElement, Func<PracticeInfo, Task<PracticeInfo>> waitForYourTurnToFinish)
+    public async Task StartIndividualPractice(PracticeInfo practiceInfo, MediaElement mediaElement, Func<PracticeInfo, Task<PracticeInfo>> waitForYourTurnToFinish)
     {
         var (chapter, startIndex, chapterEndTime) = await InitializeAsync(practiceInfo, mediaElement);
         var token = _cts.Token;
@@ -201,7 +202,9 @@ public class Player : IPlayer
 
             // Play entire shloka for other participant first
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
-            var end = TimeSpan.FromSeconds(double.Parse(shloka.Entries.Last().EndTime));
+            var rawEnd = double.Parse(shloka.Entries.Last().EndTime);
+            var flooredEnd = Math.Floor(rawEnd);
+            var end = TimeSpan.FromSeconds(flooredEnd);
 
             // If this is first shloka to be played, start from 0
             if (i == 1)

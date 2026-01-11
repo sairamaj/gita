@@ -120,7 +120,7 @@ public class GroupPracticeViewModel : BaseViewModel
         {
             IsPlaying = true;
             OnPropertyChanged(nameof(IsPlaying));
-            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
+            await this.Player.StartGroupPractice(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
             {
                 _progressViewModel.SetParticipantStatus(otherParticipant.Number, otherParticipant.IsReciting ? ParticipantStatus.Reciting : ParticipantStatus.Idle);
             },
@@ -152,6 +152,7 @@ public class GroupPracticeViewModel : BaseViewModel
         this.Player.Stop();
         IsPlaying = false;
         OnPropertyChanged(nameof(IsPlaying));
+        _progressViewModel.SetAllStatus(ParticipantStatus.Waiting);
     }
 
     private static object Pause()

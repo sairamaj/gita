@@ -80,7 +80,7 @@ namespace Gita.Practice.App.ViewModels
             {
                 IsPlaying = true;
                 OnPropertyChanged(nameof(IsPlaying));
-                await this.Player.StartWithRandom(GetPracticeInfo(), this.MediaElement!, async (config) =>
+                await this.Player.StartIndividualPractice(GetPracticeInfo(), this.MediaElement!, async (config) =>
                 {
                     if (config.WaitForKeyPress)
                     {

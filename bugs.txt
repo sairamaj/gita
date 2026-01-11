@@ -1,0 +1,2 @@
+- limit participants to 12
+- first sloka in individual is not played properly
