@@ -1,4 +1,5 @@
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Gita.Practice.App.Views;
@@ -61,6 +62,16 @@ public partial class MessageDialog : Window
     {
         DialogResult = true;
         Close();
+    }
+
+    private void Window_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter || e.Key == Key.Escape)
+        {
+            DialogResult = true;
+            Close();
+            e.Handled = true;
+        }
     }
 }
 

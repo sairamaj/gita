@@ -55,6 +55,10 @@ public class GroupPracticeViewModel : BaseViewModel
         get => _numberOfParticipants;
         set
         {
+            if (value > 12)
+            {
+                value = 12;
+            }
             _numberOfParticipants = value;
             OnPropertyChanged();
             UpdateProgressParticipants();
