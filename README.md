@@ -14,12 +14,16 @@ Choose a chapter, set your pace, and press **Play**. The app plays shlokas and g
 - It becomes your turn to recite the next shloka.
 - The cycle continues with more random shlokas and your recitation after each one.
 
+![individual](./doc/Gita.Practice.App_Individual.png)
+
 ### Group Practice
 
 - Configure the total number of participants.
 - Select your turn number.
 - The app plays shlokas for each participant in sequence.
 - When it is your turn, you recite your shloka, then the session continues.
+
+![group](./doc/Gita.Practice.App.Group.png)
 
 ## Features
 
