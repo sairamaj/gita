@@ -118,7 +118,7 @@ public class Player : IPlayer
 
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
             var actualEntryCount = Math.Min(shloka.Entries.Count, participantStanzaCount);
-            var endValue = Math.Floor(double.Parse(shloka.Entries[actualEntryCount - 1].EndTime));
+            var endValue = double.Parse(shloka.Entries[actualEntryCount - 1].EndTime);
             var end = TimeSpan.FromSeconds(endValue);
 
             // If this is first shloka to be played, start from 0 (prayer too)
@@ -203,8 +203,7 @@ public class Player : IPlayer
             // Play entire shloka for other participant first
             var start = TimeSpan.FromSeconds(double.Parse(shloka.Entries.First().StartTime));
             var rawEnd = double.Parse(shloka.Entries.Last().EndTime);
-            var flooredEnd = Math.Floor(rawEnd);
-            var end = TimeSpan.FromSeconds(flooredEnd);
+            var end = TimeSpan.FromSeconds(rawEnd);
 
             // If this is first shloka to be played, start from 0
             if (i == 1)
@@ -230,6 +229,7 @@ public class Player : IPlayer
 
             (start, end) = GetStartEndTimes(chapter, selfSlokaIndex, practiceInfo);
             await PlaySegment(start, end, practiceInfo, token);
+            await Task.Delay(500);      // give little gap for the next sloka.
         }
     }
 
