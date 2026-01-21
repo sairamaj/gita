@@ -129,7 +129,7 @@
               Header="Help &amp; Information"
               IsExpanded="True"
               ExpandDirection="Down">
-        <Border MaxHeight="400">
+        <Border MaxHeight="300">
             <ScrollViewer VerticalScrollBarVisibility="Auto"
                          HorizontalScrollBarVisibility="Disabled"
                          CanContentScroll="False"

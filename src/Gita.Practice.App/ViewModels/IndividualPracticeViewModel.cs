@@ -10,7 +10,7 @@ namespace Gita.Practice.App.ViewModels
 {
     public class IndividualPracticeViewModel : BaseViewModel
     {
-        private double _playningSpeed = 1.0;
+        private double _playningSpeed = 1.50;
         private int _yourTurn = 1;
         private int _participantStanzaCount = 1;
         private string _selectedChapterName = string.Empty;
@@ -80,7 +80,7 @@ namespace Gita.Practice.App.ViewModels
             {
                 IsPlaying = true;
                 OnPropertyChanged(nameof(IsPlaying));
-                await this.Player.StartWithRandom(GetPracticeInfo(), this.MediaElement!, async (config) =>
+                await this.Player.StartIndividualPractice(GetPracticeInfo(), this.MediaElement!, async (config) =>
                 {
                     if (config.WaitForKeyPress)
                     {

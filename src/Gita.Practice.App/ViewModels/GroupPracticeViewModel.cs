@@ -55,6 +55,10 @@ public class GroupPracticeViewModel : BaseViewModel
         get => _numberOfParticipants;
         set
         {
+            if (value > 12)
+            {
+                value = 12;
+            }
             _numberOfParticipants = value;
             OnPropertyChanged();
             UpdateProgressParticipants();
@@ -83,7 +87,7 @@ public class GroupPracticeViewModel : BaseViewModel
         }
     }
     public int YourDurationInSeconds { get; set; } = 20;
-    public bool RepeatYourSloka { get; set; }
+    public bool RepeatYourSloka { get; set; } = true;
     public HelpViewModel HelpViewModel { get; set; }
     public WaitModeOption WaitMode { get => _waitMode; set { _waitMode = value; OnPropertyChanged(); } }
     public int ParticipantStanzaCount
@@ -120,7 +124,7 @@ public class GroupPracticeViewModel : BaseViewModel
         {
             IsPlaying = true;
             OnPropertyChanged(nameof(IsPlaying));
-            await this.Player.Start(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
+            await this.Player.StartGroupPractice(GetPracticeInfo(), this.MediaElement!, (otherParticipant) => 
             {
                 _progressViewModel.SetParticipantStatus(otherParticipant.Number, otherParticipant.IsReciting ? ParticipantStatus.Reciting : ParticipantStatus.Idle);
             },
@@ -152,6 +156,7 @@ public class GroupPracticeViewModel : BaseViewModel
         this.Player.Stop();
         IsPlaying = false;
         OnPropertyChanged(nameof(IsPlaying));
+        _progressViewModel.SetAllStatus(ParticipantStatus.Waiting);
     }
 
     private static object Pause()
