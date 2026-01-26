@@ -45,18 +45,30 @@ export function extractSegments(metadata) {
 
   for (const shloka of shlokas) {
     const entries = shloka?.entry || shloka?.entries || [];
+    let start = null;
+    let end = null;
+    const texts = [];
+
     for (const entry of entries) {
-      const start = parseTimeToSeconds(entry?.startTime);
-      const end = parseTimeToSeconds(entry?.endTime);
-      if (start == null || end == null || end <= start) {
+      const entryStart = parseTimeToSeconds(entry?.startTime);
+      const entryEnd = parseTimeToSeconds(entry?.endTime);
+      if (entryStart == null || entryEnd == null || entryEnd <= entryStart) {
         continue;
       }
+      start = start == null ? entryStart : Math.min(start, entryStart);
+      end = end == null ? entryEnd : Math.max(end, entryEnd);
+      if (entry?.text) {
+        texts.push(entry.text);
+      }
+    }
+
+    if (start != null && end != null && end > start) {
       segments.push({
         start,
         end,
         duration: end - start,
-        text: entry?.text || "",
-        shlokaNum: shloka?.shlokaNum || entry?.shlNbr || "",
+        text: texts.join(" "),
+        shlokaNum: shloka?.shlokaNum || "",
       });
     }
   }
