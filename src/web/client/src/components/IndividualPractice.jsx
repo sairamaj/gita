@@ -31,6 +31,9 @@ export default function IndividualPractice({
   const stopRef = useRef(false);
   const waitResolverRef = useRef(null);
   const [audioError, setAudioError] = useState("");
+  const repeatRef = useRef(repeatYourShloka);
+  const durationRef = useRef(duration);
+  const waitModeRef = useRef(waitMode);
 
   const segments = useMemo(() => extractSegments(metadata), [metadata]);
   const isPlayDisabled = isRunning || isMetadataLoading || !audioUrl || !segments.length;
@@ -53,6 +56,18 @@ export default function IndividualPractice({
   useEffect(() => {
     setAudioError("");
   }, [audioUrl]);
+
+  useEffect(() => {
+    repeatRef.current = repeatYourShloka;
+  }, [repeatYourShloka]);
+
+  useEffect(() => {
+    durationRef.current = duration;
+  }, [duration]);
+
+  useEffect(() => {
+    waitModeRef.current = waitMode;
+  }, [waitMode]);
 
   const ensureAudioReady = async () => {
     const audio = audioRef.current;
@@ -127,17 +142,17 @@ export default function IndividualPractice({
       setUserSegment(nextSegment);
 
       setStatus("Your turn");
-      if (waitMode === "keyboard") {
+      if (waitModeRef.current === "keyboard") {
         await waitForKeyboard(setAwaitingUser, waitResolverRef);
       } else {
-        await waitForDuration(duration, stopRef);
+        await waitForDuration(durationRef.current, stopRef);
       }
 
       if (stopRef.current) {
         break;
       }
 
-      if (repeatYourShloka && nextSegment) {
+      if (repeatRef.current && nextSegment) {
         setStatus("Repeating your shloka");
         await playSegment(audioRef.current, nextSegment, playbackSpeed, stopRef);
       }
@@ -187,12 +202,14 @@ export default function IndividualPractice({
           <button onClick={stop} disabled={!isRunning && !awaitingUser}>
             Stop
           </button>
-          <button
-            onClick={() => waitResolverRef.current?.()}
-            disabled={!awaitingUser}
-          >
-            OK (Finish Reciting)
-          </button>
+          {waitMode !== "duration" ? (
+            <button
+              onClick={() => waitResolverRef.current?.()}
+              disabled={!awaitingUser}
+            >
+              OK (Finish Reciting)
+            </button>
+          ) : null}
         </div>
         <StatusBar
           status={status}

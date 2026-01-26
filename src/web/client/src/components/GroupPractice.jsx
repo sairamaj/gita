@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import PracticeControls from "./PracticeControls.jsx";
 import StatusBar from "./StatusBar.jsx";
 import {
@@ -32,8 +32,23 @@ export default function GroupPractice({
   const stopRef = useRef(false);
   const waitResolverRef = useRef(null);
   const segmentIndexRef = useRef(0);
+  const repeatRef = useRef(repeatYourShloka);
+  const durationRef = useRef(duration);
+  const waitModeRef = useRef(waitMode);
 
   const segments = useMemo(() => extractSegments(metadata), [metadata]);
+
+  useEffect(() => {
+    repeatRef.current = repeatYourShloka;
+  }, [repeatYourShloka]);
+
+  useEffect(() => {
+    durationRef.current = duration;
+  }, [duration]);
+
+  useEffect(() => {
+    waitModeRef.current = waitMode;
+  }, [waitMode]);
 
   const nextSegment = () => {
     if (!segments.length) {
@@ -68,17 +83,17 @@ export default function GroupPractice({
 
           if (participant === yourTurn) {
             setStatus(`Your turn (participant ${participant})`);
-            if (waitMode === "keyboard") {
+            if (waitModeRef.current === "keyboard") {
               await waitForKeyboard(setAwaitingUser, waitResolverRef);
             } else {
-              await waitForDuration(duration, stopRef);
+              await waitForDuration(durationRef.current, stopRef);
             }
 
             if (stopRef.current) {
               break;
             }
 
-            if (repeatYourShloka) {
+            if (repeatRef.current) {
               setStatus(`Repeating your shloka (participant ${participant})`);
               await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
             }
@@ -173,12 +188,14 @@ export default function GroupPractice({
           <button onClick={stop} disabled={!isRunning && !awaitingUser}>
             Stop
           </button>
-          <button
-            onClick={() => waitResolverRef.current?.()}
-            disabled={!awaitingUser}
-          >
-            OK (Finish Reciting)
-          </button>
+          {waitMode !== "duration" ? (
+            <button
+              onClick={() => waitResolverRef.current?.()}
+              disabled={!awaitingUser}
+            >
+              OK (Finish Reciting)
+            </button>
+          ) : null}
         </div>
         <StatusBar
           status={status}

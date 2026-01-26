@@ -28,7 +28,8 @@ export default function PracticeControls({
           Duration (seconds)
           <input
             type="number"
-            min="5"
+            miny
+             ="5"
             max="120"
             step="1"
             value={duration}
