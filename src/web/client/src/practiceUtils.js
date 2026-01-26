@@ -1,9 +1,27 @@
 export function parseTimeToSeconds(value) {
-  if (!value || typeof value !== "string") {
+  if (value == null) {
     return null;
   }
 
-  const parts = value.split(":");
+  if (typeof value === "number") {
+    return Number.isFinite(value) ? value : null;
+  }
+
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return null;
+  }
+
+  if (!trimmed.includes(":")) {
+    const numeric = Number(trimmed);
+    return Number.isFinite(numeric) ? numeric : null;
+  }
+
+  const parts = trimmed.split(":");
   if (parts.length < 2 || parts.length > 3) {
     return null;
   }

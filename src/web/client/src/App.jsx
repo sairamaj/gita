@@ -29,6 +29,7 @@ export default function App() {
   const [selectedChapterId, setSelectedChapterId] = useState(null);
   const [metadata, setMetadata] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isMetadataLoading, setIsMetadataLoading] = useState(false);
   const [error, setError] = useState("");
   const [tab, setTab] = useState("individual");
   const [config, setConfig] = useState({
@@ -69,12 +70,15 @@ export default function App() {
         return;
       }
       setError("");
+      setIsMetadataLoading(true);
       try {
         const data = await fetchChapterMetadata(selectedChapterId);
         setMetadata(data);
       } catch (err) {
         setError(err.message || "Failed to load chapter metadata");
         setMetadata(null);
+      } finally {
+        setIsMetadataLoading(false);
       }
     };
 
@@ -125,6 +129,7 @@ export default function App() {
           chapter={chapter}
           audioUrl={audioUrl}
           metadata={metadata}
+          isMetadataLoading={isMetadataLoading}
           waitModes={config.waitModes}
           defaults={config.defaults}
           speedConfig={config.playbackSpeed}

@@ -138,3 +138,9 @@ button:disabled {
   padding: 10px 12px;
   border-radius: 6px;
 }
+
+.hint {
+  margin: 6px 0 0;
+  color: #6c6c72;
+  font-size: 14px;
+}
