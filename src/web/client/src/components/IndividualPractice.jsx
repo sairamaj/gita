@@ -26,6 +26,7 @@ export default function IndividualPractice({
   const [isRunning, setIsRunning] = useState(false);
   const [awaitingUser, setAwaitingUser] = useState(false);
   const [currentSegment, setCurrentSegment] = useState(null);
+  const [userSegment, setUserSegment] = useState(null);
   const audioRef = useRef(null);
   const stopRef = useRef(false);
   const waitResolverRef = useRef(null);
@@ -103,19 +104,27 @@ export default function IndividualPractice({
     }
 
     while (!stopRef.current) {
-      const segment = pickRandomSegment(segments);
-      if (!segment) {
+      const deviceSegment = pickRandomSegment(segments);
+      if (!deviceSegment) {
         setStatus("No playable shlokas");
         break;
       }
 
-      setCurrentSegment(segment);
+      setCurrentSegment(deviceSegment);
       setStatus("Listening");
-      await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+      await playSegment(audioRef.current, deviceSegment, playbackSpeed, stopRef);
 
       if (stopRef.current) {
         break;
       }
+
+      const deviceIndex = segments.findIndex(
+        (segment) =>
+          segment.start === deviceSegment.start && segment.end === deviceSegment.end
+      );
+      const nextSegment =
+        deviceIndex >= 0 ? segments[(deviceIndex + 1) % segments.length] : null;
+      setUserSegment(nextSegment);
 
       setStatus("Your turn");
       if (waitMode === "keyboard") {
@@ -128,9 +137,9 @@ export default function IndividualPractice({
         break;
       }
 
-      if (repeatYourShloka) {
+      if (repeatYourShloka && nextSegment) {
         setStatus("Repeating your shloka");
-        await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+        await playSegment(audioRef.current, nextSegment, playbackSpeed, stopRef);
       }
     }
 
@@ -187,7 +196,13 @@ export default function IndividualPractice({
         </div>
         <StatusBar
           status={status}
-          extra={currentSegment ? `Shloka ${currentSegment.shlokaNum}` : null}
+          extra={
+            currentSegment
+              ? `Device: Shloka ${currentSegment.shlokaNum}${
+                  userSegment ? ` • Your turn: Shloka ${userSegment.shlokaNum}` : ""
+                }`
+              : null
+          }
         />
       </div>
 
