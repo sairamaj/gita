@@ -22,7 +22,6 @@ export default function GroupPractice({
   const [playbackSpeed, setPlaybackSpeed] = useState(defaults.playbackSpeed);
   const [participants, setParticipants] = useState(defaults.participants);
   const [yourTurn, setYourTurn] = useState(defaults.yourTurn);
-  const [stanzaCount, setStanzaCount] = useState(defaults.stanzaCount);
   const [status, setStatus] = useState("Idle");
   const [isRunning, setIsRunning] = useState(false);
   const [awaitingUser, setAwaitingUser] = useState(false);
@@ -51,10 +50,10 @@ export default function GroupPractice({
   }, [waitMode]);
 
   const nextSegment = () => {
-    if (!segments.length) {
+    if (!segments.length || segmentIndexRef.current >= segments.length) {
       return null;
     }
-    const segment = segments[segmentIndexRef.current % segments.length];
+    const segment = segments[segmentIndexRef.current];
     segmentIndexRef.current += 1;
     return segment;
   };
@@ -64,47 +63,46 @@ export default function GroupPractice({
       return;
     }
 
+    segmentIndexRef.current = 0;
     stopRef.current = false;
+    let completed = false;
     setIsRunning(true);
     setStatus("Starting...");
+    setCurrentSegment(null);
+    setCurrentParticipant(null);
 
     while (!stopRef.current) {
       for (let participant = 1; participant <= participants; participant += 1) {
         setCurrentParticipant(participant);
-        for (let stanza = 0; stanza < stanzaCount; stanza += 1) {
-          const segment = nextSegment();
-          if (!segment) {
-            setStatus("No playable shlokas");
-            stopRef.current = true;
-            break;
-          }
+        const segment = nextSegment();
+        if (!segment) {
+          setStatus("Completed all shlokas");
+          completed = true;
+          stopRef.current = true;
+          break;
+        }
 
-          setCurrentSegment(segment);
+        setCurrentSegment(segment);
 
-          if (participant === yourTurn) {
-            setStatus(`Your turn (participant ${participant})`);
-            if (waitModeRef.current === "keyboard") {
-              await waitForKeyboard(setAwaitingUser, waitResolverRef);
-            } else {
-              await waitForDuration(durationRef.current, stopRef);
-            }
-
-            if (stopRef.current) {
-              break;
-            }
-
-            if (repeatRef.current) {
-              setStatus(`Repeating your shloka (participant ${participant})`);
-              await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
-            }
+        if (participant === yourTurn) {
+          setStatus(`Your turn (participant ${participant})`);
+          if (waitModeRef.current === "keyboard") {
+            await waitForKeyboard(setAwaitingUser, waitResolverRef);
           } else {
-            setStatus(`Participant ${participant}`);
-            await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+            await waitForDuration(durationRef.current, stopRef);
           }
 
           if (stopRef.current) {
             break;
           }
+
+          if (repeatRef.current) {
+            setStatus(`Repeating your shloka (participant ${participant})`);
+            await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+          }
+        } else {
+          setStatus(`Participant ${participant}`);
+          await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
         }
 
         if (stopRef.current) {
@@ -115,8 +113,9 @@ export default function GroupPractice({
 
     setIsRunning(false);
     setAwaitingUser(false);
-    setStatus("Stopped");
+    setStatus(completed ? "Completed" : "Stopped");
     setCurrentParticipant(null);
+    setCurrentSegment(null);
   };
 
   const stop = () => {
@@ -168,16 +167,6 @@ export default function GroupPractice({
               max={participants}
               value={yourTurn}
               onChange={(event) => setYourTurn(Number(event.target.value))}
-            />
-          </label>
-          <label>
-            Number of Stanzas
-            <input
-              type="number"
-              min="1"
-              max="4"
-              value={stanzaCount}
-              onChange={(event) => setStanzaCount(Number(event.target.value))}
             />
           </label>
         </div>

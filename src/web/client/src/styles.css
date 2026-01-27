@@ -115,6 +115,10 @@ button:disabled {
   gap: 8px;
 }
 
+.form-grid .checkbox {
+  padding-top: 22px;
+}
+
 .status-bar {
   display: flex;
   flex-wrap: wrap;

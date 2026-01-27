@@ -16,7 +16,6 @@ const emptyDefaults = {
   repeatYourShloka: false,
   participants: 4,
   yourTurn: 2,
-  stanzaCount: 4,
 };
 
 const emptyWaitModes = [

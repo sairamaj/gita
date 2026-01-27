@@ -24,19 +24,20 @@ export default function PracticeControls({
             ))}
           </select>
         </label>
-        <label>
-          Duration (seconds)
-          <input
-            type="number"
-            miny
-             ="5"
-            max="120"
-            step="1"
-            value={duration}
-            onChange={(event) => onDurationChange(Number(event.target.value))}
-            disabled={waitMode !== "duration"}
-          />
-        </label>
+        {waitMode !== "keyboard" ? (
+          <label>
+            Duration (seconds)
+            <input
+              type="number"
+              min="5"
+              max="120"
+              step="1"
+              value={duration}
+              onChange={(event) => onDurationChange(Number(event.target.value))}
+              disabled={waitMode !== "duration"}
+            />
+          </label>
+        ) : null}
         <label className="checkbox">
           <input
             type="checkbox"

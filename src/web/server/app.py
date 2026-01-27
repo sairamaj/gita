@@ -86,7 +86,6 @@ def config() -> tuple[dict, int]:
             "repeatYourShloka": False,
             "participants": 4,
             "yourTurn": 2,
-            "stanzaCount": 4,
         },
         "waitModes": [
             {"id": "keyboard", "label": "Keyboard Hit"},
