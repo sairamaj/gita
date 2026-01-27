@@ -137,6 +137,63 @@ button:disabled {
   gap: 16px;
 }
 
+.group-practice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.group-practice-panel h3 {
+  margin-top: 0;
+}
+
+.participant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.participant-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e2e6;
+  background: #fafafa;
+}
+
+.participant-item.active {
+  border-color: #2f74ff;
+  background: #f2f6ff;
+}
+
+.participant-item.self .participant-label {
+  font-weight: 600;
+}
+
+.participant-label {
+  font-size: 14px;
+}
+
+.participant-status {
+  font-size: 12px;
+  color: #6c6c72;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .group-practice-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .error {
   background: #ffe9e9;
   color: #b00020;

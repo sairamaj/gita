@@ -49,6 +49,40 @@ export default function GroupPractice({
     waitModeRef.current = waitMode;
   }, [waitMode]);
 
+  const participantStatuses = useMemo(() => {
+    const list = [];
+    for (let participant = 1; participant <= participants; participant += 1) {
+      let state = "Waiting";
+      if (isRunning && currentParticipant != null) {
+        if (participant < currentParticipant) {
+          state = "Done";
+        } else if (participant === currentParticipant) {
+          if (participant === yourTurn) {
+            state = awaitingUser || !repeatYourShloka ? "Reciting" : "Playing";
+          } else {
+            state = "Playing";
+          }
+        }
+      }
+
+      list.push({
+        id: participant,
+        label: participant === yourTurn ? "Self" : `Participant ${participant}`,
+        state,
+        isActive: participant === currentParticipant,
+        isSelf: participant === yourTurn,
+      });
+    }
+    return list;
+  }, [
+    participants,
+    yourTurn,
+    isRunning,
+    currentParticipant,
+    awaitingUser,
+    repeatYourShloka,
+  ]);
+
   const nextSegment = () => {
     if (!segments.length || segmentIndexRef.current >= segments.length) {
       return null;
@@ -143,57 +177,80 @@ export default function GroupPractice({
         speedConfig={speedConfig}
       />
 
-      <div className="card">
-        <h3>Group Practice</h3>
-        <p>
-          Chapter: <strong>{chapter?.name || "Not selected"}</strong>
-        </p>
-        <div className="form-grid">
-          <label>
-            Participants
-            <input
-              type="number"
-              min="1"
-              max="12"
-              value={participants}
-              onChange={(event) => setParticipants(Number(event.target.value))}
-            />
-          </label>
-          <label>
-            Your Turn
-            <input
-              type="number"
-              min="1"
-              max={participants}
-              value={yourTurn}
-              onChange={(event) => setYourTurn(Number(event.target.value))}
-            />
-          </label>
-        </div>
-        <div className="controls">
-          <button onClick={start} disabled={!segments.length || isRunning}>
-            Play
-          </button>
-          <button onClick={stop} disabled={!isRunning && !awaitingUser}>
-            Stop
-          </button>
-          {waitMode !== "duration" ? (
-            <button
-              onClick={() => waitResolverRef.current?.()}
-              disabled={!awaitingUser}
-            >
-              OK (Finish Reciting)
+      <div className="group-practice-layout">
+        <div className="card">
+          <h3>Group Practice</h3>
+          <p>
+            Chapter: <strong>{chapter?.name || "Not selected"}</strong>
+          </p>
+          <div className="form-grid">
+            <label>
+              Participants
+              <input
+                type="number"
+                min="1"
+                max="12"
+                value={participants}
+                onChange={(event) => setParticipants(Number(event.target.value))}
+              />
+            </label>
+            <label>
+              Your Turn
+              <input
+                type="number"
+                min="1"
+                max={participants}
+                value={yourTurn}
+                onChange={(event) => setYourTurn(Number(event.target.value))}
+              />
+            </label>
+          </div>
+          <div className="controls">
+            <button onClick={start} disabled={!segments.length || isRunning}>
+              Play
             </button>
-          ) : null}
+            <button onClick={stop} disabled={!isRunning && !awaitingUser}>
+              Stop
+            </button>
+            {waitMode !== "duration" ? (
+              <button
+                onClick={() => waitResolverRef.current?.()}
+                disabled={!awaitingUser}
+              >
+                OK (Finish Reciting)
+              </button>
+            ) : null}
+          </div>
+          <StatusBar
+            status={status}
+            extra={
+              currentSegment
+                ? `Participant ${currentParticipant ?? "-"} • Shloka ${currentSegment.shlokaNum}`
+                : null
+            }
+          />
         </div>
-        <StatusBar
-          status={status}
-          extra={
-            currentSegment
-              ? `Participant ${currentParticipant ?? "-"} • Shloka ${currentSegment.shlokaNum}`
-              : null
-          }
-        />
+
+        <aside className="card group-practice-panel">
+          <h3>Participants</h3>
+          <ul className="participant-list">
+            {participantStatuses.map((participant) => (
+              <li
+                key={participant.id}
+                className={[
+                  "participant-item",
+                  participant.isActive ? "active" : "",
+                  participant.isSelf ? "self" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
+                <span className="participant-label">{participant.label}</span>
+                <span className="participant-status">{participant.state}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </div>
 
       <audio ref={audioRef} src={audioUrl || undefined} preload="auto" />
