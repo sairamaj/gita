@@ -33,6 +33,7 @@ export default function IndividualPractice({
   const repeatRef = useRef(repeatYourShloka);
   const durationRef = useRef(duration);
   const waitModeRef = useRef(waitMode);
+  const playbackSpeedRef = useRef(playbackSpeed);
 
   const segments = useMemo(() => extractSegments(metadata), [metadata]);
   const isPlayDisabled = isRunning || isMetadataLoading || !audioUrl || !segments.length;
@@ -67,6 +68,16 @@ export default function IndividualPractice({
   useEffect(() => {
     waitModeRef.current = waitMode;
   }, [waitMode]);
+
+  useEffect(() => {
+    playbackSpeedRef.current = playbackSpeed;
+  }, [playbackSpeed]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = playbackSpeed > 0 ? playbackSpeed : 1;
+    }
+  }, [playbackSpeed]);
 
   const ensureAudioReady = async () => {
     const audio = audioRef.current;
@@ -126,7 +137,12 @@ export default function IndividualPractice({
 
       setCurrentSegment(deviceSegment);
       setStatus("Listening");
-      await playSegment(audioRef.current, deviceSegment, playbackSpeed, stopRef);
+      await playSegment(
+        audioRef.current,
+        deviceSegment,
+        playbackSpeedRef.current,
+        stopRef
+      );
 
       if (stopRef.current) {
         break;
@@ -153,7 +169,12 @@ export default function IndividualPractice({
 
       if (repeatRef.current && nextSegment) {
         setStatus("Repeating your shloka");
-        await playSegment(audioRef.current, nextSegment, playbackSpeed, stopRef);
+        await playSegment(
+          audioRef.current,
+          nextSegment,
+          playbackSpeedRef.current,
+          stopRef
+        );
       }
     }
 

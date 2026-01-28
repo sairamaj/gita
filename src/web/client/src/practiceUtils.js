@@ -104,8 +104,15 @@ export async function playSegment(audio, segment, playbackSpeed, stopRef) {
     return;
   }
 
-  const durationMs = Math.max(0, (segment.duration * 1000) / speed);
-  await sleep(durationMs);
+  const targetEnd = segment.end;
+  const checkStepMs = 100;
+
+  while (!stopRef?.current) {
+    if (audio.currentTime >= targetEnd) {
+      break;
+    }
+    await sleep(checkStepMs);
+  }
   audio.pause();
 }
 

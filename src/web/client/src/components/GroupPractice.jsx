@@ -33,6 +33,7 @@ export default function GroupPractice({
   const repeatRef = useRef(repeatYourShloka);
   const durationRef = useRef(duration);
   const waitModeRef = useRef(waitMode);
+  const playbackSpeedRef = useRef(playbackSpeed);
 
   const segments = useMemo(() => extractSegments(metadata), [metadata]);
 
@@ -47,6 +48,16 @@ export default function GroupPractice({
   useEffect(() => {
     waitModeRef.current = waitMode;
   }, [waitMode]);
+
+  useEffect(() => {
+    playbackSpeedRef.current = playbackSpeed;
+  }, [playbackSpeed]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = playbackSpeed > 0 ? playbackSpeed : 1;
+    }
+  }, [playbackSpeed]);
 
   const participantStatuses = useMemo(() => {
     const list = [];
@@ -131,11 +142,21 @@ export default function GroupPractice({
 
           if (repeatRef.current) {
             setStatus(`Repeating your shloka (participant ${participant})`);
-            await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+            await playSegment(
+              audioRef.current,
+              segment,
+              playbackSpeedRef.current,
+              stopRef
+            );
           }
         } else {
           setStatus(`Participant ${participant}`);
-          await playSegment(audioRef.current, segment, playbackSpeed, stopRef);
+          await playSegment(
+            audioRef.current,
+            segment,
+            playbackSpeedRef.current,
+            stopRef
+          );
         }
 
         if (stopRef.current) {
