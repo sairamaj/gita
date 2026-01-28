@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import PracticeControls from "./PracticeControls.jsx";
-import StatusBar from "./StatusBar.jsx";
 import {
   extractSegments,
   playSegment,
@@ -221,14 +220,6 @@ export default function GroupPractice({
               </button>
             ) : null}
           </div>
-          <StatusBar
-            status={status}
-            extra={
-              currentSegment
-                ? `Participant ${currentParticipant ?? "-"} • Shloka ${currentSegment.shlokaNum}`
-                : null
-            }
-          />
         </div>
 
         <aside className="card group-practice-panel">

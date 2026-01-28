@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import PracticeControls from "./PracticeControls.jsx";
-import StatusBar from "./StatusBar.jsx";
 import {
   extractSegments,
   pickRandomSegment,
@@ -173,6 +172,37 @@ export default function IndividualPractice({
     }
   };
 
+  const participantStatuses = useMemo(() => {
+    const deviceActive =
+      status === "Listening" || status === "Repeating your shloka";
+    const selfActive = awaitingUser;
+    const deviceState = deviceActive ? "Playing" : isRunning ? "Waiting" : "Idle";
+    const selfState = selfActive
+      ? "Reciting"
+      : status === "Repeating your shloka"
+        ? "Listening"
+        : isRunning
+          ? "Waiting"
+          : "Idle";
+
+    return [
+      {
+        id: "device",
+        label: "Device",
+        state: deviceState,
+        isActive: deviceActive,
+        isSelf: false,
+      },
+      {
+        id: "self",
+        label: "Self",
+        state: selfState,
+        isActive: selfActive,
+        isSelf: true,
+      },
+    ];
+  }, [awaitingUser, isRunning, status]);
+
   return (
     <div className="stack">
       <PracticeControls
@@ -188,39 +218,52 @@ export default function IndividualPractice({
         speedConfig={speedConfig}
       />
 
-      <div className="card">
-        <h3>Individual Practice</h3>
-        <p>
-          Chapter: <strong>{chapter?.name || "Not selected"}</strong>
-        </p>
-        {audioError ? <p className="error">{audioError}</p> : null}
-        {playDisabledReason ? <p className="hint">{playDisabledReason}</p> : null}
-        <div className="controls">
-          <button onClick={start} disabled={isPlayDisabled}>
-            Play
-          </button>
-          <button onClick={stop} disabled={!isRunning && !awaitingUser}>
-            Stop
-          </button>
-          {waitMode !== "duration" ? (
-            <button
-              onClick={() => waitResolverRef.current?.()}
-              disabled={!awaitingUser}
-            >
-              OK (Finish Reciting)
+      <div className="group-practice-layout">
+        <div className="card">
+          <h3>Individual Practice</h3>
+          <p>
+            Chapter: <strong>{chapter?.name || "Not selected"}</strong>
+          </p>
+          {audioError ? <p className="error">{audioError}</p> : null}
+          {playDisabledReason ? <p className="hint">{playDisabledReason}</p> : null}
+          <div className="controls">
+            <button onClick={start} disabled={isPlayDisabled}>
+              Play
             </button>
-          ) : null}
+            <button onClick={stop} disabled={!isRunning && !awaitingUser}>
+              Stop
+            </button>
+            {waitMode !== "duration" ? (
+              <button
+                onClick={() => waitResolverRef.current?.()}
+                disabled={!awaitingUser}
+              >
+                OK (Finish Reciting)
+              </button>
+            ) : null}
+          </div>
         </div>
-        <StatusBar
-          status={status}
-          extra={
-            currentSegment
-              ? `Device: Shloka ${currentSegment.shlokaNum}${
-                  userSegment ? ` • Your turn: Shloka ${userSegment.shlokaNum}` : ""
-                }`
-              : null
-          }
-        />
+
+        <aside className="card group-practice-panel">
+          <h3>Participants</h3>
+          <ul className="participant-list">
+            {participantStatuses.map((participant) => (
+              <li
+                key={participant.id}
+                className={[
+                  "participant-item",
+                  participant.isActive ? "active" : "",
+                  participant.isSelf ? "self" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
+                <span className="participant-label">{participant.label}</span>
+                <span className="participant-status">{participant.state}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </div>
 
       <audio
