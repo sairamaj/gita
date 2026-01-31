@@ -8,6 +8,9 @@ import {
 import ChapterSelector from "./components/ChapterSelector.jsx";
 import IndividualPractice from "./components/IndividualPractice.jsx";
 import GroupPractice from "./components/GroupPractice.jsx";
+import MarkdownView from "./components/MarkdownView.jsx";
+import individualHelp from "../../../Gita.Practice.App/Help/individual_practice_help.md?raw";
+import groupHelp from "../../../Gita.Practice.App/Help/group_practice_help.md?raw";
 
 const emptyDefaults = {
   waitMode: "keyboard",
@@ -115,37 +118,53 @@ export default function App() {
           >
             Group Practice
           </button>
+          <button className={tab === "help" ? "active" : ""} onClick={() => setTab("help")}>
+            Help
+          </button>
         </nav>
 
         <main className="app-content">
           {error ? <div className="error">{error}</div> : null}
 
-          <ChapterSelector
-            chapters={chapters}
-            selectedChapterId={selectedChapterId}
-            onChange={setSelectedChapterId}
-            isLoading={isLoading}
-          />
-
-          {tab === "individual" ? (
-            <IndividualPractice
-              chapter={chapter}
-              audioUrl={audioUrl}
-              metadata={metadata}
-              isMetadataLoading={isMetadataLoading}
-              waitModes={config.waitModes}
-              defaults={config.defaults}
-              speedConfig={config.playbackSpeed}
-            />
+          {tab === "help" ? (
+            <div className="stack">
+              <div className="card">
+                <MarkdownView content={individualHelp} />
+              </div>
+              <div className="card">
+                <MarkdownView content={groupHelp} />
+              </div>
+            </div>
           ) : (
-            <GroupPractice
-              chapter={chapter}
-              audioUrl={audioUrl}
-              metadata={metadata}
-              waitModes={config.waitModes}
-              defaults={config.defaults}
-              speedConfig={config.playbackSpeed}
-            />
+            <>
+              <ChapterSelector
+                chapters={chapters}
+                selectedChapterId={selectedChapterId}
+                onChange={setSelectedChapterId}
+                isLoading={isLoading}
+              />
+
+              {tab === "individual" ? (
+                <IndividualPractice
+                  chapter={chapter}
+                  audioUrl={audioUrl}
+                  metadata={metadata}
+                  isMetadataLoading={isMetadataLoading}
+                  waitModes={config.waitModes}
+                  defaults={config.defaults}
+                  speedConfig={config.playbackSpeed}
+                />
+              ) : (
+                <GroupPractice
+                  chapter={chapter}
+                  audioUrl={audioUrl}
+                  metadata={metadata}
+                  waitModes={config.waitModes}
+                  defaults={config.defaults}
+                  speedConfig={config.playbackSpeed}
+                />
+              )}
+            </>
           )}
         </main>
       </div>
