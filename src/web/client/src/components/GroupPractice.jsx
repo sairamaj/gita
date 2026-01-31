@@ -196,6 +196,13 @@ export default function GroupPractice({
   const statusClassName = (state) =>
     `participant-status status-${state.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
+  const clampParticipants = (value) => {
+    if (!Number.isFinite(value)) {
+      return 1;
+    }
+    return Math.min(12, Math.max(1, Math.trunc(value)));
+  };
+
   return (
     <div className="stack">
       <PracticeControls
@@ -225,7 +232,13 @@ export default function GroupPractice({
                 min="1"
                 max="12"
                 value={participants}
-                onChange={(event) => setParticipants(Number(event.target.value))}
+                onChange={(event) => {
+                  const nextParticipants = clampParticipants(Number(event.target.value));
+                  setParticipants(nextParticipants);
+                  if (yourTurn > nextParticipants) {
+                    setYourTurn(nextParticipants);
+                  }
+                }}
               />
             </label>
             <label>
@@ -235,7 +248,13 @@ export default function GroupPractice({
                 min="1"
                 max={participants}
                 value={yourTurn}
-                onChange={(event) => setYourTurn(Number(event.target.value))}
+                onChange={(event) => {
+                  const nextTurn = Math.min(
+                    participants,
+                    Math.max(1, Math.trunc(Number(event.target.value)))
+                  );
+                  setYourTurn(nextTurn);
+                }}
               />
             </label>
           </div>

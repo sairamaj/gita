@@ -46,8 +46,10 @@ export function extractSegments(metadata) {
   for (let index = 0; index < shlokas.length; index += 1) {
     const shloka = shlokas[index];
     const nextCandidate = index + 1 < shlokas.length ? shlokas[index + 1] : null;
+    const isLastPair = index === shlokas.length - 2;
     const shouldMergeNext =
-      (shloka?.shlokaNum === "" || nextCandidate?.shlokaNum === "") && nextCandidate;
+      nextCandidate &&
+      (isLastPair || shloka?.shlokaNum === "" || nextCandidate?.shlokaNum === "");
     const nextShloka = shouldMergeNext ? nextCandidate : null;
     if (shouldMergeNext) {
       index += 1;
