@@ -1,0 +1,173 @@
+import { useEffect, useMemo, useState } from "react";
+import {
+  fetchChapterMetadata,
+  fetchChapters,
+  fetchConfig,
+  getChapterAudioUrl,
+} from "./api.js";
+import ChapterSelector from "./components/ChapterSelector.jsx";
+import IndividualPractice from "./components/IndividualPractice.jsx";
+import GroupPractice from "./components/GroupPractice.jsx";
+import MarkdownView from "./components/MarkdownView.jsx";
+import individualHelp from "../../../Gita.Practice.App/Help/individual_practice_help.md?raw";
+import groupHelp from "../../../Gita.Practice.App/Help/group_practice_help.md?raw";
+
+const emptyDefaults = {
+  waitMode: "keyboard",
+  duration: 20,
+  playbackSpeed: 1.5,
+  repeatYourShloka: true,
+  participants: 4,
+  yourTurn: 2,
+};
+
+const emptyWaitModes = [
+  { id: "keyboard", label: "Keyboard Hit" },
+  { id: "duration", label: "Duration" },
+];
+
+export default function App() {
+  const [chapters, setChapters] = useState([]);
+  const [selectedChapterId, setSelectedChapterId] = useState(null);
+  const [metadata, setMetadata] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isMetadataLoading, setIsMetadataLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [tab, setTab] = useState("individual");
+  const [config, setConfig] = useState({
+    defaults: emptyDefaults,
+    waitModes: emptyWaitModes,
+    playbackSpeed: { min: 0.5, max: 2.0, step: 0.1 },
+  });
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const [chapterData, configData] = await Promise.all([
+          fetchChapters(),
+          fetchConfig(),
+        ]);
+        setChapters(chapterData.chapters || []);
+        setConfig((prev) => ({
+          ...prev,
+          ...configData,
+          defaults: { ...prev.defaults, ...(configData.defaults || {}) },
+        }));
+        if (chapterData.chapters?.length) {
+          setSelectedChapterId(chapterData.chapters[0].id);
+        }
+      } catch (err) {
+        setError(err.message || "Failed to load configuration");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    load();
+  }, []);
+
+  useEffect(() => {
+    const loadMetadata = async () => {
+      if (selectedChapterId == null) {
+        return;
+      }
+      setError("");
+      setIsMetadataLoading(true);
+      try {
+        const data = await fetchChapterMetadata(selectedChapterId);
+        setMetadata(data);
+      } catch (err) {
+        setError(err.message || "Failed to load chapter metadata");
+        setMetadata(null);
+      } finally {
+        setIsMetadataLoading(false);
+      }
+    };
+
+    loadMetadata();
+  }, [selectedChapterId]);
+
+  const chapter = useMemo(
+    () => chapters.find((item) => item.id === selectedChapterId),
+    [chapters, selectedChapterId]
+  );
+
+  const audioUrl = selectedChapterId == null ? "" : getChapterAudioUrl(selectedChapterId);
+
+  return (
+    <div className="app">
+      <header>
+        <div>
+          <h1>Gita Practice</h1>
+          <p>Structured Bhagavad Gita recitation with individual and group modes.</p>
+        </div>
+      </header>
+
+      <div className="app-body">
+        <nav className="side-nav">
+          <h2>Practice Modes</h2>
+          <button
+            className={tab === "individual" ? "active" : ""}
+            onClick={() => setTab("individual")}
+          >
+            Individual Practice
+          </button>
+          <button
+            className={tab === "group" ? "active" : ""}
+            onClick={() => setTab("group")}
+          >
+            Group Practice
+          </button>
+          <button className={tab === "help" ? "active" : ""} onClick={() => setTab("help")}>
+            Help
+          </button>
+        </nav>
+
+        <main className="app-content">
+          {error ? <div className="error">{error}</div> : null}
+
+          {tab === "help" ? (
+            <div className="stack">
+              <div className="card">
+                <MarkdownView content={individualHelp} />
+              </div>
+              <div className="card">
+                <MarkdownView content={groupHelp} />
+              </div>
+            </div>
+          ) : (
+            <>
+              <ChapterSelector
+                chapters={chapters}
+                selectedChapterId={selectedChapterId}
+                onChange={setSelectedChapterId}
+                isLoading={isLoading}
+              />
+
+              {tab === "individual" ? (
+                <IndividualPractice
+                  chapter={chapter}
+                  audioUrl={audioUrl}
+                  metadata={metadata}
+                  isMetadataLoading={isMetadataLoading}
+                  waitModes={config.waitModes}
+                  defaults={config.defaults}
+                  speedConfig={config.playbackSpeed}
+                />
+              ) : (
+                <GroupPractice
+                  chapter={chapter}
+                  audioUrl={audioUrl}
+                  metadata={metadata}
+                  waitModes={config.waitModes}
+                  defaults={config.defaults}
+                  speedConfig={config.playbackSpeed}
+                />
+              )}
+            </>
+          )}
+        </main>
+      </div>
+    </div>
+  );
+}

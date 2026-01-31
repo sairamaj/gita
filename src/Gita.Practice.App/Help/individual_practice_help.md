@@ -32,6 +32,3 @@ Use this section to practice reciting Bhagavad Gita verses individually.
    - If **Duration**: Wait for the specified duration to pass
 6. The cycle repeats with another random shloka
 
-## Known issues
-1. Some slokas were not ending smoothly because of some calculations issues of end time. (will be addressed later)
-2. If first sloka is your turn and Repeat your sloka is turned on , then the complete sloka is not being recited.
