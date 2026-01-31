@@ -226,6 +226,37 @@ button:disabled {
   border-radius: 999px;
 }
 
+.participant-status.status-done {
+  color: #1b5e20;
+  background: #e6f4ea;
+}
+
+.participant-status.status-waiting,
+.participant-status.status-idle {
+  color: #5b5b64;
+  background: #f1f2f6;
+}
+
+.participant-status.status-playing {
+  color: #1b3f91;
+  background: #e6efff;
+}
+
+.participant-status.status-reciting {
+  color: #9a4f00;
+  background: #fff3e0;
+}
+
+.participant-status.status-listening {
+  color: #0c5460;
+  background: #d8f1f6;
+}
+
+.participant-status.status-repeatingyoursolka {
+  color: #5a2ea6;
+  background: #f1e8ff;
+}
+
 @media (max-width: 900px) {
   .group-practice-layout {
     grid-template-columns: 1fr;

@@ -193,6 +193,9 @@ export default function IndividualPractice({
     }
   };
 
+  const statusClassName = (state) =>
+    `participant-status status-${state.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
   const participantStatuses = useMemo(() => {
     const deviceActive =
       status === "Listening" || status === "Repeating your shloka";
@@ -287,7 +290,7 @@ export default function IndividualPractice({
                   .join(" ")}
               >
                 <span className="participant-label">{participant.label}</span>
-                <span className="participant-status">{participant.state}</span>
+                <span className={statusClassName(participant.state)}>{participant.state}</span>
               </li>
             ))}
           </ul>

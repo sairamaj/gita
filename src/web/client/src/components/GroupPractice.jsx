@@ -193,6 +193,9 @@ export default function GroupPractice({
     }
   };
 
+  const statusClassName = (state) =>
+    `participant-status status-${state.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
   return (
     <div className="stack">
       <PracticeControls
@@ -269,7 +272,7 @@ export default function GroupPractice({
                   .join(" ")}
               >
                 <span className="participant-label">{participant.label}</span>
-                <span className="participant-status">{participant.state}</span>
+                <span className={statusClassName(participant.state)}>{participant.state}</span>
               </li>
             ))}
           </ul>
