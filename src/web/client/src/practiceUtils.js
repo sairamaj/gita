@@ -43,8 +43,20 @@ export function extractSegments(metadata) {
   const shlokas = metadata?.shloka || metadata?.shlokas || [];
   const segments = [];
 
-  for (const shloka of shlokas) {
-    const entries = shloka?.entry || shloka?.entries || [];
+  for (let index = 0; index < shlokas.length; index += 1) {
+    const shloka = shlokas[index];
+    const nextCandidate = index + 1 < shlokas.length ? shlokas[index + 1] : null;
+    const shouldMergeNext =
+      (shloka?.shlokaNum === "" || nextCandidate?.shlokaNum === "") && nextCandidate;
+    const nextShloka = shouldMergeNext ? nextCandidate : null;
+    if (shouldMergeNext) {
+      index += 1;
+    }
+
+    const entries = [
+      ...(shloka?.entry || shloka?.entries || []),
+      ...(nextShloka?.entry || nextShloka?.entries || []),
+    ];
     let start = null;
     let end = null;
     const texts = [];
@@ -68,7 +80,10 @@ export function extractSegments(metadata) {
         end,
         duration: end - start,
         text: texts.join(" "),
-        shlokaNum: shloka?.shlokaNum || "",
+        shlokaNum:
+          nextShloka?.shlokaNum === ""
+            ? shloka?.shlokaNum || ""
+            : nextShloka?.shlokaNum || shloka?.shlokaNum || "",
       });
     }
   }
