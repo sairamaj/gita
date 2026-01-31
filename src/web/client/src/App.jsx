@@ -13,7 +13,7 @@ const emptyDefaults = {
   waitMode: "keyboard",
   duration: 20,
   playbackSpeed: 1.5,
-  repeatYourShloka: false,
+  repeatYourShloka: true,
   participants: 4,
   yourTurn: 2,
 };

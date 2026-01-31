@@ -83,7 +83,7 @@ def config() -> tuple[dict, int]:
             "waitMode": "keyboard",
             "duration": 20,
             "playbackSpeed": 1.5,
-            "repeatYourShloka": False,
+            "repeatYourShloka": True,
             "participants": 4,
             "yourTurn": 2,
         },
