@@ -258,7 +258,15 @@ export default function GroupPractice({
         </div>
 
         <aside className="card group-practice-panel">
-          <h3>Participants</h3>
+          <div className="panel-header">
+            <div>
+              <h3>Participants</h3>
+              <p className="panel-subtitle">
+                Active: {currentParticipant ?? "-"} / {participants}
+              </p>
+            </div>
+            <span className="panel-pill">{participants} total</span>
+          </div>
           <ul className="participant-list">
             {participantStatuses.map((participant) => (
               <li
@@ -271,7 +279,15 @@ export default function GroupPractice({
                   .filter(Boolean)
                   .join(" ")}
               >
-                <span className="participant-label">{participant.label}</span>
+                <div className="participant-left">
+                  <span className="participant-badge">{participant.id}</span>
+                  <div className="participant-text">
+                    <span className="participant-label">{participant.label}</span>
+                    <span className="participant-subtitle">
+                      {participant.isSelf ? "You" : "Group member"}
+                    </span>
+                  </div>
+                </div>
                 <span className={statusClassName(participant.state)}>{participant.state}</span>
               </li>
             ))}

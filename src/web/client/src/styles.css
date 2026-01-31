@@ -207,7 +207,7 @@ button:disabled {
 
 .group-practice-panel h3 {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   font-size: 15px;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -217,6 +217,31 @@ button:disabled {
   border: 1px solid #e7e7ee;
   background: linear-gradient(180deg, #ffffff 0%, #f9fafc 100%);
   box-shadow: 0 8px 16px rgba(15, 18, 25, 0.08);
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.panel-subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: #6c6c72;
+}
+
+.panel-pill {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2f74ff;
+  background: #eef4ff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d6e4ff;
 }
 
 .participant-list {
@@ -268,13 +293,46 @@ button:disabled {
   background: #2f74ff;
 }
 
+.participant-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.participant-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  color: #2f74ff;
+  background: #eef4ff;
+  border: 1px solid #d6e4ff;
+}
+
 .participant-item.self .participant-label {
   font-weight: 600;
+}
+
+.participant-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
 }
 
 .participant-label {
   font-size: 14px;
   color: #1b1b1f;
+}
+
+.participant-subtitle {
+  font-size: 12px;
+  color: #6c6c72;
 }
 
 .participant-status {
@@ -285,6 +343,17 @@ button:disabled {
   background: #f1f2f6;
   padding: 4px 8px;
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.participant-status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: currentColor;
 }
 
 .participant-status.status-done {
