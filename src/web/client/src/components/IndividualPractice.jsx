@@ -197,7 +197,14 @@ export default function IndividualPractice({
     const deviceActive =
       status === "Listening" || status === "Repeating your shloka";
     const selfActive = awaitingUser;
-    const deviceState = deviceActive ? "Playing" : isRunning ? "Waiting" : "Idle";
+    const deviceState =
+      status === "Repeating your shloka"
+        ? "RepeatingYourSholka"
+        : deviceActive
+          ? "Playing"
+          : isRunning
+            ? "Waiting"
+            : "Idle";
     const selfState = selfActive
       ? "Reciting"
       : status === "Repeating your shloka"
@@ -259,7 +266,7 @@ export default function IndividualPractice({
                 onClick={() => waitResolverRef.current?.()}
                 disabled={!awaitingUser}
               >
-                OK (Finish Reciting)
+                Finish Your turn
               </button>
             ) : null}
           </div>

@@ -24,6 +24,7 @@ export default function GroupPractice({
   const [status, setStatus] = useState("Idle");
   const [isRunning, setIsRunning] = useState(false);
   const [awaitingUser, setAwaitingUser] = useState(false);
+  const [isRepeatingSelf, setIsRepeatingSelf] = useState(false);
   const [currentSegment, setCurrentSegment] = useState(null);
   const [currentParticipant, setCurrentParticipant] = useState(null);
   const audioRef = useRef(null);
@@ -68,7 +69,13 @@ export default function GroupPractice({
           state = "Done";
         } else if (participant === currentParticipant) {
           if (participant === yourTurn) {
-            state = awaitingUser || !repeatYourShloka ? "Reciting" : "Playing";
+            if (isRepeatingSelf) {
+              state = "RepeatingYourSholka";
+            } else if (awaitingUser || !repeatYourShloka) {
+              state = "Reciting";
+            } else {
+              state = "Playing";
+            }
           } else {
             state = "Playing";
           }
@@ -91,6 +98,7 @@ export default function GroupPractice({
     currentParticipant,
     awaitingUser,
     repeatYourShloka,
+    isRepeatingSelf,
   ]);
 
   const nextSegment = () => {
@@ -142,12 +150,14 @@ export default function GroupPractice({
 
           if (repeatRef.current) {
             setStatus(`Repeating your shloka (participant ${participant})`);
+            setIsRepeatingSelf(true);
             await playSegment(
               audioRef.current,
               segment,
               playbackSpeedRef.current,
               stopRef
             );
+            setIsRepeatingSelf(false);
           }
         } else {
           setStatus(`Participant ${participant}`);
@@ -167,6 +177,7 @@ export default function GroupPractice({
 
     setIsRunning(false);
     setAwaitingUser(false);
+    setIsRepeatingSelf(false);
     setStatus(completed ? "Completed" : "Stopped");
     setCurrentParticipant(null);
     setCurrentSegment(null);
@@ -237,7 +248,7 @@ export default function GroupPractice({
                 onClick={() => waitResolverRef.current?.()}
                 disabled={!awaitingUser}
               >
-                OK (Finish Reciting)
+                Finish Your turn
               </button>
             ) : null}
           </div>
