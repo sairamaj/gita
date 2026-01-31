@@ -35,5 +35,4 @@ Use this section to practice reciting Bhagavad Gita verses with a group.
    - If **Duration** mode: Wait for the specified duration to pass
 5. The cycle continues with the next participant
 
-## Known issues
-1. Some slokas were not ending smoothly because of some calculations issues of end time. (will be addressed later)
+
