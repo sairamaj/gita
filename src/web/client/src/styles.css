@@ -34,25 +34,56 @@ header p {
   color: #5b5b5f;
 }
 
-.tabs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+.app-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
 }
 
-.tabs button {
+.side-nav {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e7e7ee;
+  box-shadow: 0 6px 14px rgba(15, 18, 25, 0.08);
+}
+
+.side-nav h2 {
+  margin: 0 0 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #5b5b64;
+}
+
+.side-nav button {
   border: 1px solid #d8d8dc;
   background: #ffffff;
   color: #1d1d1f;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
   cursor: pointer;
+  text-align: left;
 }
 
-.tabs button.active {
+.side-nav button.active {
   border-color: #2f74ff;
   color: #2f74ff;
   font-weight: 600;
+  background: #f2f6ff;
+}
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .card {
@@ -258,6 +289,14 @@ button:disabled {
 }
 
 @media (max-width: 900px) {
+  .app-body {
+    grid-template-columns: 1fr;
+  }
+
+  .side-nav {
+    position: static;
+  }
+
   .group-practice-layout {
     grid-template-columns: 1fr;
   }

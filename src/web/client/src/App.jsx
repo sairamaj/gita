@@ -98,7 +98,11 @@ export default function App() {
           <h1>Gita Practice</h1>
           <p>Structured Bhagavad Gita recitation with individual and group modes.</p>
         </div>
-        <div className="tabs">
+      </header>
+
+      <div className="app-body">
+        <nav className="side-nav">
+          <h2>Practice Modes</h2>
           <button
             className={tab === "individual" ? "active" : ""}
             onClick={() => setTab("individual")}
@@ -111,38 +115,40 @@ export default function App() {
           >
             Group Practice
           </button>
-        </div>
-      </header>
+        </nav>
 
-      {error ? <div className="error">{error}</div> : null}
+        <main className="app-content">
+          {error ? <div className="error">{error}</div> : null}
 
-      <ChapterSelector
-        chapters={chapters}
-        selectedChapterId={selectedChapterId}
-        onChange={setSelectedChapterId}
-        isLoading={isLoading}
-      />
+          <ChapterSelector
+            chapters={chapters}
+            selectedChapterId={selectedChapterId}
+            onChange={setSelectedChapterId}
+            isLoading={isLoading}
+          />
 
-      {tab === "individual" ? (
-        <IndividualPractice
-          chapter={chapter}
-          audioUrl={audioUrl}
-          metadata={metadata}
-          isMetadataLoading={isMetadataLoading}
-          waitModes={config.waitModes}
-          defaults={config.defaults}
-          speedConfig={config.playbackSpeed}
-        />
-      ) : (
-        <GroupPractice
-          chapter={chapter}
-          audioUrl={audioUrl}
-          metadata={metadata}
-          waitModes={config.waitModes}
-          defaults={config.defaults}
-          speedConfig={config.playbackSpeed}
-        />
-      )}
+          {tab === "individual" ? (
+            <IndividualPractice
+              chapter={chapter}
+              audioUrl={audioUrl}
+              metadata={metadata}
+              isMetadataLoading={isMetadataLoading}
+              waitModes={config.waitModes}
+              defaults={config.defaults}
+              speedConfig={config.playbackSpeed}
+            />
+          ) : (
+            <GroupPractice
+              chapter={chapter}
+              audioUrl={audioUrl}
+              metadata={metadata}
+              waitModes={config.waitModes}
+              defaults={config.defaults}
+              speedConfig={config.playbackSpeed}
+            />
+          )}
+        </main>
+      </div>
     </div>
   );
 }
