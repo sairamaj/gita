@@ -1,0 +1,418 @@
+{
+"name":"विश्वरूपसन्दर्शनयोगः",
+"chapterNum":"11",
+"shloka":[ 
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"1.248",	"endTime":"7.814",	"swhtsp":"l",	"shlNbr":"00",	"sty":"fh",	"text":"﻿ओं  श्री  परमात्मने नमः"},
+	{"startTime":"8.256",	"endTime":"12.446",	"swhtsp":"l",	"shlNbr":"00",	"sty":"sh",	"text":"अथ  एकादशोऽध्यायः"},
+	{"startTime":"12.96",	"endTime":"17.126",	"swhtsp":"",	"shlNbr":"00",	"sty":"th",	"text":"विश्वरूपसन्दर्शनयोगः"}
+]},
+{"shlokaNum":"1",
+"entry":[
+	{"startTime":"17.736",	"endTime":"20.174",	"swhtsp":"l",	"shlNbr":"1",	"sty":"uh",	"text":"अर्जुन   उवाच   -"},
+	{"startTime":"20.544",	"endTime":"23.702",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"मदनुग्रहाय  परमं"},
+	{"startTime":"24.12",	"endTime":"27.542",	"swhtsp":"l",	"shlNbr":"1",	"sty":"",	"text":"गुह्यमध्यात्मसञ्ज्ञितम् |"},
+	{"startTime":"28.08",	"endTime":"31.982",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"यत्त्वयोक्तं  वचस्तेन"},
+	{"startTime":"32.448",	"endTime":"35.558",	"swhtsp":"",	"shlNbr":"1",	"sty":"",	"text":"मोहोऽयं  विगतो  मम ||1||"}
+]},
+{"shlokaNum":"2",
+"entry":[
+	{"startTime":"36.072",	"endTime":"39.926",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"भवाप्ययौ  हि  भूतानां"},
+	{"startTime":"40.296",	"endTime":"43.814",	"swhtsp":"l",	"shlNbr":"2",	"sty":"",	"text":"श्रुतौ  विस्तरशो   मया |"},
+	{"startTime":"44.28",	"endTime":"47.774",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"त्वत्तः  कमलपत्राक्ष"},
+	{"startTime":"48.288",	"endTime":"51.83",	"swhtsp":"",	"shlNbr":"2",	"sty":"",	"text":"माहात्म्यमपि  चाव्ययम् ||2||"}
+]},
+{"shlokaNum":"3",
+"entry":[
+	{"startTime":"52.464",	"endTime":"56.534",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"एवमेतद्यथाऽऽत्थ  त्वम्"},
+	{"startTime":"57.024",	"endTime":"60.518",	"swhtsp":"l",	"shlNbr":"3",	"sty":"",	"text":"आत्मानं  परमेश्वर |"},
+	{"startTime":"61.104",	"endTime":"64.574",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"द्रष्टुमिच्छामि  ते  रूपम्"},
+	{"startTime":"64.992",	"endTime":"67.982",	"swhtsp":"",	"shlNbr":"3",	"sty":"",	"text":"ऐश्वरम्  पुरुषोत्तम ||3||"}
+]},
+{"shlokaNum":"4",
+"entry":[
+	{"startTime":"68.568",	"endTime":"72.062",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"मन्यसे  यदि  तच्छक्यं"},
+	{"startTime":"72.456",	"endTime":"76.118",	"swhtsp":"l",	"shlNbr":"4",	"sty":"",	"text":"मया  द्रष्टुमिति  प्रभो |"},
+	{"startTime":"76.608",	"endTime":"80.606",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"योगेश्वर ततो  मे  त्वं"},
+	{"startTime":"81",	"endTime":"84.71",	"swhtsp":"",	"shlNbr":"4",	"sty":"",	"text":"दर्शयात्मानमव्ययम् ||4||"}
+]},
+{"shlokaNum":"5",
+"entry":[
+	{"startTime":"85.152",	"endTime":"88.646",	"swhtsp":"l",	"shlNbr":"5",	"sty":"uh",	"text":"श्री  भगवानुवाच   -"},
+	{"startTime":"89.136",	"endTime":"93.014",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"पश्य  मे  पार्थ  रूपाणि"},
+	{"startTime":"93.408",	"endTime":"96.35",	"swhtsp":"l",	"shlNbr":"5",	"sty":"",	"text":"शतशोऽथ  सहस्रशः |"},
+	{"startTime":"96.816",	"endTime":"100.502",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"नानाविधानि  दिव्यानि"},
+	{"startTime":"100.896",	"endTime":"104.438",	"swhtsp":"",	"shlNbr":"5",	"sty":"",	"text":"नानावर्णाकृतीनि  च ||5||"}
+]},
+{"shlokaNum":"6",
+"entry":[
+	{"startTime":"105.216",	"endTime":"109.886",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"पश्यादित्यान्वसून्रुद्रान्"},
+	{"startTime":"110.232",	"endTime":"113.39",	"swhtsp":"l",	"shlNbr":"6",	"sty":"",	"text":"अश्विनौ  मरुतस्तथा |"},
+	{"startTime":"113.76",	"endTime":"117.758",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"बहून्यदृष्टपूर्वाणि"},
+	{"startTime":"118.224",	"endTime":"121.934",	"swhtsp":"",	"shlNbr":"6",	"sty":"",	"text":"पश्याश्चर्याणि  भारत ||6||"}
+]},
+{"shlokaNum":"7",
+"entry":[
+	{"startTime":"122.52",	"endTime":"125.918",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"इहैकस्थं  जगत्कृत्स्नं"},
+	{"startTime":"126.408",	"endTime":"129.83",	"swhtsp":"l",	"shlNbr":"7",	"sty":"",	"text":"पश्याद्य  सचराचरम् |"},
+	{"startTime":"130.32",	"endTime":"133.838",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"मम  देहे  गुडाकेश"},
+	{"startTime":"134.28",	"endTime":"137.918",	"swhtsp":"",	"shlNbr":"7",	"sty":"",	"text":"यच्चान्यत्  द्रष्टुमिच्छसि ||7||"}
+]},
+{"shlokaNum":"8",
+"entry":[
+	{"startTime":"138.528",	"endTime":"142.382",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"न तु  मां  शक्यसे  द्रष्टुम्"},
+	{"startTime":"142.848",	"endTime":"146.294",	"swhtsp":"l",	"shlNbr":"8",	"sty":"",	"text":"अनेनैव  स्वचक्षुषा |"},
+	{"startTime":"146.736",	"endTime":"150.854",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"दिव्यं  ददामि  ते  चक्षुः"},
+	{"startTime":"151.368",	"endTime":"155.174",	"swhtsp":"",	"shlNbr":"8",	"sty":"",	"text":"पश्य  मे  योगमैश्वरम् ||8||"}
+]},
+{"shlokaNum":"9",
+"entry":[
+	{"startTime":"155.712",	"endTime":"158.27",	"swhtsp":"l",	"shlNbr":"9",	"sty":"uh",	"text":"सञ्जय   उवाच  -"},
+	{"startTime":"158.712",	"endTime":"162.638",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"एवमुक्त्वा  ततो  राजन्"},
+	{"startTime":"163.032",	"endTime":"166.598",	"swhtsp":"l",	"shlNbr":"99",	"sty":"",	"text":"महायोगेश्वरो  हरिः |"},
+	{"startTime":"167.136",	"endTime":"171.23",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"दर्शयामास  पार्थाय"},
+	{"startTime":"171.768",	"endTime":"174.926",	"swhtsp":"",	"shlNbr":"9",	"sty":"",	"text":"परमं  रूपमैश्वरम् ||9||"}
+]},
+{"shlokaNum":"10",
+"entry":[
+	{"startTime":"175.392",	"endTime":"178.334",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"अनेकवक्त्रनयनम्"},
+	{"startTime":"178.752",	"endTime":"182.078",	"swhtsp":"l",	"shlNbr":"10",	"sty":"",	"text":"अनेकाद्भुतदर्शनम् |"},
+	{"startTime":"182.544",	"endTime":"185.75",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"अनेकदिव्याभरणं"},
+	{"startTime":"186.144",	"endTime":"190.358",	"swhtsp":"",	"shlNbr":"10",	"sty":"",	"text":"दिव्यानेकोद्यतायुधम् ||10||"}
+]},
+{"shlokaNum":"11",
+"entry":[
+	{"startTime":"190.944",	"endTime":"194.75",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"दिव्यमाल्याम्बरधरं"},
+	{"startTime":"195.264",	"endTime":"198.662",	"swhtsp":"l",	"shlNbr":"11",	"sty":"",	"text":"दिव्यगन्धानुलेपनम् |"},
+	{"startTime":"199.128",	"endTime":"203.198",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"सर्वाश्चर्यमयं  देवम्"},
+	{"startTime":"203.664",	"endTime":"207.23",	"swhtsp":"",	"shlNbr":"11",	"sty":"",	"text":"अनन्तं  विश्वतोमुखम् ||11||"}
+]},
+{"shlokaNum":"12",
+"entry":[
+	{"startTime":"207.648",	"endTime":"211.19",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"दिवि  सूर्यसहस्रस्य"},
+	{"startTime":"211.536",	"endTime":"214.838",	"swhtsp":"l",	"shlNbr":"12",	"sty":"",	"text":"भवेद्युगपदुत्थिता |"},
+	{"startTime":"215.208",	"endTime":"219.062",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"यदि  भाः  सदृशी  सा  स्यात्"},
+	{"startTime":"219.552",	"endTime":"223.142",	"swhtsp":"",	"shlNbr":"12",	"sty":"",	"text":"भासस्तस्य  महात्मनः ||12||"}
+]},
+{"shlokaNum":"13",
+"entry":[
+	{"startTime":"223.704",	"endTime":"227.27",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"तत्रैकस्थं  जगत्कृत्स्नं"},
+	{"startTime":"227.712",	"endTime":"230.606",	"swhtsp":"l",	"shlNbr":"13",	"sty":"",	"text":"प्रविभक्तमनेकधा |"},
+	{"startTime":"231",	"endTime":"234.47",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"अपश्यद्देवदेवस्य"},
+	{"startTime":"234.864",	"endTime":"238.478",	"swhtsp":"",	"shlNbr":"13",	"sty":"",	"text":"शरीरे  पाण्डवस्तदा ||13||"}
+]},
+{"shlokaNum":"14",
+"entry":[
+	{"startTime":"238.944",	"endTime":"242.654",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"ततः  स  विस्मयाविष्टः"},
+	{"startTime":"243.072",	"endTime":"246.302",	"swhtsp":"l",	"shlNbr":"14",	"sty":"",	"text":"हृष्टरोमा  धनञ्जयः |"},
+	{"startTime":"246.792",	"endTime":"249.734",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"प्रणम्य  शिरसा  देवं"},
+	{"startTime":"250.152",	"endTime":"253.046",	"swhtsp":"",	"shlNbr":"14",	"sty":"",	"text":"कृताञ्जलिरभाषत ||14||"}
+]},
+{"shlokaNum":"15",
+"entry":[
+	{"startTime":"253.584",	"endTime":"255.878",	"swhtsp":"l",	"shlNbr":"15",	"sty":"uh",	"text":"अर्जुन   उवाच   -"},
+	{"startTime":"256.32",	"endTime":"261.014",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"पश्यामि  देवांस्तव  देव  देहे"},
+	{"startTime":"261.48",	"endTime":"266.39",	"swhtsp":"l",	"shlNbr":"15",	"sty":"",	"text":"सर्वांस्तथा  भूतविशेषसङ्घान् |"},
+	{"startTime":"266.856",	"endTime":"271.502",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"ब्रह्माणमीशं  कमलासनस्थम्"},
+	{"startTime":"272.04",	"endTime":"277.094",	"swhtsp":"",	"shlNbr":"15",	"sty":"",	"text":"ऋषींश्च  सर्वानुरगांश्च  दिव्यान् ||15||"}
+]},
+{"shlokaNum":"16",
+"entry":[
+	{"startTime":"277.656",	"endTime":"281.774",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"अनेकबाहूदरवक्त्रनेत्रं"},
+	{"startTime":"282.168",	"endTime":"287.126",	"swhtsp":"l",	"shlNbr":"16",	"sty":"",	"text":"पश्यामि  त्वा  सर्वतोऽनन्तरूपम् |"},
+	{"startTime":"287.592",	"endTime":"292.022",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"नान्तं  न  मध्यं  न  पुनस्तवादिं"},
+	{"startTime":"292.512",	"endTime":"296.918",	"swhtsp":"",	"shlNbr":"16",	"sty":"",	"text":"पश्यामि  विश्वेश्वर  विश्वरूप ||16||"}
+]},
+{"shlokaNum":"17",
+"entry":[
+	{"startTime":"297.528",	"endTime":"301.478",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"किरीटिनं  गदिनं  चक्रिणं  च"},
+	{"startTime":"301.92",	"endTime":"306.83",	"swhtsp":"l",	"shlNbr":"17",	"sty":"",	"text":"तेजोराशिं  सर्वतो  दीप्तिमन्तम् |"},
+	{"startTime":"307.32",	"endTime":"312.758",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"पश्यामि  त्वां  दुर्निरीक्ष्यं  समन्तात्"},
+	{"startTime":"313.248",	"endTime":"317.702",	"swhtsp":"",	"shlNbr":"17",	"sty":"",	"text":"दीप्तानलार्कद्युतिमप्रमेयम् ||17||"}
+]},
+{"shlokaNum":"18",
+"entry":[
+	{"startTime":"318.192",	"endTime":"322.238",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"त्वमक्षरं  परमं  वेदितव्यं"},
+	{"startTime":"322.656",	"endTime":"326.654",	"swhtsp":"l",	"shlNbr":"18",	"sty":"",	"text":"त्वमस्य  विश्वस्य  परं  निधानम् |"},
+	{"startTime":"327.144",	"endTime":"331.694",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"त्वमव्ययः  शाश्वतधर्मगोप्ता"},
+	{"startTime":"332.16",	"endTime":"336.662",	"swhtsp":"",	"shlNbr":"18",	"sty":"",	"text":"सनातनस्त्वं  पुरुषो  मतो  मे ||18||"}
+]},
+{"shlokaNum":"19",
+"entry":[
+	{"startTime":"337.176",	"endTime":"341.462",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"अनादिमध्यान्तमनन्तवीर्यम्"},
+	{"startTime":"341.928",	"endTime":"346.406",	"swhtsp":"l",	"shlNbr":"19",	"sty":"",	"text":"अनन्तबाहुं  शशिसूर्यनेत्रम् |"},
+	{"startTime":"346.872",	"endTime":"351.566",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"पश्यामि  त्वां  दीप्तहुताशवक्त्रं"},
+	{"startTime":"352.032",	"endTime":"356.15",	"swhtsp":"",	"shlNbr":"19",	"sty":"",	"text":"स्वतेजसा  विश्वमिदं  तपन्तम् ||19||"}
+]},
+{"shlokaNum":"20",
+"entry":[
+	{"startTime":"356.76",	"endTime":"361.214",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"द्यावापृथिव्योरिदमन्तरं हि"},
+	{"startTime":"361.68",	"endTime":"366.662",	"swhtsp":"l",	"shlNbr":"20",	"sty":"",	"text":"व्याप्तं  त्वयैकेन  दिशश्च  सर्वाः |"},
+	{"startTime":"367.128",	"endTime":"371.678",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"दृष्ट्वाद्भुतं  रूपमिदं  तवोग्रं"},
+	{"startTime":"372.192",	"endTime":"376.694",	"swhtsp":"",	"shlNbr":"20",	"sty":"",	"text":"लोकत्रयं  प्रव्यथितं  महात्मन् ||20||"}
+]},
+{"shlokaNum":"21",
+"entry":[
+	{"startTime":"377.16",	"endTime":"381.518",	"swhtsp":"p",	"shlNbr":"21",	"sty":"",	"text":"अमी  हि  त्वा सुरसङ्घा  विशन्ति"},
+	{"startTime":"381.96",	"endTime":"386.414",	"swhtsp":"l",	"shlNbr":"21",	"sty":"",	"text":"केचिद्भीताः  प्राञ्जलयो  गृणन्ति |"},
+	{"startTime":"387.024",	"endTime":"392.414",	"swhtsp":"p",	"shlNbr":"21",	"sty":"",	"text":"स्वस्तीत्युक्त्वा  महर्षिसिद्धसङ्घाः"},
+	{"startTime":"392.88",	"endTime":"397.19",	"swhtsp":"",	"shlNbr":"21",	"sty":"",	"text":"स्तुवन्ति  त्वां  स्तुतिभिः  पुष्कलाभिः ||21||"}
+]},
+{"shlokaNum":"22",
+"entry":[
+	{"startTime":"397.776",	"endTime":"402.854",	"swhtsp":"p",	"shlNbr":"22",	"sty":"",	"text":"रुद्रादित्या  वसवो  ये  च  साध्याः"},
+	{"startTime":"403.368",	"endTime":"407.702",	"swhtsp":"l",	"shlNbr":"22",	"sty":"",	"text":"विश्वेऽश्विनौ  मरुतश्चोष्मपाश्च |"},
+	{"startTime":"408.12",	"endTime":"412.79",	"swhtsp":"p",	"shlNbr":"22",	"sty":"",	"text":"गन्धर्वयक्षासुरसिद्धसङ्घाः"},
+	{"startTime":"413.328",	"endTime":"418.142",	"swhtsp":"",	"shlNbr":"22",	"sty":"",	"text":"वीक्षन्ते  त्वां  विस्मिताश्चैव  सर्वे ||22||"}
+]},
+{"shlokaNum":"23",
+"entry":[
+	{"startTime":"418.8",	"endTime":"422.822",	"swhtsp":"p",	"shlNbr":"23",	"sty":"",	"text":"रूपं  महत्ते  बहुवक्त्र  नेत्रं"},
+	{"startTime":"423.216",	"endTime":"427.382",	"swhtsp":"l",	"shlNbr":"23",	"sty":"",	"text":"महाबाहो  बहुबाहूरुपादम् |"},
+	{"startTime":"427.896",	"endTime":"431.87",	"swhtsp":"p",	"shlNbr":"23",	"sty":"",	"text":"बहूदरं  बहुदंष्ट्राकरालं"},
+	{"startTime":"432.336",	"endTime":"436.982",	"swhtsp":"",	"shlNbr":"23",	"sty":"",	"text":"दृष्ट्वा  लोकाः  प्रव्यथितास्तथाऽहम् ||23||"}
+]},
+{"shlokaNum":"24",
+"entry":[
+	{"startTime":"437.448",	"endTime":"441.638",	"swhtsp":"p",	"shlNbr":"24",	"sty":"",	"text":"नभः  स्पृशं  दीप्तमनेकवर्णं"},
+	{"startTime":"442.056",	"endTime":"446.462",	"swhtsp":"l",	"shlNbr":"24",	"sty":"",	"text":"व्यात्ताननं  दीप्तविशालनेत्रम् |"},
+	{"startTime":"446.88",	"endTime":"451.934",	"swhtsp":"p",	"shlNbr":"24",	"sty":"",	"text":"दृष्ट्वा  हि  त्वां  प्रव्यथितान्तरात्मा"},
+	{"startTime":"452.472",	"endTime":"456.59",	"swhtsp":"",	"shlNbr":"24",	"sty":"",	"text":"धृतिं  न  विन्दामि  शमं  च  विष्णो ||24||"}
+]},
+{"shlokaNum":"25",
+"entry":[
+	{"startTime":"457.128",	"endTime":"461.486",	"swhtsp":"p",	"shlNbr":"25",	"sty":"",	"text":"दंष्ट्राकरालानि  च  ते  मुखानि"},
+	{"startTime":"461.904",	"endTime":"466.262",	"swhtsp":"l",	"shlNbr":"25",	"sty":"",	"text":"दृष्ट्वैव  कालानलसन्निभानि |"},
+	{"startTime":"466.776",	"endTime":"470.75",	"swhtsp":"p",	"shlNbr":"25",	"sty":"",	"text":"दिशो  न  जाने  न  लभे  च  शर्म"},
+	{"startTime":"471.216",	"endTime":"475.118",	"swhtsp":"",	"shlNbr":"25",	"sty":"",	"text":"प्रसीद  देवेश  जगन्निवास ||25||"}
+]},
+{"shlokaNum":"26",
+"entry":[
+	{"startTime":"475.656",	"endTime":"480.758",	"swhtsp":"p",	"shlNbr":"26",	"sty":"",	"text":"अमी  च  त्वां  धृतराष्ट्रस्य  पुत्राः"},
+	{"startTime":"481.248",	"endTime":"486.086",	"swhtsp":"l",	"shlNbr":"26",	"sty":"",	"text":"सर्वे  सहैवावनिपालसङ्घैः |"},
+	{"startTime":"486.648",	"endTime":"491.414",	"swhtsp":"p",	"shlNbr":"26",	"sty":"",	"text":"भीष्मो  द्रोणः  सूतपुत्रस्तथाऽसौ"},
+	{"startTime":"491.856",	"endTime":"496.622",	"swhtsp":"",	"shlNbr":"26",	"sty":"",	"text":"सहास्मदीयैरपि  योधमुख्यैः ||26||"}
+]},
+{"shlokaNum":"27",
+"entry":[
+	{"startTime":"497.16",	"endTime":"501.47",	"swhtsp":"p",	"shlNbr":"27",	"sty":"",	"text":"वक्त्राणि  ते  त्वरमाणा  विशन्ति"},
+	{"startTime":"501.888",	"endTime":"506.222",	"swhtsp":"l",	"shlNbr":"27",	"sty":"",	"text":"दंष्ट्राकरालानि  भयानकानि |"},
+	{"startTime":"506.76",	"endTime":"511.238",	"swhtsp":"p",	"shlNbr":"27",	"sty":"",	"text":"केचिद्विलग्ना  दशनान्तरेषु"},
+	{"startTime":"511.704",	"endTime":"516.758",	"swhtsp":"",	"shlNbr":"27",	"sty":"",	"text":"सन्दृश्यन्ते  चूर्णितैरुत्तमाङ्गैः ||27||"}
+]},
+{"shlokaNum":"28",
+"entry":[
+	{"startTime":"517.32",	"endTime":"522.038",	"swhtsp":"p",	"shlNbr":"28",	"sty":"",	"text":"यथा  नदीनां  बहवोऽम्बुवेगाः"},
+	{"startTime":"522.6",	"endTime":"526.598",	"swhtsp":"l",	"shlNbr":"28",	"sty":"",	"text":"समुद्रमेवाभिमुखा  द्रवन्ति |"},
+	{"startTime":"527.184",	"endTime":"531.614",	"swhtsp":"p",	"shlNbr":"28",	"sty":"",	"text":"तथा  तवामी  नरलोकवीराः"},
+	{"startTime":"532.104",	"endTime":"536.102",	"swhtsp":"",	"shlNbr":"28",	"sty":"",	"text":"विशन्ति  वक्त्राण्यभिविज्वलन्ति ||28||"}
+]},
+{"shlokaNum":"29",
+"entry":[
+	{"startTime":"536.496",	"endTime":"541.166",	"swhtsp":"p",	"shlNbr":"29",	"sty":"",	"text":"यथा  प्रदीप्तं  ज्वलनं  पतङ्गाः"},
+	{"startTime":"541.56",	"endTime":"545.99",	"swhtsp":"l",	"shlNbr":"29",	"sty":"",	"text":"विशन्ति  नाशाय  समृद्धवेगाः |"},
+	{"startTime":"546.528",	"endTime":"550.886",	"swhtsp":"p",	"shlNbr":"29",	"sty":"",	"text":"तथैव  नाशाय  विशन्ति  लोकाः"},
+	{"startTime":"551.424",	"endTime":"555.686",	"swhtsp":"",	"shlNbr":"29",	"sty":"",	"text":"तवापि  वक्त्राणि  समृद्धवेगाः ||29||"}
+]},
+{"shlokaNum":"30",
+"entry":[
+	{"startTime":"556.296",	"endTime":"560.942",	"swhtsp":"p",	"shlNbr":"30",	"sty":"",	"text":"लेलिह्यसे  ग्रसमानः  समन्तात्"},
+	{"startTime":"561.456",	"endTime":"566.126",	"swhtsp":"l",	"shlNbr":"30",	"sty":"",	"text":"लोकान्समग्रान्वदनैर्ज्वलद्भिः |"},
+	{"startTime":"566.712",	"endTime":"570.782",	"swhtsp":"p",	"shlNbr":"30",	"sty":"",	"text":"तेजोभिरापूर्य  जगत्समग्रं"},
+	{"startTime":"571.248",	"endTime":"575.774",	"swhtsp":"",	"shlNbr":"30",	"sty":"",	"text":"भासस्तवोग्राः  प्रतपन्ति  विष्णो ||30||"}
+]},
+{"shlokaNum":"31",
+"entry":[
+	{"startTime":"576.408",	"endTime":"580.958",	"swhtsp":"p",	"shlNbr":"31",	"sty":"",	"text":"आख्याहि  मे  को  भवानुग्ररूपः"},
+	{"startTime":"581.496",	"endTime":"585.47",	"swhtsp":"l",	"shlNbr":"31",	"sty":"",	"text":"नमोऽस्तु  ते  देववर  प्रसीद |"},
+	{"startTime":"585.936",	"endTime":"590.222",	"swhtsp":"p",	"shlNbr":"31",	"sty":"",	"text":"विज्ञातुमिच्छामि  भवन्तमाद्यं"},
+	{"startTime":"590.736",	"endTime":"594.974",	"swhtsp":"",	"shlNbr":"31",	"sty":"",	"text":"न  हि  प्रजानामि  तव  प्रवृत्तिम् ||31||"}
+]},
+{"shlokaNum":"32",
+"entry":[
+	{"startTime":"595.68",	"endTime":"598.982",	"swhtsp":"l",	"shlNbr":"32",	"sty":"uh",	"text":"श्री  भगवानुवाच   -"},
+	{"startTime":"599.424",	"endTime":"603.806",	"swhtsp":"p",	"shlNbr":"32",	"sty":"",	"text":"कालोऽस्मि  लोकक्षयकृत्प्रवृद्धः"},
+	{"startTime":"604.272",	"endTime":"608.63",	"swhtsp":"l",	"shlNbr":"32",	"sty":"",	"text":"लोकान्समाहर्तुमिह  प्रवृत्तः |"},
+	{"startTime":"609.144",	"endTime":"613.142",	"swhtsp":"p",	"shlNbr":"32",	"sty":"",	"text":"ऋतेऽपि  त्वा  न  भविष्यन्ति  सर्वे"},
+	{"startTime":"613.584",	"endTime":"618.47",	"swhtsp":"",	"shlNbr":"32",	"sty":"",	"text":"येऽवस्थिताः  प्रत्यनीकेषु योधाः ||32||"}
+]},
+{"shlokaNum":"33",
+"entry":[
+	{"startTime":"619.224",	"endTime":"623.222",	"swhtsp":"p",	"shlNbr":"33",	"sty":"",	"text":"तस्मात्त्वमुत्तिष्ठ  यशो  लभस्व"},
+	{"startTime":"623.664",	"endTime":"628.31",	"swhtsp":"l",	"shlNbr":"33",	"sty":"",	"text":"जित्वा  शत्रून्भुङ्क्ष्व  राज्यं  समृद्धम् |"},
+	{"startTime":"628.584",	"endTime":"632.822",	"swhtsp":"p",	"shlNbr":"33",	"sty":"",	"text":"मयैवैते  निहताः  पूर्वमेव"},
+	{"startTime":"633.288",	"endTime":"637.598",	"swhtsp":"",	"shlNbr":"33",	"sty":"",	"text":"निमित्तमात्रं  भव  सव्यसाचिन् ||33||"}
+]},
+{"shlokaNum":"34",
+"entry":[
+	{"startTime":"638.088",	"endTime":"641.99",	"swhtsp":"p",	"shlNbr":"34",	"sty":"",	"text":"द्रोणं  च  भीष्मं  च  जयद्रथं  च"},
+	{"startTime":"642.504",	"endTime":"647.006",	"swhtsp":"l",	"shlNbr":"34",	"sty":"",	"text":"कर्णं  तथान्यानपि  योधवीरान् |"},
+	{"startTime":"647.664",	"endTime":"652.598",	"swhtsp":"p",	"shlNbr":"34",	"sty":"",	"text":"मया  हतांस्त्वं  जहि  मा  व्यथिष्ठाः"},
+	{"startTime":"653.136",	"endTime":"657.59",	"swhtsp":"",	"shlNbr":"34",	"sty":"",	"text":"युध्यस्व  जेतासि  रणे  सपत्नान् ||34||"}
+]},
+{"shlokaNum":"35",
+"entry":[
+	{"startTime":"658.368",	"endTime":"660.662",	"swhtsp":"l",	"shlNbr":"35",	"sty":"uh",	"text":"सञ्जय   उवाच  -"},
+	{"startTime":"661.104",	"endTime":"665.51",	"swhtsp":"p",	"shlNbr":"35",	"sty":"",	"text":"एतच्छ्रुत्वा  वचनं  केशवस्य"},
+	{"startTime":"666.024",	"endTime":"670.382",	"swhtsp":"l",	"shlNbr":"35",	"sty":"",	"text":"कृताञ्जलिर्वेपमानः  किरीटी |"},
+	{"startTime":"670.848",	"endTime":"675.23",	"swhtsp":"p",	"shlNbr":"35",	"sty":"",	"text":"नमस्कृत्वा  भूय  एवाह  कृष्णं"},
+	{"startTime":"675.696",	"endTime":"679.91",	"swhtsp":"",	"shlNbr":"35",	"sty":"",	"text":"सगद्गदं  भीतभीतः  प्रणम्य ||35||"}
+]},
+{"shlokaNum":"36",
+"entry":[
+	{"startTime":"680.4",	"endTime":"682.646",	"swhtsp":"l",	"shlNbr":"36",	"sty":"uh",	"text":"अर्जुन   उवाच  -"},
+	{"startTime":"682.968",	"endTime":"687.542",	"swhtsp":"p",	"shlNbr":"36",	"sty":"",	"text":"स्थाने  हृषीकेश  तव  प्रकीर्त्या"},
+	{"startTime":"687.984",	"endTime":"691.91",	"swhtsp":"l",	"shlNbr":"36",	"sty":"",	"text":"जगत्प्रहृष्यत्यनुरज्यते  च |"},
+	{"startTime":"692.4",	"endTime":"696.614",	"swhtsp":"p",	"shlNbr":"36",	"sty":"",	"text":"रक्षांसि  भीतानि  दिशो  द्रवन्ति"},
+	{"startTime":"697.056",	"endTime":"701.486",	"swhtsp":"",	"shlNbr":"36",	"sty":"",	"text":"सर्वे  नमस्यन्ति  च  सिद्धसङ्घाः ||36||"}
+]},
+{"shlokaNum":"37",
+"entry":[
+	{"startTime":"702.144",	"endTime":"706.286",	"swhtsp":"p",	"shlNbr":"37",	"sty":"",	"text":"कस्माच्च  ते  न  नमेरन्महात्मन्"},
+	{"startTime":"706.728",	"endTime":"711.422",	"swhtsp":"l",	"shlNbr":"37",	"sty":"",	"text":"गरीयसे  ब्रह्मणोऽप्यादिकर्त्रे |"},
+	{"startTime":"711.936",	"endTime":"715.814",	"swhtsp":"p",	"shlNbr":"37",	"sty":"",	"text":"अनन्त  देवेश  जगन्निवास"},
+	{"startTime":"716.28",	"endTime":"720.134",	"swhtsp":"",	"shlNbr":"37",	"sty":"",	"text":"त्वमक्षरं  सदसत्तत्परं  यत् ||37||"}
+]},
+{"shlokaNum":"38",
+"entry":[
+	{"startTime":"720.672",	"endTime":"724.55",	"swhtsp":"p",	"shlNbr":"38",	"sty":"",	"text":"त्वमादिदेवः  पुरुषः  पुराणः"},
+	{"startTime":"725.04",	"endTime":"728.846",	"swhtsp":"l",	"shlNbr":"38",	"sty":"",	"text":"त्वमस्य  विश्वस्य  परं  निधानम् |"},
+	{"startTime":"729.336",	"endTime":"733.526",	"swhtsp":"p",	"shlNbr":"38",	"sty":"",	"text":"वेत्ताऽसि  वेद्यं  च  परं  च  धाम"},
+	{"startTime":"734.112",	"endTime":"737.87",	"swhtsp":"",	"shlNbr":"38",	"sty":"",	"text":"त्वया  ततं  विश्वमनन्तरूप ||38||"}
+]},
+{"shlokaNum":"39",
+"entry":[
+	{"startTime":"738.432",	"endTime":"742.598",	"swhtsp":"p",	"shlNbr":"39",	"sty":"",	"text":"वायुर्यमोऽग्निर्वरुणः  शशाङ्कः"},
+	{"startTime":"743.088",	"endTime":"747.11",	"swhtsp":"l",	"shlNbr":"39",	"sty":"",	"text":"प्रजापतिस्त्वं  प्रपितामहश्च |"},
+	{"startTime":"747.6",	"endTime":"751.526",	"swhtsp":"p",	"shlNbr":"39",	"sty":"",	"text":"नमो  नमस्तेऽस्तु  सहस्रकृत्वः"},
+	{"startTime":"752.016",	"endTime":"755.822",	"swhtsp":"",	"shlNbr":"39",	"sty":"",	"text":"पुनश्च  भूयोऽपि  नमो  नमस्ते ||39||"}
+]},
+{"shlokaNum":"40",
+"entry":[
+	{"startTime":"756.288",	"endTime":"760.43",	"swhtsp":"p",	"shlNbr":"40",	"sty":"",	"text":"नमः  पुरस्तादथ  पृष्ठतस्ते"},
+	{"startTime":"760.8",	"endTime":"764.918",	"swhtsp":"l",	"shlNbr":"40",	"sty":"",	"text":"नमोऽस्तु  ते  सर्वत  एव  सर्व |"},
+	{"startTime":"765.408",	"endTime":"769.43",	"swhtsp":"p",	"shlNbr":"40",	"sty":"",	"text":"अनन्तवीर्यामितविक्रमस्त्वं"},
+	{"startTime":"769.824",	"endTime":"774.062",	"swhtsp":"",	"shlNbr":"40",	"sty":"",	"text":"सर्वं  समाप्नोषि  ततोऽसि  सर्वः ||40||"}
+]},
+{"shlokaNum":"41",
+"entry":[
+	{"startTime":"774.528",	"endTime":"778.814",	"swhtsp":"p",	"shlNbr":"41",	"sty":"",	"text":"सखेति  मत्वा  प्रसभं  यदुक्तं"},
+	{"startTime":"779.328",	"endTime":"783.23",	"swhtsp":"l",	"shlNbr":"41",	"sty":"",	"text":"हे  कृष्ण  हे  यादव  हे  सखेति |"},
+	{"startTime":"783.624",	"endTime":"787.622",	"swhtsp":"p",	"shlNbr":"41",	"sty":"",	"text":"अजानता  महिमानं  तवेदं"},
+	{"startTime":"788.04",	"endTime":"792.35",	"swhtsp":"",	"shlNbr":"41",	"sty":"",	"text":"मया  प्रमादात्प्रणयेन  वाऽपि ||41||"}
+]},
+{"shlokaNum":"42",
+"entry":[
+	{"startTime":"792.816",	"endTime":"796.886",	"swhtsp":"p",	"shlNbr":"42",	"sty":"",	"text":"यच्चापहासार्थमसत्कृतोऽसि"},
+	{"startTime":"797.376",	"endTime":"801.302",	"swhtsp":"l",	"shlNbr":"42",	"sty":"",	"text":"विहारशय्यासनभोजनेषु |"},
+	{"startTime":"801.816",	"endTime":"805.766",	"swhtsp":"p",	"shlNbr":"42",	"sty":"",	"text":"एकोऽथवाप्यच्युत  तत्समक्षं"},
+	{"startTime":"806.256",	"endTime":"810.35",	"swhtsp":"",	"shlNbr":"42",	"sty":"",	"text":"तत्क्षामये  त्वामहमप्रमेयम् ||42||"}
+]},
+{"shlokaNum":"43",
+"entry":[
+	{"startTime":"811.056",	"endTime":"814.67",	"swhtsp":"p",	"shlNbr":"43",	"sty":"",	"text":"पितासि  लोकस्य  चराचरस्य"},
+	{"startTime":"815.064",	"endTime":"819.086",	"swhtsp":"l",	"shlNbr":"43",	"sty":"",	"text":"त्वमस्य  पूज्यश्च  गुरुर्गरीयान् |"},
+	{"startTime":"819.624",	"endTime":"824.03",	"swhtsp":"p",	"shlNbr":"43",	"sty":"",	"text":"न  त्वत्समोऽस्त्यभ्यधिकः  कुतोऽन्यः"},
+	{"startTime":"824.448",	"endTime":"828.374",	"swhtsp":"",	"shlNbr":"43",	"sty":"",	"text":"लोकत्रयेऽप्यप्रतिमप्रभाव ||43||"}
+]},
+{"shlokaNum":"44",
+"entry":[
+	{"startTime":"828.912",	"endTime":"833.102",	"swhtsp":"p",	"shlNbr":"44",	"sty":"",	"text":"तस्मात्प्रणम्य  प्रणिधाय  कायं"},
+	{"startTime":"833.52",	"endTime":"837.422",	"swhtsp":"l",	"shlNbr":"44",	"sty":"",	"text":"प्रसादये  त्वामहमीशमीड्यम् |"},
+	{"startTime":"837.912",	"endTime":"841.622",	"swhtsp":"p",	"shlNbr":"44",	"sty":"",	"text":"पितेव  पुत्रस्य  सखेव  सख्युः"},
+	{"startTime":"842.184",	"endTime":"845.99",	"swhtsp":"",	"shlNbr":"44",	"sty":"",	"text":"प्रियः  प्रियायार्हसि  देव  सोढुम् ||44||"}
+]},
+{"shlokaNum":"45",
+"entry":[
+	{"startTime":"846.528",	"endTime":"850.574",	"swhtsp":"p",	"shlNbr":"45",	"sty":"",	"text":"अदृष्टपूर्वं  हृषितोऽस्मि  दृष्ट्वा"},
+	{"startTime":"851.064",	"endTime":"854.966",	"swhtsp":"l",	"shlNbr":"45",	"sty":"",	"text":"भयेन  च  प्रव्यथितं  मनो  मे |"},
+	{"startTime":"855.432",	"endTime":"859.238",	"swhtsp":"p",	"shlNbr":"45",	"sty":"",	"text":"तदेव  मे  दर्शय  देवरूपं"},
+	{"startTime":"859.656",	"endTime":"863.486",	"swhtsp":"",	"shlNbr":"45",	"sty":"",	"text":"प्रसीद  देवेश  जगन्निवास ||45||"}
+]},
+{"shlokaNum":"46",
+"entry":[
+	{"startTime":"864",	"endTime":"867.71",	"swhtsp":"p",	"shlNbr":"46",	"sty":"",	"text":"किरीटिनं  गदिनं  चक्रहस्तम्"},
+	{"startTime":"868.104",	"endTime":"872.366",	"swhtsp":"l",	"shlNbr":"46",	"sty":"",	"text":"इच्छामि  त्वां  द्रष्टुमहं  तथैव |"},
+	{"startTime":"872.976",	"endTime":"876.806",	"swhtsp":"p",	"shlNbr":"46",	"sty":"",	"text":"तेनैव  रूपेण  चतुर्भुजेन"},
+	{"startTime":"877.224",	"endTime":"881.774",	"swhtsp":"",	"shlNbr":"46",	"sty":"",	"text":"सहस्रबाहो  भव  विश्वमूर्ते ||46||"}
+]},
+{"shlokaNum":"47",
+"entry":[
+	{"startTime":"882.264",	"endTime":"885.47",	"swhtsp":"l",	"shlNbr":"47",	"sty":"uh",	"text":"श्री  भगवानुवाच  -"},
+	{"startTime":"885.84",	"endTime":"889.958",	"swhtsp":"p",	"shlNbr":"47",	"sty":"",	"text":"मया  प्रसन्नेन  तवार्जुनेदं"},
+	{"startTime":"890.352",	"endTime":"894.83",	"swhtsp":"l",	"shlNbr":"47",	"sty":"",	"text":"रूपं  परं  दर्शितमात्मयोगात् |"},
+	{"startTime":"895.296",	"endTime":"899.318",	"swhtsp":"p",	"shlNbr":"47",	"sty":"",	"text":"तेजोमयं  विश्वमनन्तमाद्यं"},
+	{"startTime":"899.736",	"endTime":"904.166",	"swhtsp":"",	"shlNbr":"47",	"sty":"",	"text":"यन्मे  त्वदन्येन  न  दृष्टपूर्वम् ||47||"}
+]},
+{"shlokaNum":"48",
+"entry":[
+	{"startTime":"904.632",	"endTime":"909.206",	"swhtsp":"p",	"shlNbr":"48",	"sty":"",	"text":"न  वेदयज्ञाध्ययनैर्न  दानैः"},
+	{"startTime":"909.672",	"endTime":"913.862",	"swhtsp":"l",	"shlNbr":"48",	"sty":"",	"text":"न  च  क्रियाभिर्न  तपोभिरुग्रैः |"},
+	{"startTime":"914.424",	"endTime":"918.47",	"swhtsp":"p",	"shlNbr":"48",	"sty":"",	"text":"एवंरूपः  शक्य  अहं  नृलोके"},
+	{"startTime":"918.888",	"endTime":"922.718",	"swhtsp":"",	"shlNbr":"48",	"sty":"",	"text":"द्रष्टुं  त्वदन्येन  कुरुप्रवीर ||48||"}
+]},
+{"shlokaNum":"49",
+"entry":[
+	{"startTime":"923.232",	"endTime":"927.542",	"swhtsp":"p",	"shlNbr":"49",	"sty":"",	"text":"मा  ते  व्यथा  मा  च  विमूढभावः"},
+	{"startTime":"928.056",	"endTime":"932.27",	"swhtsp":"l",	"shlNbr":"49",	"sty":"",	"text":"दृष्ट्वा  रूपं  घोरमीदृङ्ममेदम् |"},
+	{"startTime":"932.784",	"endTime":"936.926",	"swhtsp":"p",	"shlNbr":"49",	"sty":"",	"text":"व्यपेतभीः  प्रीतमनाः  पुनस्त्वं"},
+	{"startTime":"937.368",	"endTime":"941.054",	"swhtsp":"",	"shlNbr":"49",	"sty":"",	"text":"तदेव  मे  रूपमिदं  प्रपश्य ||49||"}
+]},
+{"shlokaNum":"50",
+"entry":[
+	{"startTime":"941.496",	"endTime":"943.766",	"swhtsp":"l",	"shlNbr":"50",	"sty":"uh",	"text":"सञ्जय  उवाच  -"},
+	{"startTime":"944.256",	"endTime":"948.47",	"swhtsp":"p",	"shlNbr":"50",	"sty":"",	"text":"इत्यर्जुनं  वासुदेवस्तथोक्त्वा"},
+	{"startTime":"948.888",	"endTime":"953.294",	"swhtsp":"l",	"shlNbr":"50",	"sty":"",	"text":"स्वकं  रूपं  दर्शयामास  भूयः |"},
+	{"startTime":"953.736",	"endTime":"957.854",	"swhtsp":"p",	"shlNbr":"50",	"sty":"",	"text":"आश्वासयामास  च  भीतमेनं"},
+	{"startTime":"958.296",	"endTime":"962.582",	"swhtsp":"",	"shlNbr":"50",	"sty":"",	"text":"भूत्वा  पुनः  सौम्यवपुर्महात्मा ||50||"}
+]},
+{"shlokaNum":"51",
+"entry":[
+	{"startTime":"963.072",	"endTime":"965.198",	"swhtsp":"l",	"shlNbr":"51",	"sty":"uh",	"text":"अर्जुन  उवाच  -"},
+	{"startTime":"965.544",	"endTime":"969.566",	"swhtsp":"p",	"shlNbr":"51",	"sty":"",	"text":"दृष्ट्वेदं  मानुषं  रूपं"},
+	{"startTime":"970.032",	"endTime":"973.118",	"swhtsp":"l",	"shlNbr":"51",	"sty":"",	"text":"तव  सौम्यं  जनार्दन |"},
+	{"startTime":"973.608",	"endTime":"977.294",	"swhtsp":"p",	"shlNbr":"51",	"sty":"",	"text":"इदानीमस्मि  संवृत्तः"},
+	{"startTime":"977.712",	"endTime":"981.182",	"swhtsp":"",	"shlNbr":"51",	"sty":"",	"text":"सचेताः  प्रकृतिं  गतः ||51||"}
+]},
+{"shlokaNum":"52",
+"entry":[
+	{"startTime":"981.648",	"endTime":"985.118",	"swhtsp":"l",	"shlNbr":"52",	"sty":"uh",	"text":"श्री  भगवानुवाच  -"},
+	{"startTime":"985.608",	"endTime":"988.934",	"swhtsp":"p",	"shlNbr":"52",	"sty":"",	"text":"सुदुर्दर्शमिदं  रूपं"},
+	{"startTime":"989.328",	"endTime":"992.27",	"swhtsp":"l",	"shlNbr":"52",	"sty":"",	"text":"दृष्टवानसि  यन्मम |"},
+	{"startTime":"992.76",	"endTime":"996.614",	"swhtsp":"p",	"shlNbr":"52",	"sty":"",	"text":"देवा  अप्यस्य  रूपस्य"},
+	{"startTime":"997.056",	"endTime":"1000.57",	"swhtsp":"",	"shlNbr":"52",	"sty":"",	"text":"नित्यं  दर्शनकाङ्क्षिणः ||52||"}
+]},
+{"shlokaNum":"53",
+"entry":[
+	{"startTime":"1001.06",	"endTime":"1004.53",	"swhtsp":"p",	"shlNbr":"53",	"sty":"",	"text":"नाहं  वेदैर्न  तपसा"},
+	{"startTime":"1004.93",	"endTime":"1008.23",	"swhtsp":"l",	"shlNbr":"53",	"sty":"",	"text":"न  दानेन  न  चेज्यया |"},
+	{"startTime":"1008.62",	"endTime":"1012.43",	"swhtsp":"p",	"shlNbr":"53",	"sty":"",	"text":"शक्य  एवंविधो  द्रष्टुं"},
+	{"startTime":"1012.85",	"endTime":"1016.1",	"swhtsp":"",	"shlNbr":"53",	"sty":"",	"text":"दृष्टवानसि  मां  यथा ||53||"}
+]},
+{"shlokaNum":"54",
+"entry":[
+	{"startTime":"1016.69",	"endTime":"1021.09",	"swhtsp":"p",	"shlNbr":"54",	"sty":"",	"text":"भक्त्या  त्वनन्यया  शक्यः"},
+	{"startTime":"1021.63",	"endTime":"1024.43",	"swhtsp":"l",	"shlNbr":"54",	"sty":"",	"text":"अहमेवंविधोऽर्जुन |"},
+	{"startTime":"1024.94",	"endTime":"1028.68",	"swhtsp":"p",	"shlNbr":"54",	"sty":"",	"text":"ज्ञातुं  द्रष्टुं  च  तत्त्वेन"},
+	{"startTime":"1029.19",	"endTime":"1032.28",	"swhtsp":"",	"shlNbr":"54",	"sty":"",	"text":"प्रवेष्टुं  च  परन्तप ||54||"}
+]},
+{"shlokaNum":"55",
+"entry":[
+	{"startTime":"1032.86",	"endTime":"1036.26",	"swhtsp":"p",	"shlNbr":"55",	"sty":"",	"text":"मत्कर्मकृन्मत्परमः"},
+	{"startTime":"1036.68",	"endTime":"1039.98",	"swhtsp":"l",	"shlNbr":"55",	"sty":"",	"text":"मद्भक्तः  सङ्गवर्जितः |"},
+	{"startTime":"1040.47",	"endTime":"1043.89",	"swhtsp":"p",	"shlNbr":"55",	"sty":"",	"text":"निर्वैरः  सर्वभूतेषु"},
+	{"startTime":"1044.34",	"endTime":"1047.54",	"swhtsp":"",	"shlNbr":"55",	"sty":"",	"text":"यः  स  मामेति  पाण्डव ||55||"}
+]},
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"1048.15",	"endTime":"1050.49",	"swhtsp":"p",	"shlNbr":"56",	"sty":"th",	"text":"﻿|| ओं  तत्सदिति"},
+	{"startTime":"1050.91",	"endTime":"1054.17",	"swhtsp":"p",	"shlNbr":"56",	"sty":"uh",	"text":"श्रीमद्भगवद्गीतासु"},
+	{"startTime":"1054.63",	"endTime":"1056.11",	"swhtsp":"p",	"shlNbr":"56",	"sty":"uh",	"text":"उपनिषत्सु"},
+	{"startTime":"1056.6",	"endTime":"1058.97",	"swhtsp":"l",	"shlNbr":"56",	"sty":"uh",	"text":"ब्रह्मविद्यायां"},
+	{"startTime":"1059.41",	"endTime":"1061.53",	"swhtsp":"p",	"shlNbr":"56",	"sty":"th",	"text":"योगशास्त्रे"},
+	{"startTime":"1061.9",	"endTime":"1065.47",	"swhtsp":"p",	"shlNbr":"56",	"sty":"uh",	"text":"श्रीकृष्णार्जुनसंवादे"},
+	{"startTime":"1065.89",	"endTime":"1070.44",	"swhtsp":"p",	"shlNbr":"56",	"sty":"uh",	"text":"विश्वरूपसन्दर्शनयोगोनाम"},
+	{"startTime":"1070.95",	"endTime":"1074.47",	"swhtsp":"",	"shlNbr":"56",	"sty":"uh",	"text":"एकादशोऽध्यायः ||"}
+]}
+]}
