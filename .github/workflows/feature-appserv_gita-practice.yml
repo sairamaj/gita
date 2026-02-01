@@ -38,9 +38,7 @@ jobs:
           cp -r dist deploy/
           cp server.js deploy/
           cp package*.json deploy/
-          cp web.config deploy/ || true
-          echo "[config]" > deploy/.deployment
-          echo "SCM_DO_BUILD_DURING_DEPLOYMENT=false" >> deploy/.deployment
+          if [ -f web.config ]; then cp web.config deploy/; fi
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -67,6 +65,23 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1A4B161AF8144D17852FFBF3938F62AB }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A404C8D471DF4988B334324B7398DAAB }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1CDE6A6C8F6445768CE88D018A183845 }}
+
+      - name: Configure Azure App Service settings
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: 'gita-practice'
+          slot-name: 'Production'
+          app-settings-json: |
+            [
+              {
+                "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+                "value": "false"
+              },
+              {
+                "name": "WEBSITE_NODE_DEFAULT_VERSION",
+                "value": "20-lts"
+              }
+            ]
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
