@@ -55,13 +55,24 @@ npm run preview
 
 The application can be deployed to any static hosting service. Simply upload the contents of the `dist` folder.
 
-### Azure Static Web Apps
+### Azure Static Web Apps (Recommended)
 
-1. Create a new Static Web App in Azure Portal
-2. Connect to your repository or upload the `dist` folder directly
-3. Set build configuration:
-   - App location: `src/web/client`
-   - Output location: `dist`
+**Quick Start**: See [AZURE_QUICK_START.md](AZURE_QUICK_START.md) for 5-minute deployment.
+
+**Full Guide**: See [AZURE_DEPLOYMENT_GUIDE.md](AZURE_DEPLOYMENT_GUIDE.md) for comprehensive instructions.
+
+**Key Features**:
+- Free tier (250 MB storage, 100 GB bandwidth/month)
+- Automatic CI/CD with GitHub Actions
+- Global CDN included
+- Free SSL certificates
+- Custom domains supported
+
+**Quick Deploy**:
+1. Create Static Web App in Azure Portal
+2. Connect to GitHub repository
+3. Add deployment token to GitHub Secrets
+4. Push to GitHub - automatic deployment
 
 ### AWS S3 + CloudFront
 
