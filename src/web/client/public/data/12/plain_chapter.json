@@ -1,0 +1,164 @@
+{
+"name":"भक्तियोगः",
+"chapterNum":"",
+"shloka":[ 
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"0.864",	"endTime":"6.9",	"swhtsp":"l",	"shlNbr":"00",	"sty":"fh",	"text":"﻿ओं  श्री  परमात्मने नमः"},
+	{"startTime":"7.368",	"endTime":"11.196",	"swhtsp":"l",	"shlNbr":"00",	"sty":"sh",	"text":"अथ  द्वादशोऽध्यायः"},
+	{"startTime":"11.784",	"endTime":"13.908",	"swhtsp":"",	"shlNbr":"00",	"sty":"th",	"text":"भक्तियोगः"}
+]},
+{"shlokaNum":"1",
+"entry":[
+	{"startTime":"14.4",	"endTime":"16.908",	"swhtsp":"l",	"shlNbr":"1",	"sty":"uh",	"text":"अर्जुन   उवाच   -"},
+	{"startTime":"17.376",	"endTime":"21.564",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"एवं  सततयुक्ता  ये"},
+	{"startTime":"22.032",	"endTime":"26.604",	"swhtsp":"l",	"shlNbr":"1",	"sty":"",	"text":"भक्तास्त्वां  पर्युपासते |"},
+	{"startTime":"27.048",	"endTime":"31.308",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"ये  चाप्यक्षरमव्यक्तं"},
+	{"startTime":"31.776",	"endTime":"36.108",	"swhtsp":"",	"shlNbr":"1",	"sty":"",	"text":"तेषां  के  योगवित्तमाः ||1||"}
+]},
+{"shlokaNum":"2",
+"entry":[
+	{"startTime":"36.6",	"endTime":"40.116",	"swhtsp":"l",	"shlNbr":"2",	"sty":"uh",	"text":"श्री  भगवानुवाच   -"},
+	{"startTime":"40.56",	"endTime":"44.988",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"मय्यावेश्य  मनो  ये  मां"},
+	{"startTime":"45.456",	"endTime":"49.02",	"swhtsp":"l",	"shlNbr":"2",	"sty":"",	"text":"नित्ययुक्ता  उपासते |"},
+	{"startTime":"49.536",	"endTime":"53.988",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"श्रद्धया  परयोपेताः"},
+	{"startTime":"54.48",	"endTime":"58.572",	"swhtsp":"",	"shlNbr":"2",	"sty":"",	"text":"ते  मे  युक्ततमा  मताः ||2||"}
+]},
+{"shlokaNum":"3",
+"entry":[
+	{"startTime":"59.064",	"endTime":"63.324",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"ये  त्वक्षरमनिर्देश्यम्"},
+	{"startTime":"63.816",	"endTime":"67.644",	"swhtsp":"l",	"shlNbr":"3",	"sty":"",	"text":"अव्यक्तं  पर्युपासते |"},
+	{"startTime":"68.016",	"endTime":"71.604",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"सर्वत्रगमचिन्त्यं  च"},
+	{"startTime":"72.024",	"endTime":"75.252",	"swhtsp":"",	"shlNbr":"3",	"sty":"",	"text":"कूटस्थमचलं  ध्रुवम् ||3||"}
+]},
+{"shlokaNum":"4",
+"entry":[
+	{"startTime":"75.768",	"endTime":"80.124",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"सन्नियम्येन्द्रियग्रामं"},
+	{"startTime":"80.544",	"endTime":"83.82",	"swhtsp":"l",	"shlNbr":"4",	"sty":"",	"text":"सर्वत्र  समबुद्धयः |"},
+	{"startTime":"84.312",	"endTime":"88.476",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"ते  प्राप्नुवन्ति  मामेव"},
+	{"startTime":"88.896",	"endTime":"92.484",	"swhtsp":"",	"shlNbr":"4",	"sty":"",	"text":"सर्वभूतहिते   रताः ||4||"}
+]},
+{"shlokaNum":"5",
+"entry":[
+	{"startTime":"93.144",	"endTime":"97.164",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"क्लेशोऽधिकतरस्तेषाम्"},
+	{"startTime":"97.584",	"endTime":"101.82",	"swhtsp":"l",	"shlNbr":"5",	"sty":"",	"text":"अव्यक्तासक्तचेतसाम्  |"},
+	{"startTime":"102.264",	"endTime":"105.948",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"अव्यक्ता  हि  गतिर्दुःखं"},
+	{"startTime":"106.44",	"endTime":"109.908",	"swhtsp":"",	"shlNbr":"5",	"sty":"",	"text":"देहवद्भिरवाप्यते ||5||"}
+]},
+{"shlokaNum":"6",
+"entry":[
+	{"startTime":"110.52",	"endTime":"114.228",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"ये  तु  सर्वाणि  कर्माणि"},
+	{"startTime":"114.624",	"endTime":"118.092",	"swhtsp":"l",	"shlNbr":"6",	"sty":"",	"text":"मयि  सन्न्यस्य  मत्पराः |"},
+	{"startTime":"118.56",	"endTime":"122.508",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"अनन्येनैव  योगेन"},
+	{"startTime":"122.976",	"endTime":"126.828",	"swhtsp":"",	"shlNbr":"6",	"sty":"",	"text":"मां  ध्यायन्त  उपासते ||6||"}
+]},
+{"shlokaNum":"7",
+"entry":[
+	{"startTime":"127.32",	"endTime":"131.028",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"तेषामहं  समुद्धर्ता"},
+	{"startTime":"131.448",	"endTime":"135.108",	"swhtsp":"l",	"shlNbr":"7",	"sty":"",	"text":"मृत्युसंसारसागरात् |"},
+	{"startTime":"135.648",	"endTime":"139.476",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"भवामि  नचिरात्पार्थ"},
+	{"startTime":"139.968",	"endTime":"144.156",	"swhtsp":"",	"shlNbr":"7",	"sty":"",	"text":"मय्यावेशितचेतसाम् ||7||"}
+]},
+{"shlokaNum":"8",
+"entry":[
+	{"startTime":"144.672",	"endTime":"148.404",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"मय्येव  मन  आधत्स्व"},
+	{"startTime":"148.824",	"endTime":"151.932",	"swhtsp":"l",	"shlNbr":"8",	"sty":"",	"text":"मयि  बुद्धिं  निवेशय |"},
+	{"startTime":"152.4",	"endTime":"155.628",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"निवसिष्यसि  मय्येव"},
+	{"startTime":"156.12",	"endTime":"159.732",	"swhtsp":"",	"shlNbr":"8",	"sty":"",	"text":"अत  ऊर्ध्वं  न  संशयः ||8||"}
+]},
+{"shlokaNum":"9",
+"entry":[
+	{"startTime":"160.296",	"endTime":"163.812",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"अथ  चित्तं  समाधातुं"},
+	{"startTime":"164.256",	"endTime":"167.436",	"swhtsp":"l",	"shlNbr":"9",	"sty":"",	"text":"न  शक्नोषि  मयि  स्थिरम् |"},
+	{"startTime":"167.88",	"endTime":"171.564",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"अभ्यासयोगेन  ततः"},
+	{"startTime":"172.056",	"endTime":"175.884",	"swhtsp":"",	"shlNbr":"9",	"sty":"",	"text":"मामिच्छाप्तुं  धनञ्जय ||9||"}
+]},
+{"shlokaNum":"10",
+"entry":[
+	{"startTime":"176.496",	"endTime":"180.564",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"अभ्यासेऽप्यसमर्थोऽसि"},
+	{"startTime":"181.08",	"endTime":"184.068",	"swhtsp":"l",	"shlNbr":"10",	"sty":"",	"text":"मत्कर्मपरमो  भव |"},
+	{"startTime":"184.56",	"endTime":"187.644",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"मदर्थमपि  कर्माणि"},
+	{"startTime":"188.136",	"endTime":"191.46",	"swhtsp":"",	"shlNbr":"10",	"sty":"",	"text":"कुर्वन्सिद्धिमवाप्स्यसि ||10||"}
+]},
+{"shlokaNum":"11",
+"entry":[
+	{"startTime":"191.976",	"endTime":"195.348",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"अथैतदप्यशक्तोऽसि"},
+	{"startTime":"195.84",	"endTime":"199.524",	"swhtsp":"l",	"shlNbr":"11",	"sty":"",	"text":"कर्तुं  मद्योगमाश्रितः |"},
+	{"startTime":"200.016",	"endTime":"203.412",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"सर्वकर्मफलत्यागं"},
+	{"startTime":"203.856",	"endTime":"207.036",	"swhtsp":"",	"shlNbr":"11",	"sty":"",	"text":"ततः  कुरु  यतात्मवान् ||11||"}
+]},
+{"shlokaNum":"12",
+"entry":[
+	{"startTime":"207.648",	"endTime":"211.668",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"श्रेयो  हि  ज्ञानमभ्यासात्"},
+	{"startTime":"212.208",	"endTime":"216.132",	"swhtsp":"l",	"shlNbr":"12",	"sty":"",	"text":"ज्ञानाद्ध्यानं   विशिष्यते |"},
+	{"startTime":"216.672",	"endTime":"220.908",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"ध्यानात्कर्मफलत्यागः"},
+	{"startTime":"221.448",	"endTime":"225.156",	"swhtsp":"",	"shlNbr":"12",	"sty":"",	"text":"त्यागाच्छान्तिरनन्तरम् ||12||"}
+]},
+{"shlokaNum":"13",
+"entry":[
+	{"startTime":"225.696",	"endTime":"230.236",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"अद्वेष्टा  सर्वभूतानां"},
+	{"startTime":"230.536",	"endTime":"233.412",	"swhtsp":"l",	"shlNbr":"13",	"sty":"",	"text":"मैत्रः  करुण  एव  च |"},	
+	{"startTime":"233.928",	"endTime":"237.372",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"निर्ममो  निरहङ्कारः"},
+	{"startTime":"237.792",	"endTime":"241.164",	"swhtsp":"",	"shlNbr":"13",	"sty":"",	"text":"समदुःखसुखः   क्षमी ||13||"}
+]},
+{"shlokaNum":"14",
+"entry":[
+	{"startTime":"241.704",	"endTime":"245.316",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"सन्तुष्टः  सततं  योगी"},
+	{"startTime":"245.76",	"endTime":"249.276",	"swhtsp":"l",	"shlNbr":"14",	"sty":"",	"text":"यतात्मा  दृढनिश्चयः |"},
+	{"startTime":"249.888",	"endTime":"253.308",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"मय्यर्पितमनोबुद्धिः"},
+	{"startTime":"253.824",	"endTime":"257.532",	"swhtsp":"",	"shlNbr":"14",	"sty":"",	"text":"यो  मद्भक्तः  स  मे  प्रियः ||14||"}
+]},
+{"shlokaNum":"15",
+"entry":[
+	{"startTime":"258.12",	"endTime":"262.668",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"यस्मान्नोद्विजते  लोकः"},
+	{"startTime":"263.16",	"endTime":"267.108",	"swhtsp":"l",	"shlNbr":"15",	"sty":"",	"text":"लोकान्नोद्विजते  च  यः |"},
+	{"startTime":"267.72",	"endTime":"272.316",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"हर्षामर्षभयोद्वेगैः"},
+	{"startTime":"273.024",	"endTime":"276.54",	"swhtsp":"",	"shlNbr":"15",	"sty":"",	"text":"मुक्तो   यः  स  च  मे  प्रियः ||15||"}
+]},
+{"shlokaNum":"16",
+"entry":[
+	{"startTime":"277.152",	"endTime":"280.956",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"अनपेक्षः  शुचिर्दक्षः"},
+	{"startTime":"281.448",	"endTime":"284.844",	"swhtsp":"l",	"shlNbr":"16",	"sty":"",	"text":"उदासीनो  गतव्यथः |"},
+	{"startTime":"285.312",	"endTime":"289.452",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"सर्वारम्भपरित्यागी"},
+	{"startTime":"289.92",	"endTime":"293.724",	"swhtsp":"",	"shlNbr":"16",	"sty":"",	"text":"यो  मद्भक्तः   स  मे  प्रियः ||16||"}
+]},
+{"shlokaNum":"17",
+"entry":[
+	{"startTime":"294.336",	"endTime":"297.9",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"यो  न  हृष्यति  न  द्वेष्टि"},
+	{"startTime":"298.416",	"endTime":"301.188",	"swhtsp":"l",	"shlNbr":"17",	"sty":"",	"text":"न  शोचति  न  काङ्क्षति |"},
+	{"startTime":"301.728",	"endTime":"305.484",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"शुभाशुभपरित्यागी"},
+	{"startTime":"305.928",	"endTime":"309.636",	"swhtsp":"",	"shlNbr":"17",	"sty":"",	"text":"भक्तिमान्यः   स  मे   प्रियः ||17||"}
+]},
+{"shlokaNum":"18",
+"entry":[
+	{"startTime":"310.344",	"endTime":"313.932",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"समः  शत्रौ  च  मित्रे  च"},
+	{"startTime":"314.424",	"endTime":"318.132",	"swhtsp":"l",	"shlNbr":"18",	"sty":"",	"text":"तथा  मानापमानयोः |"},
+	{"startTime":"318.648",	"endTime":"322.62",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"शीतोष्णसुखदुःखेषु"},
+	{"startTime":"323.136",	"endTime":"326.244",	"swhtsp":"",	"shlNbr":"18",	"sty":"",	"text":"समः  सङ्गविवर्जितः ||18||"}
+]},
+{"shlokaNum":"19",
+"entry":[
+	{"startTime":"326.976",	"endTime":"330.828",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"तुल्यनिन्दास्तुतिर्मौनी"},
+	{"startTime":"331.272",	"endTime":"335.052",	"swhtsp":"l",	"shlNbr":"19",	"sty":"",	"text":"सन्तुष्टो  येन  केनचित् |"},
+	{"startTime":"335.616",	"endTime":"338.676",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"अनिकेतः  स्थिरमतिः"},
+	{"startTime":"339.192",	"endTime":"343.044",	"swhtsp":"",	"shlNbr":"19",	"sty":"",	"text":"भक्तिमान्मे  प्रियो  नरः ||19||"}
+]},
+{"shlokaNum":"20",
+"entry":[
+	{"startTime":"343.68",	"endTime":"347.196",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"ये  तु  धर्म्यामृतमिदं"},
+	{"startTime":"347.64",	"endTime":"351.372",	"swhtsp":"l",	"shlNbr":"20",	"sty":"",	"text":"यथोक्तं  पर्युपासते |"},
+	{"startTime":"351.792",	"endTime":"355.86",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"श्रद्दधाना  मत्परमाः"},
+	{"startTime":"356.376",	"endTime":"360.9",	"swhtsp":"",	"shlNbr":"20",	"sty":"",	"text":"भक्तास्तेऽतीव   मे  प्रियाः ||20||"}
+]},
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"361.536",	"endTime":"364.404",	"swhtsp":"p",	"shlNbr":"21",	"sty":"th",	"text":"|| ओं  तत्सदिति"},
+	{"startTime":"364.896",	"endTime":"368.292",	"swhtsp":"p",	"shlNbr":"21",	"sty":"uh",	"text":"श्रीमद्भगवद्गीतासु"},
+	{"startTime":"368.784",	"endTime":"370.356",	"swhtsp":"p",	"shlNbr":"21",	"sty":"uh",	"text":"उपनिषत्सु"},
+	{"startTime":"370.8",	"endTime":"373.428",	"swhtsp":"l",	"shlNbr":"21",	"sty":"uh",	"text":"ब्रह्मविद्यायां"},
+	{"startTime":"373.896",	"endTime":"376.02",		"swhtsp":"p",	"shlNbr":"21",	"sty":"th",	"text":"योगशास्त्रे"},
+	{"startTime":"376.416",	"endTime":"380.028",	"swhtsp":"p",	"shlNbr":"21",	"sty":"uh",	"text":"श्रीकृष्णार्जुनसंवादे"},
+	{"startTime":"380.544",	"endTime":"383.316",	"swhtsp":"p",	"shlNbr":"21",	"sty":"uh",	"text":"भक्तियोगो  नाम"},
+	{"startTime":"383.76",	"endTime":"386.988",	"swhtsp":"",	"shlNbr":"21",	"sty":"uh",	"text":" द्वादशोऽध्यायः ||"}
+]}
+]}

@@ -1,0 +1,23 @@
+{
+  "chapters": [
+    { "id": 0, "name": "Gita Dhayna Slokas" },
+    { "id": 1, "name": "Arjuna Vishadha Yoga" },
+    { "id": 2, "name": "Sankhya Yoga" },
+    { "id": 3, "name": "Karma Yoga" },
+    { "id": 4, "name": "Jnana Yoga" },
+    { "id": 5, "name": "Karma Sanyasa Yoga" },
+    { "id": 6, "name": "Ātma-Saṁyama Yoga" },
+    { "id": 7, "name": "Jnana Vijnana Yoga" },
+    { "id": 8, "name": "Aksara Brahma Yoga" },
+    { "id": 9, "name": "Raja Vidya Raja Guhya Yoga" },
+    { "id": 10, "name": "Vibhuti Yoga" },
+    { "id": 11, "name": "Visvarupa Darsana Yoga" },
+    { "id": 12, "name": "Bhakti Yoga" },
+    { "id": 13, "name": "Ksetra Ksetrajna Vibhaga Yoga" },
+    { "id": 14, "name": "Gunatraya Vibhaga Yoga" },
+    { "id": 15, "name": "Purushottama Yoga" },
+    { "id": 16, "name": "Daivasura Sampad Vibhaga Yoga" },
+    { "id": 17, "name": "Sraddhatraya Vibhaga Yoga" },
+    { "id": 18, "name": "Moksha Sanyasa Yoga" }
+  ]
+}

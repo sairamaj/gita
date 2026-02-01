@@ -1,30 +1,29 @@
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+// Helper function to format chapter ID as two-digit string
+function chapterSlug(chapterId) {
+  return String(chapterId).padStart(2, '0');
+}
 
-async function request(path) {
-  const response = await fetch(`${API_BASE}${path}`);
+// Fetch JSON files from the public directory
+async function fetchJson(path) {
+  const response = await fetch(path);
   if (!response.ok) {
-    const message = await response.text();
-    throw new Error(message || `Request failed: ${response.status}`);
+    throw new Error(`Failed to load ${path}: ${response.status}`);
   }
   return response.json();
 }
 
-export function getApiBase() {
-  return API_BASE;
-}
-
 export async function fetchChapters() {
-  return request("/api/chapters");
+  return fetchJson('/chapters.json');
 }
 
 export async function fetchConfig() {
-  return request("/api/config");
+  return fetchJson('/config.json');
 }
 
 export async function fetchChapterMetadata(chapterId) {
-  return request(`/api/chapters/${chapterId}/metadata`);
+  return fetchJson(`/data/${chapterSlug(chapterId)}/plain_chapter.json`);
 }
 
 export function getChapterAudioUrl(chapterId) {
-  return `${API_BASE}/api/chapters/${chapterId}/audio`;
+  return `/data/${chapterSlug(chapterId)}/plain_chapter.m4a`;
 }

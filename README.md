@@ -47,3 +47,5 @@ Choose a chapter, set your pace, and press **Play**. The app plays shlokas and g
 2. Click **Play** to begin.
 3. Recite when it is your turn based on the selected mode.
 4. Continue until you stop the session.
+
+

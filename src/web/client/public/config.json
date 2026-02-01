@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "waitMode": "keyboard",
+    "duration": 20,
+    "playbackSpeed": 1.5,
+    "repeatYourShloka": true,
+    "participants": 4,
+    "yourTurn": 2
+  },
+  "waitModes": [
+    { "id": "keyboard", "label": "Keyboard Hit" },
+    { "id": "duration", "label": "Duration" }
+  ],
+  "playbackSpeed": {
+    "min": 0.5,
+    "max": 2.0,
+    "step": 0.1
+  }
+}

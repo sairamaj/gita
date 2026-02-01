@@ -1,0 +1,357 @@
+{
+"name":"अर्जुनविषादयोगः",
+"chapterNum":"01",
+"shloka":[ 
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"1.224",	"endTime":"6.854",	"swhtsp":"l",	"shlNbr":"00",	"sty":"fh",	"text":"ओं  श्री  परमात्मने नमः"},
+	{"startTime":"7.416",	"endTime":"11.006",	"swhtsp":"l",	"shlNbr":"00",	"sty":"sh",	"text":"अथ  प्रथमोऽध्यायः"},
+	{"startTime":"11.64",	"endTime":"14.87",	"swhtsp":"",	"shlNbr":"00",	"sty":"th",	"text":"अर्जुनविषादयोगः"}
+]},
+{"shlokaNum":"1",
+"entry":[
+	{"startTime":"15.456",	"endTime":"18.254",	"swhtsp":"l",	"shlNbr":"1",	"sty":"uh",	"text":"धृतराष्ट्र   उवाच   -"},
+	{"startTime":"18.912",	"endTime":"23.534",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"धर्मक्षेत्रे  कुरुक्षेत्रे"},
+	{"startTime":"24.000",	"endTime":"27.35",	"swhtsp":"l",	"shlNbr":"1",	"sty":"",	"text":"समवेता  युयुत्सवः |"},
+	{"startTime":"27.936",	"endTime":"32.054",	"swhtsp":"p",	"shlNbr":"1",	"sty":"",	"text":"मामकाः  पाण्डवाश्चैव"},
+	{"startTime":"32.544",	"endTime":"35.198",	"swhtsp":"",	"shlNbr":"1",	"sty":"",	"text":"किमकुर्वत  सञ्जय ||1||"}
+]},
+{"shlokaNum":"2",
+"entry":[
+	{"startTime":"35.784",	"endTime":"38.054",	"swhtsp":"l",	"shlNbr":"2",	"sty":"uh",	"text":"सञ्जय  उवाच   -"},
+	{"startTime":"38.592",	"endTime":"42.374",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"दृष्ट्वा  तु  पाण्डवानीकं"},
+	{"startTime":"42.864",	"endTime":"46.526",	"swhtsp":"l",	"shlNbr":"2",	"sty":"",	"text":"व्यूढं  दुर्योधनस्तदा |"},
+	{"startTime":"47.088",	"endTime":"50.678",	"swhtsp":"p",	"shlNbr":"2",	"sty":"",	"text":"आचार्यमुपसङ्गम्य"},
+	{"startTime":"51.144",	"endTime":"54.782",	"swhtsp":"",	"shlNbr":"2",	"sty":"",	"text":"राजा  वचनमब्रवीत् ||2||"}
+]},
+{"shlokaNum":"3",
+"entry":[
+	{"startTime":"55.44",	"endTime":"59.798",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"पश्यैतां  पाण्डुपुत्राणाम्"},
+	{"startTime":"60.24",	"endTime":"63.998",	"swhtsp":"l",	"shlNbr":"3",	"sty":"",	"text":"आचार्य  महतीं  चमूम् |"},
+	{"startTime":"64.488",	"endTime":"68.342",	"swhtsp":"p",	"shlNbr":"3",	"sty":"",	"text":"व्यूढां  द्रुपदपुत्रेण"},
+	{"startTime":"68.832",	"endTime":"72.038",	"swhtsp":"",	"shlNbr":"3",	"sty":"",	"text":"तव  शिष्येण  धीमता ||3||"}
+]},
+{"shlokaNum":"4",
+"entry":[
+	{"startTime":"72.672",	"endTime":"77.078",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"अत्र  शूरा  महेष्वासाः"},
+	{"startTime":"77.64",	"endTime":"80.966",	"swhtsp":"l",	"shlNbr":"4",	"sty":"",	"text":"भीमार्जुनसमा  युधि |"},
+	{"startTime":"81.744",	"endTime":"85.022",	"swhtsp":"p",	"shlNbr":"4",	"sty":"",	"text":"युयुधानो  विराटश्च"},
+	{"startTime":"85.512",	"endTime":"88.574",	"swhtsp":"",	"shlNbr":"4",	"sty":"",	"text":"द्रुपदश्च  महारथः ||4||"}
+]},
+{"shlokaNum":"5",
+"entry":[
+	{"startTime":"89.208",	"endTime":"93.086",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"धृष्टकेतुश्चेकितानः"},
+	{"startTime":"93.72",	"endTime":"97.598",	"swhtsp":"l",	"shlNbr":"5",	"sty":"",	"text":"काशिराजश्च  वीर्यवान् |"},
+	{"startTime":"98.376",	"endTime":"101.534",	"swhtsp":"p",	"shlNbr":"5",	"sty":"",	"text":"पुरुजित्कुन्तिभोजश्च"},
+	{"startTime":"101.976",	"endTime":"105.206",	"swhtsp":"",	"shlNbr":"5",	"sty":"",	"text":"शैब्यश्च  नरपुङ्गवः ||5||"}
+]},
+{"shlokaNum":"6",
+"entry":[
+	{"startTime":"106.08",	"endTime":"110.318",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"युधामन्युश्च  विक्रान्तः"},
+	{"startTime":"110.76",	"endTime":"114.446",	"swhtsp":"l",	"shlNbr":"6",	"sty":"",	"text":"उत्तमौजाश्च  वीर्यवान् |"},
+	{"startTime":"114.84",	"endTime":"119.222",	"swhtsp":"p",	"shlNbr":"6",	"sty":"",	"text":"सौभद्रो  द्रौपदेयाश्च"},
+	{"startTime":"119.688",	"endTime":"123.230",	"swhtsp":"",	"shlNbr":"6",	"sty":"",	"text":"सर्व  एव  महारथाः ||6||"}
+]},
+{"shlokaNum":"7",
+"entry":[
+	{"startTime":"123.864",	"endTime":"127.598",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"अस्माकं  तु  विशिष्टा  ये"},
+	{"startTime":"128.136",	"endTime":"131.366",	"swhtsp":"l",	"shlNbr":"7",	"sty":"",	"text":"तान्निबोध  द्विजोत्तम |"},
+	{"startTime":"132.024",	"endTime":"135.830",	"swhtsp":"p",	"shlNbr":"7",	"sty":"",	"text":"नायका  मम  सैन्यस्य"},
+	{"startTime":"136.296",	"endTime":"140.342",	"swhtsp":"",	"shlNbr":"7",	"sty":"",	"text":"सञ्ज्ञार्थं  तान्  ब्रवीमि  ते ||7||"}
+]},
+{"shlokaNum":"8",
+"entry":[
+	{"startTime":"140.904",	"endTime":"145.214",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"भवान्  भीष्मश्च  कर्णश्च"},
+	{"startTime":"145.872",	"endTime":"148.814",	"swhtsp":"l",	"shlNbr":"8",	"sty":"",	"text":"कृपश्च  समितिञ्जयः |"},
+	{"startTime":"149.424",	"endTime":"153.446",	"swhtsp":"p",	"shlNbr":"8",	"sty":"",	"text":"अश्वत्थामा  विकर्णश्च"},
+	{"startTime":"153.96",	"endTime":"157.142",	"swhtsp":"",	"shlNbr":"8",	"sty":"",	"text":"सौमदत्तिस्तथैव  च ||8||"}
+]},
+{"shlokaNum":"9",
+"entry":[
+	{"startTime":"157.56",	"endTime":"161.390",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"अन्ये  च  बहवः  शूराः"},
+	{"startTime":"161.88",	"endTime":"165.686",	"swhtsp":"l",	"shlNbr":"9",	"sty":"",	"text":"मदर्थे  त्यक्तजीविताः |"},
+	{"startTime":"166.248",	"endTime":"170.174",	"swhtsp":"p",	"shlNbr":"9",	"sty":"",	"text":"नानाशस्त्रप्रहरणाः"},
+	{"startTime":"170.664",	"endTime":"174.398",	"swhtsp":"",	"shlNbr":"9",	"sty":"",	"text":"सर्वे  युद्धविशारदाः ||9||"}
+]},
+{"shlokaNum":"10",
+"entry":[
+	{"startTime":"175.008",	"endTime":"178.958",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"अपर्याप्तं  तदस्माकं"},
+	{"startTime":"179.472",	"endTime":"182.726",	"swhtsp":"l",	"shlNbr":"10",	"sty":"",	"text":"बलं  भीष्माभिरक्षितम् |"},
+	{"startTime":"183.24",	"endTime":"186.950",	"swhtsp":"p",	"shlNbr":"10",	"sty":"",	"text":"पर्याप्तं  त्विदमेतेषां"},
+	{"startTime":"187.44",	"endTime":"190.550",	"swhtsp":"",	"shlNbr":"10",	"sty":"",	"text":"बलं  भीमाभिरक्षितम् ||10||"}
+]},
+{"shlokaNum":"11",
+"entry":[
+	{"startTime":"191.184",	"endTime":"194.174",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"अयनेषु  च  सर्वेषु"},
+	{"startTime":"194.664",	"endTime":"198.302",	"swhtsp":"l",	"shlNbr":"11",	"sty":"",	"text":"यथाभागमवस्थिताः |"},
+	{"startTime":"199.008",	"endTime":"202.406",	"swhtsp":"p",	"shlNbr":"11",	"sty":"",	"text":"भीष्ममेवाभिरक्षन्तु"},
+	{"startTime":"202.992",	"endTime":"206.03",	"swhtsp":"",	"shlNbr":"11",	"sty":"",	"text":"भवन्तः  सर्व  एव  हि ||11||"}
+]},
+{"shlokaNum":"12",
+"entry":[
+	{"startTime":"206.76",	"endTime":"209.75",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"तस्य  सञ्जनयन्  हर्षं"},
+	{"startTime":"210.312",	"endTime":"213.206",	"swhtsp":"l",	"shlNbr":"12",	"sty":"",	"text":"कुरुवृद्धः  पितामहः |"},
+	{"startTime":"213.744",	"endTime":"217.838",	"swhtsp":"p",	"shlNbr":"12",	"sty":"",	"text":"सिंहनादं  विनद्योच्चैः"},
+	{"startTime":"218.304",	"endTime":"221.99",	"swhtsp":"",	"shlNbr":"12",	"sty":"",	"text":"शङ्खं  दध्मौ  प्रतापवान् ||12||"}
+]},
+{"shlokaNum":"13",
+"entry":[
+	{"startTime":"222.528",	"endTime":"226.238",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"ततः  शङ्खाश्च  भेर्यश्च"},
+	{"startTime":"226.8",	"endTime":"229.694",	"swhtsp":"l",	"shlNbr":"13",	"sty":"",	"text":"पणवानकगोमुखाः |"},
+	{"startTime":"230.16",	"endTime":"233.51",	"swhtsp":"p",	"shlNbr":"13",	"sty":"",	"text":"सहसैवाभ्यहन्यन्त"},
+	{"startTime":"233.952",	"endTime":"236.966",	"swhtsp":"",	"shlNbr":"13",	"sty":"",	"text":"स  शब्दस्तुमुलोऽभवत् ||13||"}
+]},
+{"shlokaNum":"14",
+"entry":[
+	{"startTime":"237.648",	"endTime":"241.79",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"ततः  श्वेतैर्हयैर्युक्ते"},
+	{"startTime":"242.28",	"endTime":"245.486",	"swhtsp":"l",	"shlNbr":"14",	"sty":"",	"text":"महति  स्यन्दने  स्थितौ |"},
+	{"startTime":"245.976",	"endTime":"249.398",	"swhtsp":"p",	"shlNbr":"14",	"sty":"",	"text":"माधवः  पाण्डवश्चैव"},
+	{"startTime":"249.888",	"endTime":"253.598",	"swhtsp":"",	"shlNbr":"14",	"sty":"",	"text":"दिव्यौ  शङ्खौ  प्रदध्मतुः ||14||"}
+]},
+{"shlokaNum":"15",
+"entry":[
+	{"startTime":"254.232",	"endTime":"258.038",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"पाञ्चजन्यं  हृषीकेशः"},
+	{"startTime":"258.576",	"endTime":"261.806",	"swhtsp":"l",	"shlNbr":"15",	"sty":"",	"text":"देवदत्तं  धनञ्जयः |"},
+	{"startTime":"262.392",	"endTime":"266.198",	"swhtsp":"p",	"shlNbr":"15",	"sty":"",	"text":"पौण्ड्रं  दध्मौ  महाशङ्खं"},
+	{"startTime":"266.784",	"endTime":"270.182",	"swhtsp":"",	"shlNbr":"15",	"sty":"",	"text":"भीमकर्मा  वृकोदरः ||15||"}
+]},
+{"shlokaNum":"16",
+"entry":[
+	{"startTime":"270.984",	"endTime":"274.094",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"अनन्तविजयं  राजा"},
+	{"startTime":"274.56",	"endTime":"278.366",	"swhtsp":"l",	"shlNbr":"16",	"sty":"",	"text":"कुन्तीपुत्रो  युधिष्ठिरः |"},
+	{"startTime":"278.904",	"endTime":"281.798",	"swhtsp":"p",	"shlNbr":"16",	"sty":"",	"text":"नकुलः  सहदेवश्च"},
+	{"startTime":"282.216",	"endTime":"285.254",	"swhtsp":"",	"shlNbr":"16",	"sty":"",	"text":"सुघोषमणिपुष्पकौ ||16||"}
+]},
+{"shlokaNum":"17",
+"entry":[
+	{"startTime":"286.104",	"endTime":"289.982",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"काश्यश्च  परमेष्वासः"},
+	{"startTime":"290.352",	"endTime":"293.654",	"swhtsp":"l",	"shlNbr":"17",	"sty":"",	"text":"शिखण्डी  च  महारथः |"},
+	{"startTime":"294.24",	"endTime":"297.95",	"swhtsp":"p",	"shlNbr":"17",	"sty":"",	"text":"धृष्टद्युम्नो  विराटश्च"},
+	{"startTime":"298.464",	"endTime":"302.102",	"swhtsp":"",	"shlNbr":"17",	"sty":"",	"text":"सात्यकिश्चापराजितः ||17||"}
+]},
+{"shlokaNum":"18",
+"entry":[
+	{"startTime":"302.64",	"endTime":"306.638",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"द्रुपदो  द्रौपदेयाश्च"},
+	{"startTime":"307.08",	"endTime":"310.358",	"swhtsp":"l",	"shlNbr":"18",	"sty":"",	"text":"सर्वशः  पृथिवीपते |"},
+	{"startTime":"310.944",	"endTime":"314.894",	"swhtsp":"p",	"shlNbr":"18",	"sty":"",	"text":"सौभद्रश्च  महाबाहुः"},
+	{"startTime":"315.36",	"endTime":"319.286",	"swhtsp":"",	"shlNbr":"18",	"sty":"",	"text":"शङ्खान्दध्मुः  पृथक्  पृथक् ||18||"}
+]},
+{"shlokaNum":"19",
+"entry":[
+	{"startTime":"319.92",	"endTime":"324.206",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"स  घोषो  धार्तराष्ट्राणां"},
+	{"startTime":"324.792",	"endTime":"327.902",	"swhtsp":"l",	"shlNbr":"19",	"sty":"",	"text":"हृदयानि  व्यदारयत् |"},
+	{"startTime":"328.368",	"endTime":"331.622",	"swhtsp":"p",	"shlNbr":"19",	"sty":"",	"text":"नभश्च  पृथिवीं  चैव"},
+	{"startTime":"332.112",	"endTime":"335.342",	"swhtsp":"",	"shlNbr":"19",	"sty":"",	"text":"तुमुलो  व्यनुनादयन् ||19||"}
+]},
+{"shlokaNum":"20",
+"entry":[
+	{"startTime":"335.856",	"endTime":"339.542",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"अथ  व्यवस्थितान्दृष्ट्वा"},
+	{"startTime":"340.032",	"endTime":"343.766",	"swhtsp":"l",	"shlNbr":"20",	"sty":"",	"text":"धार्तराष्ट्रान्  कपिध्वजः |"},
+	{"startTime":"344.28",	"endTime":"347.966",	"swhtsp":"p",	"shlNbr":"20",	"sty":"",	"text":"प्रवृत्ते  शस्त्रसम्पाते"},
+	{"startTime":"348.48",	"endTime":"351.686",	"swhtsp":"",	"shlNbr":"20",	"sty":"",	"text":"धनुरुद्यम्य  पाण्डवः ||20||"}
+]},
+{"shlokaNum":"21",
+"entry":[
+	{"startTime":"352.272",	"endTime":"356.39",	"swhtsp":"p",	"shlNbr":"21",	"sty":"",	"text":"हृषीकेशं  तदा  वाक्यम्"},
+	{"startTime":"356.856",	"endTime":"359.726",	"swhtsp":"l",	"shlNbr":"21",	"sty":"",	"text":"इदमाह  महीपते |"},
+	{"startTime":"360.168",	"endTime":"362.558",	"swhtsp":"l",	"shlNbr":"21",	"sty":"uh",	"text":"अर्जुन   उवाच  -"},
+	{"startTime":"362.952",	"endTime":"366.734",	"swhtsp":"p",	"shlNbr":"21",	"sty":"",	"text":"सेनयोरुभयोर्मध्ये"},
+	{"startTime":"367.152",	"endTime":"370.478",	"swhtsp":"",	"shlNbr":"21",	"sty":"",	"text":"रथं  स्थापय  मेऽच्युत ||21||"}
+]},
+{"shlokaNum":"22",
+"entry":[
+	{"startTime":"371.064",	"endTime":"375.206",	"swhtsp":"p",	"shlNbr":"22",	"sty":"",	"text":"यावदेतान्निरीक्षेऽहं"},
+	{"startTime":"375.696",	"endTime":"379.166",	"swhtsp":"l",	"shlNbr":"22",	"sty":"",	"text":"योद्धुकामानवस्थितान् |"},
+	{"startTime":"379.752",	"endTime":"383.366",	"swhtsp":"p",	"shlNbr":"22",	"sty":"",	"text":"कैर्मया  सह  योद्धव्यं"},
+	{"startTime":"383.88",	"endTime":"387.134",	"swhtsp":"",	"shlNbr":"22",	"sty":"",	"text":"अस्मिन् रणसमुद्यमे ||22||"}
+]},
+{"shlokaNum":"23",
+"entry":[
+	{"startTime":"387.696",	"endTime":"391.67",	"swhtsp":"p",	"shlNbr":"23",	"sty":"",	"text":"योत्स्यमानानवेक्षेऽहं"},
+	{"startTime":"392.112",	"endTime":"395.678",	"swhtsp":"l",	"shlNbr":"23",	"sty":"",	"text":"य  एतेऽत्र  समागताः |"},
+	{"startTime":"396.192",	"endTime":"400.43",	"swhtsp":"p",	"shlNbr":"23",	"sty":"",	"text":"धार्तराष्ट्रस्य  दुर्बुद्धेः"},
+	{"startTime":"400.944",	"endTime":"404.774",	"swhtsp":"",	"shlNbr":"23",	"sty":"",	"text":"युद्धे  प्रियचिकीर्षवः ||23||"}
+]},
+{"shlokaNum":"24",
+"entry":[
+	{"startTime":"405.432",	"endTime":"407.846",	"swhtsp":"l",	"shlNbr":"24",	"sty":"uh",	"text":"सञ्जय   उवाच  -"},
+	{"startTime":"408.264",	"endTime":"412.142",	"swhtsp":"p",	"shlNbr":"24",	"sty":"",	"text":"एवमुक्तो  हृषीकेशः"},
+	{"startTime":"412.56",	"endTime":"415.79",	"swhtsp":"l",	"shlNbr":"24",	"sty":"",	"text":"गुडाकेशेन  भारत |"},
+	{"startTime":"416.304",	"endTime":"420.134",	"swhtsp":"p",	"shlNbr":"24",	"sty":"",	"text":"सेनयोरुभयोर्मध्ये"},
+	{"startTime":"420.504",	"endTime":"423.926",	"swhtsp":"",	"shlNbr":"24",	"sty":"",	"text":"स्थापयित्वा  रथोत्तमम् ||24||"}
+]},
+{"shlokaNum":"25",
+"entry":[
+	{"startTime":"424.488",	"endTime":"428.198",	"swhtsp":"p",	"shlNbr":"25",	"sty":"",	"text":"भीष्मद्रोणप्रमुखतः"},
+	{"startTime":"428.664",	"endTime":"432.614",	"swhtsp":"l",	"shlNbr":"25",	"sty":"",	"text":"सर्वेषां  च  महीक्षिताम् |"},
+	{"startTime":"433.152",	"endTime":"436.694",	"swhtsp":"p",	"shlNbr":"25",	"sty":"",	"text":"उवाच  पार्थ  पश्यैतान्"},
+	{"startTime":"437.16",	"endTime":"440.198",	"swhtsp":"",	"shlNbr":"25",	"sty":"",	"text":"समवेतान्कुरूनिति ||25||"}
+]},
+{"shlokaNum":"26",
+"entry":[
+	{"startTime":"440.88",	"endTime":"445.31",	"swhtsp":"p",	"shlNbr":"26",	"sty":"",	"text":"तत्रापश्यत्स्थितान्  पार्थः"},
+	{"startTime":"445.872",	"endTime":"448.934",	"swhtsp":"l",	"shlNbr":"26",	"sty":"",	"text":"पितॄनथ  पितामहान् |"},
+	{"startTime":"449.448",	"endTime":"454.142",	"swhtsp":"p",	"shlNbr":"26",	"sty":"",	"text":"आचार्यान्मातुलान्भ्रातॄन्"},
+	{"startTime":"454.632",	"endTime":"458.87",	"swhtsp":"",	"shlNbr":"26",	"sty":"",	"text":"पुत्रान्पौत्रान्सखींस्तथा ||26||"}
+]},
+{"shlokaNum":"27",
+"entry":[
+	{"startTime":"459.456",	"endTime":"462.734",	"swhtsp":"p",	"shlNbr":"27",	"sty":"",	"text":"श्वशुरान्सुहृदश्चैव"},
+	{"startTime":"463.2",	"endTime":"466.166",	"swhtsp":"l",	"shlNbr":"27",	"sty":"",	"text":"सेनयोरुभयोरपि |"},
+	{"startTime":"466.8",	"endTime":"471.086",	"swhtsp":"p",	"shlNbr":"27",	"sty":"",	"text":"तान्समीक्ष्य  स  कौन्तेयः"},
+	{"startTime":"471.528",	"endTime":"475.55",	"swhtsp":"",	"shlNbr":"27",	"sty":"",	"text":"सर्वान्बन्धूनवस्थितान् ||27||"}
+]},
+{"shlokaNum":"28",
+"entry":[
+	{"startTime":"476.16",	"endTime":"479.75",	"swhtsp":"p",	"shlNbr":"28",	"sty":"",	"text":"कृपया  परयाऽऽविष्टः"},
+	{"startTime":"480.216",	"endTime":"483.374",	"swhtsp":"l",	"shlNbr":"28",	"sty":"",	"text":"विषीदन्निदमब्रवीत् |"},
+	{"startTime":"483.936",	"endTime":"486.182",	"swhtsp":"l",	"shlNbr":"28",	"sty":"uh",	"text":"अर्जुन   उवाच  -"},
+	{"startTime":"486.96",	"endTime":"490.358",	"swhtsp":"p",	"shlNbr":"28",	"sty":"",	"text":"दृष्ट्वेमं  स्वजनं  कृष्ण"},
+	{"startTime":"490.872",	"endTime":"493.934",	"swhtsp":"",	"shlNbr":"28",	"sty":"",	"text":"युयुत्सुं  समुपस्थितम् ||28||"}
+]},
+{"shlokaNum":"29",
+"entry":[
+	{"startTime":"494.496",	"endTime":"498.014",	"swhtsp":"p",	"shlNbr":"29",	"sty":"",	"text":"सीदन्ति  मम  गात्राणि"},
+	{"startTime":"498.504",	"endTime":"500.99",	"swhtsp":"l",	"shlNbr":"29",	"sty":"",	"text":"मुखं  च  परिशुष्यति |"},
+	{"startTime":"501.6",	"endTime":"504.95",	"swhtsp":"p",	"shlNbr":"29",	"sty":"",	"text":"वेपथुश्च  शरीरे  मे"},
+	{"startTime":"505.464",	"endTime":"509.006",	"swhtsp":"",	"shlNbr":"29",	"sty":"",	"text":"रोमहर्षश्च  जायते ||29||"}
+]},
+{"shlokaNum":"30",
+"entry":[
+	{"startTime":"509.52",	"endTime":"513.854",	"swhtsp":"p",	"shlNbr":"30",	"sty":"",	"text":"गाण्डीवं  स्रंसते  हस्तात्"},
+	{"startTime":"514.32",	"endTime":"517.286",	"swhtsp":"l",	"shlNbr":"30",	"sty":"",	"text":"त्व क्चैव  परिदह्यते |"},
+	{"startTime":"517.944",	"endTime":"521.342",	"swhtsp":"p",	"shlNbr":"30",	"sty":"",	"text":"न  च  शक्नोम्यवस्थातुं"},
+	{"startTime":"521.832",	"endTime":"524.798",	"swhtsp":"",	"shlNbr":"30",	"sty":"",	"text":"भ्रमतीव  च  मे  मनः ||30||"}
+]},
+{"shlokaNum":"31",
+"entry":[
+	{"startTime":"525.384",	"endTime":"528.59",	"swhtsp":"p",	"shlNbr":"31",	"sty":"",	"text":"निमित्तानि  च  पश्यामि"},
+	{"startTime":"529.128",	"endTime":"532.07",	"swhtsp":"l",	"shlNbr":"31",	"sty":"",	"text":"विपरीतानि  केशव |"},
+	{"startTime":"532.608",	"endTime":"536.174",	"swhtsp":"p",	"shlNbr":"31",	"sty":"",	"text":"न  च  श्रेयोऽनुपश्यामि"},
+	{"startTime":"536.688",	"endTime":"540.35",	"swhtsp":"",	"shlNbr":"31",	"sty":"",	"text":"हत्वा  स्वजनमाहवे ||31||"}
+]},
+{"shlokaNum":"32",
+"entry":[
+	{"startTime":"541.152",	"endTime":"544.79",	"swhtsp":"p",	"shlNbr":"32",	"sty":"",	"text":"न  काङ्क्षे  विजयं  कृष्ण"},
+	{"startTime":"545.232",	"endTime":"548.414",	"swhtsp":"l",	"shlNbr":"32",	"sty":"",	"text":"न  च  राज्यं  सुखानि  च |"},
+	{"startTime":"548.976",	"endTime":"553.262",	"swhtsp":"p",	"shlNbr":"32",	"sty":"",	"text":"किं  नो  राज्येन  गोविन्द"},
+	{"startTime":"553.824",	"endTime":"557.774",	"swhtsp":"",	"shlNbr":"32",	"sty":"",	"text":"किं  भोगैर्जीवितेन  वा ||32||"}
+]},
+{"shlokaNum":"33",
+"entry":[
+	{"startTime":"558.24",	"endTime":"562.526",	"swhtsp":"p",	"shlNbr":"33",	"sty":"",	"text":"येषामर्थे  काङ्क्षितं  नः"},
+	{"startTime":"562.968",	"endTime":"566.606",	"swhtsp":"l",	"shlNbr":"33",	"sty":"",	"text":"राज्यं  भोगाः  सुखानि  च |"},
+	{"startTime":"567.192",	"endTime":"570.494",	"swhtsp":"p",	"shlNbr":"33",	"sty":"",	"text":"त  इमेऽवस्थिता  युद्धे"},
+	{"startTime":"571.008",	"endTime":"574.742",	"swhtsp":"",	"shlNbr":"33",	"sty":"",	"text":"प्राणांस्त्यक्त्त्वा  धनानि च ||33||"}
+]},
+{"shlokaNum":"34",
+"entry":[
+	{"startTime":"575.496",	"endTime":"579.734",	"swhtsp":"p",	"shlNbr":"34",	"sty":"",	"text":"आचार्याः  पितरः  पुत्राः"},
+	{"startTime":"580.272",	"endTime":"583.43",	"swhtsp":"l",	"shlNbr":"34",	"sty":"",	"text":"तथैव  च  पितामहाः |"},
+	{"startTime":"583.968",	"endTime":"588.542",	"swhtsp":"p",	"shlNbr":"34",	"sty":"",	"text":"मातुलाः  श्वशुराः  पौत्राः"},
+	{"startTime":"588.936",	"endTime":"593.03",	"swhtsp":"",	"shlNbr":"34",	"sty":"",	"text":"श्यालाः  सम्बन्धिनस्तथा ||34||"}
+]},
+{"shlokaNum":"35",
+"entry":[
+	{"startTime":"593.688",	"endTime":"597.278",	"swhtsp":"p",	"shlNbr":"35",	"sty":"",	"text":"एतान्न  हन्तुमिच्छामि"},
+	{"startTime":"597.792",	"endTime":"600.494",	"swhtsp":"l",	"shlNbr":"35",	"sty":"",	"text":"घ्नतोऽपि  मधुसूदन |"},
+	{"startTime":"601.008",	"endTime":"604.838",	"swhtsp":"p",	"shlNbr":"35",	"sty":"",	"text":"अपि  त्रैलोक्यराज्यस्य"},
+	{"startTime":"605.472",	"endTime":"608.99",	"swhtsp":"",	"shlNbr":"35",	"sty":"",	"text":"हेतोः   किं  नु  महीकृते ||35||"}
+]},
+{"shlokaNum":"36",
+"entry":[
+	{"startTime":"609.384",	"endTime":"613.286",	"swhtsp":"p",	"shlNbr":"36",	"sty":"",	"text":"निहत्य  धार्तराष्ट्रान्नः"},
+	{"startTime":"613.848",	"endTime":"617.51",	"swhtsp":"l",	"shlNbr":"36",	"sty":"",	"text":"का  प्रीतिः  स्याज्जनार्दन |"},
+	{"startTime":"618.12",	"endTime":"621.998",	"swhtsp":"p",	"shlNbr":"36",	"sty":"",	"text":"पापमेवाश्रयेदस्मान्"},
+	{"startTime":"622.392",	"endTime":"626.006",	"swhtsp":"",	"shlNbr":"36",	"sty":"",	"text":"हत्वैतानाततायिनः ||36||"}
+]},
+{"shlokaNum":"37",
+"entry":[
+	{"startTime":"626.592",	"endTime":"630.806",	"swhtsp":"p",	"shlNbr":"37",	"sty":"",	"text":"तस्मान्नार्हा  वयं  हन्तुं"},
+	{"startTime":"631.368",	"endTime":"635.294",	"swhtsp":"l",	"shlNbr":"37",	"sty":"",	"text":"धार्तराष्ट्रान्स्वबान्धवान् |"},
+	{"startTime":"635.76",	"endTime":"638.822",	"swhtsp":"p",	"shlNbr":"37",	"sty":"",	"text":"स्वजनं  हि  कथं  हत्वा"},
+	{"startTime":"639.288",	"endTime":"642.23",	"swhtsp":"",	"shlNbr":"37",	"sty":"",	"text":"सुखिनः  स्याम माधव ||37||"}
+]},
+{"shlokaNum":"38",
+"entry":[
+	{"startTime":"642.84",	"endTime":"646.502",	"swhtsp":"p",	"shlNbr":"38",	"sty":"",	"text":"यद्यप्येते  न  पश्यन्ति"},
+	{"startTime":"646.992",	"endTime":"650.246",	"swhtsp":"l",	"shlNbr":"38",	"sty":"",	"text":"लोभोपहतचेतसः |"},
+	{"startTime":"650.808",	"endTime":"653.846",	"swhtsp":"p",	"shlNbr":"38",	"sty":"",	"text":"कुलक्षयकृतं  दोषं"},
+	{"startTime":"654.336",	"endTime":"657.854",	"swhtsp":"",	"shlNbr":"38",	"sty":"",	"text":"मित्रद्रोहे  च  पातकम् ||38||"}
+]},
+{"shlokaNum":"39",
+"entry":[
+	{"startTime":"658.344",	"endTime":"662.102",	"swhtsp":"p",	"shlNbr":"39",	"sty":"",	"text":"कथं  न  ज्ञेयमस्माभिः"},
+	{"startTime":"662.64",	"endTime":"666.182",	"swhtsp":"l",	"shlNbr":"39",	"sty":"",	"text":"पापादस्मान्निवर्तितुम् |"},
+	{"startTime":"666.696",	"endTime":"669.566",	"swhtsp":"p",	"shlNbr":"39",	"sty":"",	"text":"कुलक्षयकृतं  दोषं"},
+	{"startTime":"670.08",	"endTime":"673.19",	"swhtsp":"",	"shlNbr":"39",	"sty":"",	"text":"प्रपश्यद्भिर्जनार्दन ||39||"}
+]},
+{"shlokaNum":"40",
+"entry":[
+	{"startTime":"673.776",	"endTime":"677.006",	"swhtsp":"p",	"shlNbr":"40",	"sty":"",	"text":"कुलक्षये  प्रणश्यन्ति"},
+	{"startTime":"677.544",	"endTime":"681.086",	"swhtsp":"l",	"shlNbr":"40",	"sty":"",	"text":"कुलधर्माः  सनातनाः |"},
+	{"startTime":"681.624",	"endTime":"685.334",	"swhtsp":"p",	"shlNbr":"40",	"sty":"",	"text":"धर्मे  नष्टे  कुलं  कृत्स्नम्"},
+	{"startTime":"685.872",	"endTime":"688.766",	"swhtsp":"",	"shlNbr":"40",	"sty":"",	"text":"अधर्मोऽभिभवत्युत ||40||"}
+]},
+{"shlokaNum":"41",
+"entry":[
+	{"startTime":"689.256",	"endTime":"693.302",	"swhtsp":"p",	"shlNbr":"41",	"sty":"",	"text":"अधर्माभिभवात्कृष्ण"},
+	{"startTime":"693.72",	"endTime":"696.782",	"swhtsp":"l",	"shlNbr":"41",	"sty":"",	"text":"प्रदुष्यन्ति    कुलस्त्रियः |"},
+	{"startTime":"697.272",	"endTime":"701.294",	"swhtsp":"p",	"shlNbr":"41",	"sty":"",	"text":"स्त्रीषु  दुष्टासु  वार्ष्णेय"},
+	{"startTime":"701.856",	"endTime":"705.494",	"swhtsp":"",	"shlNbr":"41",	"sty":"",	"text":"जायते  वर्णसङ्करः ||41||"}
+]},
+{"shlokaNum":"42",
+"entry":[
+	{"startTime":"706.008",	"endTime":"709.238",	"swhtsp":"p",	"shlNbr":"42",	"sty":"",	"text":"सङ्करो  नरकायैव"},
+	{"startTime":"709.704",	"endTime":"712.742",	"swhtsp":"l",	"shlNbr":"42",	"sty":"",	"text":"कुलघ्नानां  कुलस्य  च |"},
+	{"startTime":"713.376",	"endTime":"716.822",	"swhtsp":"p",	"shlNbr":"42",	"sty":"",	"text":"पतन्ति  पितरो  ह्येषां"},
+	{"startTime":"717.312",	"endTime":"720.902",	"swhtsp":"",	"shlNbr":"42",	"sty":"",	"text":"लुप्तपिण्डोदकक्रियाः ||42||"}
+]},
+{"shlokaNum":"43",
+"entry":[
+	{"startTime":"721.512",	"endTime":"725.51",	"swhtsp":"p",	"shlNbr":"43",	"sty":"",	"text":"दोषैरेतैः  कुलघ्नानां"},
+	{"startTime":"725.952",	"endTime":"729.302",	"swhtsp":"l",	"shlNbr":"43",	"sty":"",	"text":"वर्णसङ्करकारकैः |"},
+	{"startTime":"729.936",	"endTime":"734.318",	"swhtsp":"p",	"shlNbr":"43",	"sty":"",	"text":"उत्साद्यन्ते  जातिधर्माः"},
+	{"startTime":"734.856",	"endTime":"738.35",	"swhtsp":"",	"shlNbr":"43",	"sty":"",	"text":"कुलधर्माश्च  शाश्वताः ||43||"}
+]},
+{"shlokaNum":"44",
+"entry":[
+	{"startTime":"738.936",	"endTime":"742.118",	"swhtsp":"p",	"shlNbr":"44",	"sty":"",	"text":"उत्सन्नकुलधर्माणां"},
+	{"startTime":"742.608",	"endTime":"745.79",	"swhtsp":"l",	"shlNbr":"44",	"sty":"",	"text":"मनुष्याणां  जनार्दन |"},
+	{"startTime":"746.352",	"endTime":"749.558",	"swhtsp":"p",	"shlNbr":"44",	"sty":"",	"text":"नरकेऽनियतं  वासः"},
+	{"startTime":"750",	"endTime":"752.798",	"swhtsp":"",	"shlNbr":"44",	"sty":"",	"text":"भवतीत्यनुशुश्रुम ||44||"}
+]},
+{"shlokaNum":"45",
+"entry":[
+	{"startTime":"753.408",	"endTime":"756.59",	"swhtsp":"p",	"shlNbr":"45",	"sty":"",	"text":"अहो  बत  महत्पापं"},
+	{"startTime":"757.032",	"endTime":"760.094",	"swhtsp":"l",	"shlNbr":"45",	"sty":"",	"text":"कर्तुं  व्यवसिता  वयम् |"},
+	{"startTime":"760.632",	"endTime":"764.222",	"swhtsp":"p",	"shlNbr":"45",	"sty":"",	"text":"यद्राज्यसुखलोभेन"},
+	{"startTime":"764.664",	"endTime":"768.086",	"swhtsp":"",	"shlNbr":"45",	"sty":"",	"text":"हन्तुं  स्वजनमुद्यताः ||45||"}
+]},
+{"shlokaNum":"46",
+"entry":[
+	{"startTime":"768.6",	"endTime":"771.59",	"swhtsp":"p",	"shlNbr":"46",	"sty":"",	"text":"यदि  मामप्रतीकारम्"},
+	{"startTime":"772.056",	"endTime":"775.238",	"swhtsp":"l",	"shlNbr":"46",	"sty":"",	"text":"अशस्त्रं  शस्त्रपाणयः |"},
+	{"startTime":"775.872",	"endTime":"780.062",	"swhtsp":"p",	"shlNbr":"46",	"sty":"",	"text":"धार्तराष्ट्रा  रणे  हन्युः"},
+	{"startTime":"780.6",	"endTime":"784.334",	"swhtsp":"",	"shlNbr":"46",	"sty":"",	"text":"तन्मे  क्षेमतरं  भवेत् ||46||"}
+]},
+{"shlokaNum":"47",
+"entry":[
+	{"startTime":"785.208",	"endTime":"787.286",	"swhtsp":"l",	"shlNbr":"47",	"sty":"uh",	"text":"सञ्जय   उवाच  -"},
+	{"startTime":"787.872",	"endTime":"791.606",	"swhtsp":"p",	"shlNbr":"47",	"sty":"",	"text":"एवमुक्त्वाऽर्जुनः  सङ्ख्ये"},
+	{"startTime":"792",	"endTime":"794.942",	"swhtsp":"l",	"shlNbr":"47",	"sty":"",	"text":"रथोपस्थ  उपाविशत् |"},
+	{"startTime":"795.432",	"endTime":"798.374",	"swhtsp":"p",	"shlNbr":"47",	"sty":"",	"text":"विसृज्य  सशरं  चापं"},
+	{"startTime":"798.792",	"endTime":"802.022",	"swhtsp":"",	"shlNbr":"47",	"sty":"",	"text":"शोकसंविग्नमानसः ||47||"}
+]},
+{"shlokaNum":"",
+"entry":[
+	{"startTime":"802.608",	"endTime":"804.854",	"swhtsp":"p",	"shlNbr":"00",	"sty":"th",	"text":"|| ओं  तत्सदिति"},
+	{"startTime":"805.296",	"endTime":"808.55",	"swhtsp":"p",	"shlNbr":"00",	"sty":"uh",	"text":"श्रीमद्भगवद्गीतासु"},
+	{"startTime":"809.04",	"endTime":"810.446",	"swhtsp":"p",	"shlNbr":"00",	"sty":"uh",	"text":"उपनिषत्सु"},
+	{"startTime":"810.984",	"endTime":"813.206",	"swhtsp":"l",	"shlNbr":"00",	"sty":"uh",	"text":"ब्रह्मविद्यायां"},
+	{"startTime":"813.624",	"endTime":"815.51",	"swhtsp":"p",	"shlNbr":"00",	"sty":"th",	"text":"योगशास्त्रे"},
+	{"startTime":"815.856",	"endTime":"819.374",	"swhtsp":"p",	"shlNbr":"00",	"sty":"uh",	"text":"श्रीकृष्णार्जुनसंवादे"},
+	{"startTime":"819.792",	"endTime":"823.334",	"swhtsp":"p",	"shlNbr":"00",	"sty":"uh",	"text":"अर्जुनविषादयोगो"},
+	{"startTime":"823.8",	"endTime":"826.502",	"swhtsp":"",	"shlNbr":"00",	"sty":"th",	"text":" प्रथमोऽध्यायः ||"}
+]}
+]}
