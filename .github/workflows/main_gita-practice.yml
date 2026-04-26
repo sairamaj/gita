@@ -37,6 +37,8 @@ jobs:
         run: |
           mkdir -p deploy
           cp -r dist deploy/
+          mkdir -p deploy/src/contracts
+          cp -r src/contracts/. deploy/src/contracts/
           cp server.js deploy/
           cp package*.json deploy/
           if [ -f web.config ]; then cp web.config deploy/; fi
