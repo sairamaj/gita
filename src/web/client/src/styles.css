@@ -205,6 +205,45 @@ button:disabled {
   align-items: start;
 }
 
+.quick-practice-layout h3 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.quick-practice-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-practice-list li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e7e7ee;
+  background: #fafbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.quick-practice-current-item {
+  margin-top: 8px;
+  border: 1px dashed #cfd7e6;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #f8fbff;
+}
+
+.quiet-button {
+  background: #ffffff;
+  color: #2f74ff;
+  border: 1px solid #d6e4ff;
+}
+
 .group-practice-panel h3 {
   margin-top: 0;
   margin-bottom: 4px;

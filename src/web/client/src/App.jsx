@@ -8,6 +8,7 @@ import {
 import ChapterSelector from "./components/ChapterSelector.jsx";
 import IndividualPractice from "./components/IndividualPractice.jsx";
 import GroupPractice from "./components/GroupPractice.jsx";
+import QuickPracticePage from "./components/QuickPracticePage.jsx";
 import MarkdownView from "./components/MarkdownView.jsx";
 import individualHelp from "../../../Gita.Practice.App/Help/individual_practice_help.md?raw";
 import groupHelp from "../../../Gita.Practice.App/Help/group_practice_help.md?raw";
@@ -118,6 +119,12 @@ export default function App() {
           >
             Group Practice
           </button>
+          <button
+            className={tab === "quick-practice" ? "active" : ""}
+            onClick={() => setTab("quick-practice")}
+          >
+            Quick Practice
+          </button>
           <button className={tab === "help" ? "active" : ""} onClick={() => setTab("help")}>
             Help
           </button>
@@ -135,6 +142,8 @@ export default function App() {
                 <MarkdownView content={groupHelp} />
               </div>
             </div>
+          ) : tab === "quick-practice" ? (
+            <QuickPracticePage />
           ) : (
             <>
               <ChapterSelector
